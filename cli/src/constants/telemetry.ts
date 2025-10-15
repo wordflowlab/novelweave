@@ -1,0 +1,1 @@
+export const NOVELWEAVE_POSTHOG_API_KEY = process.env.NOVELWEAVE_POSTHOG_API_KEY || ""

@@ -1,0 +1,52 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"lint": {},
+		"check-types": {},
+		"test": {
+			"dependsOn": ["@roo-code/types#build"]
+		},
+		"format": {},
+		"clean": {
+			"cache": false
+		},
+		"build": {
+			"outputs": ["dist/**"],
+			"inputs": ["src/**", "package.json", "tsconfig.json", "tsup.config.ts", "vite.config.ts"]
+		},
+		"watch:tsc": {
+			"cache": false
+		},
+		"storybook": {
+			"cache": false,
+			"persistent": true
+		},
+		"storybook:build": {
+			"outputs": ["storybook-static/**"]
+		},
+		"jetbrains:bundle": {
+			"cache": false,
+			"dependsOn": ["@novelweave/jetbrains-plugin#bundle"]
+		},
+		"jetbrains:run-bundle": {
+			"cache": false,
+			"dependsOn": ["@novelweave/jetbrains-plugin#run:bundle"]
+		},
+		"jetbrains:build": {
+			"dependsOn": ["@novelweave/jetbrains-plugin#build"]
+		},
+		"jetbrains:run": {
+			"dependsOn": ["@novelweave/jetbrains-plugin#run"]
+		},
+		"cli:build": {
+			"dependsOn": ["@novelweave/cli#build"]
+		},
+		"chromatic": {
+			"dependsOn": ["storybook:build"],
+			"cache": false
+		},
+		"playwright": {
+			"cache": false
+		}
+	}
+}

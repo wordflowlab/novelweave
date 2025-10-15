@@ -1,0 +1,27 @@
+{
+	"greeting": "Hi, I'm NovelWeave!",
+	"introduction": "<strong>NovelWeave is an AI-powered novel writing assistant.</strong> Get ready to create, plan, and write your stories like you've never seen before. To continue, NovelWeave requires an API key.",
+	"notice": "To get started, this extension needs an API provider.",
+	"start": "Let's get started!",
+	"routers": {
+		"requesty": {
+			"description": "Your optimized LLM router",
+			"incentive": "$1 free credit"
+		},
+		"openrouter": {
+			"description": "A unified interface for LLMs"
+		},
+		"roo": {
+			"description": "The best free models to get started",
+			"incentive": "Try Roo out for free"
+		}
+	},
+	"chooseProvider": "To do its magic, NovelWeave needs an API key.",
+	"startRouter": "We recommend using an LLM Router:",
+	"startCustom": "Bring your own API key:",
+	"telemetry": {
+		"helpImprove": "Help Improve NovelWeave",
+		"helpImproveMessage": "NovelWeave collects error and usage data to help us fix bugs and improve the extension. This telemetry does not collect code, prompts or personal information. You can turn this off in <settingsLink>settings</settingsLink>."
+	},
+	"importSettings": "Import Settings"
+}
