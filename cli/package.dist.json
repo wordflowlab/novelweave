@@ -1,7 +1,7 @@
 {
 	"name": "@novelweave/cli",
 	"version": "0.0.2-alpha.2",
-	"description": "Terminal User Interface for Kilo Code",
+	"description": "Terminal User Interface for NovelWeave",
 	"type": "module",
 	"main": "index.js",
 	"bin": {
@@ -117,15 +117,15 @@
 	},
 	"keywords": ["cli", "tui", "terminal", "ai", "assistant", "novelweave", "kilo", "ink"],
 	"author": {
-		"name": "Kilo Code"
+		"name": "NovelWeave"
 	},
 	"homepage": "https://novelweave.ai/cli",
 	"bugs": {
-		"url": "https://github.com/Kilo-Org/novelweave/issues"
+		"url": "https://github.com/NovelWeave-Org/novelweave/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Kilo-Org/novelweave.git",
+		"url": "git+https://github.com/NovelWeave-Org/novelweave.git",
 		"directory": "cli"
 	},
 	"license": "Apache-2.0",

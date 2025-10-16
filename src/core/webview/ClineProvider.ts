@@ -1079,7 +1079,7 @@ export class ClineProvider
 						window.AUDIO_BASE_URI = "${audioUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 					</script>
-					<title>Kilo Code</title>
+					<title>NovelWeave</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -1155,7 +1155,7 @@ export class ClineProvider
 				window.AUDIO_BASE_URI = "${audioUri}"
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 			</script>
-            <title>Kilo Code</title>
+            <title>NovelWeave</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1402,14 +1402,14 @@ export class ClineProvider
 		// Get platform-specific application data directory
 		let mcpServersDir: string
 		if (process.platform === "win32") {
-			// Windows: %APPDATA%\Kilo-Code\MCP
-			mcpServersDir = path.join(os.homedir(), "AppData", "Roaming", "Kilo-Code", "MCP")
+			// Windows: %APPDATA%\NovelWeave-Code\MCP
+			mcpServersDir = path.join(os.homedir(), "AppData", "Roaming", "NovelWeave-Code", "MCP")
 		} else if (process.platform === "darwin") {
-			// macOS: ~/Documents/Kilo-Code/MCP
-			mcpServersDir = path.join(os.homedir(), "Documents", "Kilo-Code", "MCP")
+			// macOS: ~/Documents/NovelWeave-Code/MCP
+			mcpServersDir = path.join(os.homedir(), "Documents", "NovelWeave-Code", "MCP")
 		} else {
-			// Linux: ~/.local/share/Kilo-Code/MCP
-			mcpServersDir = path.join(os.homedir(), ".local", "share", "Kilo-Code", "MCP")
+			// Linux: ~/.local/share/NovelWeave-Code/MCP
+			mcpServersDir = path.join(os.homedir(), ".local", "share", "NovelWeave-Code", "MCP")
 		}
 
 		try {
@@ -1522,7 +1522,7 @@ export class ClineProvider
 			novelweaveToken: token,
 		})
 
-		vscode.window.showInformationMessage("Kilo Code successfully configured!")
+		vscode.window.showInformationMessage("NovelWeave successfully configured!")
 
 		if (this.getCurrentTask()) {
 			this.getCurrentTask()!.api = buildApiHandler({
@@ -2414,7 +2414,7 @@ export class ClineProvider
 			return
 		}
 
-		// Logout from Kilo Code provider before resetting (same approach as ProfileView logout)
+		// Logout from NovelWeave provider before resetting (same approach as ProfileView logout)
 		const { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
 		if (apiConfiguration.novelweaveToken) {
 			await this.upsertProviderProfile(currentApiConfigName, {

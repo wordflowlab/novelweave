@@ -6,7 +6,7 @@ import pWaitFor from "p-wait-for"
 import * as vscode from "vscode"
 // novelweave_change start
 import axios from "axios"
-import { getKiloBaseUriFromToken } from "../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../shared/novelweave/token"
 import {
 	ProfileData,
 	SeeNewChangesPayload,
@@ -72,7 +72,10 @@ import { generateSystemPrompt } from "./generateSystemPrompt"
 import { getCommand } from "../../utils/commands"
 import { toggleWorkflow, toggleRule, createRuleFile, deleteRuleFile } from "./kilorules"
 import { mermaidFixPrompt } from "../prompts/utilities/mermaid" // novelweave_change
-import { editMessageHandler, fetchNovelweaveNotificationsHandler } from "../novelweave/webview/webviewMessageHandlerUtils" // novelweave_change
+import {
+	editMessageHandler,
+	fetchNovelweaveNotificationsHandler,
+} from "../novelweave/webview/webviewMessageHandlerUtils" // novelweave_change
 
 const ALLOWED_VSCODE_SETTINGS = new Set(["terminal.integrated.inheritEnv"])
 
@@ -1969,7 +1972,7 @@ export const webviewMessageHandler = async (
 			)
 
 			if (answer === githubIssuesText) {
-				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/Kilo-Org/novelweave/issues"))
+				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/NovelWeave-Org/novelweave/issues"))
 			} else if (answer === discordText) {
 				await vscode.env.openExternal(vscode.Uri.parse("https://discord.gg/fxrhCFGhkP"))
 			} else if (answer === customerSupport) {
@@ -2053,7 +2056,8 @@ export const webviewMessageHandler = async (
 					// Only clear organization ID if we actually had a novelweave token before and it's different now
 					const hadPreviousToken = currentConfig.novelweaveToken !== undefined
 					const hasNewToken = message.apiConfiguration.novelweaveToken !== undefined
-					const tokensAreDifferent = currentConfig.novelweaveToken !== message.apiConfiguration.novelweaveToken
+					const tokensAreDifferent =
+						currentConfig.novelweaveToken !== message.apiConfiguration.novelweaveToken
 
 					if (hadPreviousToken && hasNewToken && tokensAreDifferent) {
 						configToSave = { ...message.apiConfiguration, novelweaveOrganizationId: undefined }
@@ -2593,7 +2597,7 @@ export const webviewMessageHandler = async (
 				}
 
 				const response = await axios.get<Omit<ProfileData, "novelweaveToken">>(
-					`${getKiloBaseUriFromToken(novelweaveToken)}/api/profile`,
+					`${getNovelWeaveBaseUriFromToken(novelweaveToken)}/api/profile`,
 					{
 						headers,
 					},
@@ -2657,10 +2661,13 @@ export const webviewMessageHandler = async (
 					headers["X-NOVELWEAVE-TESTER"] = "SUPPRESS"
 				}
 
-				const response = await axios.get(`${getKiloBaseUriFromToken(novelweaveToken)}/api/profile/balance`, {
-					// Original path for balance
-					headers,
-				})
+				const response = await axios.get(
+					`${getNovelWeaveBaseUriFromToken(novelweaveToken)}/api/profile/balance`,
+					{
+						// Original path for balance
+						headers,
+					},
+				)
 				provider.postMessageToWebview({
 					type: "balanceDataResponse", // New response type
 					payload: { success: true, data: response.data },
@@ -2688,7 +2695,7 @@ export const webviewMessageHandler = async (
 				const uiKind = message.values?.uiKind || "Desktop"
 				const source = uiKind === "Web" ? "web" : uriScheme
 
-				const baseUrl = getKiloBaseUriFromToken(novelweaveToken)
+				const baseUrl = getNovelWeaveBaseUriFromToken(novelweaveToken)
 				const response = await axios.post(
 					`${baseUrl}/payments/topup?origin=extension&source=${source}&amount=${credits}`,
 					{},

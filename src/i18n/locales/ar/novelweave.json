@@ -51,29 +51,29 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "تم تفعيل منشئ رسائل التزام Kilo Code",
+		"activated": "تم تفعيل منشئ رسائل التزام NovelWeave",
 		"gitNotFound": "⚠️ مستودع Git غير موجود أو Git غير متاح",
 		"gitInitError": "⚠️ خطأ في تهيئة Git: {{error}}",
-		"generating": "Kilo: جارٍ إنشاء رسالة الالتزام...",
-		"noChanges": "Kilo: لم يتم العثور على تغييرات للتحليل",
-		"generated": "Kilo: تم إنشاء رسالة الالتزام!",
-		"generationFailed": "Kilo: فشل في إنشاء رسالة الالتزام: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: إنشاء رسالة باستخدام التغييرات غير المرحلة",
-		"analyzingChanges": "Kilo: جاري تحليل التعديلات الجاهزة...",
-		"noStagedChangesRepo": "Kilo: ما فيه تعديلات مضافة في مستودع git",
-		"noStagedChanges": "Kilo: ما فيه تعديلات مضافة لتحليلها",
-		"tokenRequired": "يتطلب توليد الرسالة رمز Kilo Code",
-		"activationFailed": "Kilo: فشل تفعيل مولّد الرسائل: {{error}}",
-		"providerRegistered": "Kilo: تم تسجيل موفر رسائل الاعتماد"
+		"generating": "NovelWeave: جارٍ إنشاء رسالة الالتزام...",
+		"noChanges": "NovelWeave: لم يتم العثور على تغييرات للتحليل",
+		"generated": "NovelWeave: تم إنشاء رسالة الالتزام!",
+		"generationFailed": "NovelWeave: فشل في إنشاء رسالة الالتزام: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: إنشاء رسالة باستخدام التغييرات غير المرحلة",
+		"analyzingChanges": "NovelWeave: جاري تحليل التعديلات الجاهزة...",
+		"noStagedChangesRepo": "NovelWeave: ما فيه تعديلات مضافة في مستودع git",
+		"noStagedChanges": "NovelWeave: ما فيه تعديلات مضافة لتحليلها",
+		"tokenRequired": "يتطلب توليد الرسالة رمز NovelWeave",
+		"activationFailed": "NovelWeave: فشل تفعيل مولّد الرسائل: {{error}}",
+		"providerRegistered": "NovelWeave: تم تسجيل موفر رسائل الاعتماد"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (معطل)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (معطل)",
 				"tokenError": "يجب تعيين رمز صالح لاستخدام الإكمال التلقائي",
 				"lastCompletion": "آخر اقتراح:",
 				"sessionTotal": "إجمالي تكلفة الجلسة:",
@@ -84,55 +84,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "تحليل الكود الخاص بك...",
 			"generating": "إنشاء التعديلات المقترحة...",
 			"processing": "معالجة التعديلات المقترحة...",
 			"showing": "عرض التعديلات المقترحة..."
 		},
 		"input": {
-			"title": "Kilo Code: مهمة سريعة",
+			"title": "NovelWeave: مهمة سريعة",
 			"placeholder": "مثال، 'أعد هيكلة هذه الدالة لتكون أكثر كفاءة'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: إنشاء التعديلات المقترحة",
+			"generateSuggestions": "NovelWeave: إنشاء التعديلات المقترحة",
 			"displaySuggestions": "عرض التعديلات المقترحة",
 			"cancelSuggestions": "إلغاء التعديلات المقترحة",
 			"applyCurrentSuggestion": "تطبيق التعديل المقترح الحالي",
 			"applyAllSuggestions": "تطبيق جميع التعديلات المقترحة",
 			"promptCodeSuggestion": "مهمة سريعة",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: التعديلات المقترحة"
+			"title": "NovelWeave: التعديلات المقترحة"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "يمكنني مساعدتك في المهام السريعة والتعديلات المقترحة."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "يتم حظر Kilo Code Autocomplete بسبب تعارض مع GitHub Copilot. لإصلاح هذا، يجب عليك تعطيل اقتراحات Copilot المضمنة.",
+			"message": "يتم حظر NovelWeave Autocomplete بسبب تعارض مع GitHub Copilot. لإصلاح هذا، يجب عليك تعطيل اقتراحات Copilot المضمنة.",
 			"disableCopilot": "تعطيل Copilot",
 			"disableInlineAssist": "تعطيل الإكمال التلقائي"
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo: وصف الأمر الذي ترغب في توليده",
-		"generatingProgress": "Kilo: جاري توليد الأمر الطرفي...",
-		"noActiveTerminal": "Kilo: لا يوجد طرفية نشطة. يرجى فتح طرفية أولاً.",
-		"commandGenerated": "Kilo: الأمر الذي تم إنشاؤه: {{command}}",
+		"inputPrompt": "NovelWeave: وصف الأمر الذي ترغب في توليده",
+		"generatingProgress": "NovelWeave: جاري توليد الأمر الطرفي...",
+		"noActiveTerminal": "NovelWeave: لا يوجد طرفية نشطة. يرجى فتح طرفية أولاً.",
+		"commandGenerated": "NovelWeave: الأمر الذي تم إنشاؤه: {{command}}",
 		"inputPlaceholder": "مثلًا، إنهاء العملية التي تعمل على المنفذ 3001، إيجاد الملفات الكبيرة، إلخ",
-		"generationFailed": "Kilo: فشل في إنشاء الأمر: {{error}}",
+		"generationFailed": "NovelWeave: فشل في إنشاء الأمر: {{error}}",
 		"warningDialog": {
 			"okButton": "أفهم",
 			"title": "تحذير أمان للمحطة",
 			"message": "تحقق مرة أخرى من جميع الأوامر التي تم إنشاؤها قبل تنفيذها. لا يمكن دائمًا التراجع عن الإجراءات التي تتم في نافذة الطرفية - فتنفيذ أوامر غير موثوقة قد يؤدي إلى فقدان البيانات بشكل لا رجعة فيه أو تلف النظام. راجع وافهم الأمر بشكل كامل قبل المتابعة!",
 			"cancelButton": "إلغاء"
 		},
-		"tipMessage": "Kilo: اضغط {{shortcut}} لإنشاء أوامر الطرفية"
+		"tipMessage": "NovelWeave: اضغط {{shortcut}} لإنشاء أوامر الطرفية"
 	},
 	"seeNewChanges": {
 		"title": "عرض التغييرات الجديدة",

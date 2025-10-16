@@ -4,7 +4,7 @@ sidebar_label: Usage Analytics & Reporting
 
 # Usage Analytics & Reporting
 
-Kilo for Teams provides detailed usage analytics to help you monitor and understand your team's AI usage patterns, costs, and activity through the Kilo Code API provider.
+NovelWeave for Teams provides detailed usage analytics to help you monitor and understand your team's AI usage patterns, costs, and activity through the NovelWeave API provider.
 
 <center>
     <img src="/docs/img/teams/usage-details.png" alt="Team usage analytics dashboard" width="600" />
@@ -12,10 +12,10 @@ Kilo for Teams provides detailed usage analytics to help you monitor and underst
 
 ## Analytics Dashboard Overview
 
-Access your team's usage analytics through the **Usage Details** section in your dashboard. The analytics show comprehensive data about your team's usage of the Kilo Code API provider.
+Access your team's usage analytics through the **Usage Details** section in your dashboard. The analytics show comprehensive data about your team's usage of the NovelWeave API provider.
 
 :::info Usage Scope
-This usage overview includes all of your usage of the Kilo Code API provider. It does **NOT** include any usage made via the Kilo Code extension to other, non-Kilo Code providers. You can choose which API provider to use from the extension's main settings page.
+This usage overview includes all of your usage of the NovelWeave API provider. It does **NOT** include any usage made via the NovelWeave extension to other, non-NovelWeave providers. You can choose which API provider to use from the extension's main settings page.
 :::
 
 ## Summary Metrics

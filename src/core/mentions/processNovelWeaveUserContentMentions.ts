@@ -4,15 +4,15 @@ import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher"
 import { FileContextTracker } from "../context-tracking/FileContextTracker"
 
 import { GlobalFileNames } from "../../shared/globalFileNames"
-import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules"
-import { parseKiloSlashCommands } from "../slash-commands/kilo"
+import { ensureLocalNovelWeaverulesDirExists } from "../context/instructions/kilo-rules"
+import { parseNovelWeaveSlashCommands } from "../slash-commands/kilo"
 import { refreshWorkflowToggles } from "../context/instructions/workflows" // novelweave_change
 
 import * as vscode from "vscode" // novelweave_change
 
 // This function is a duplicate of processUserContentMentions, but it adds a check for the newrules command
-// and processes Kilo-specific slash commands. It should be merged with processUserContentMentions in the future.
-export async function processKiloUserContentMentions({
+// and processes NovelWeave-specific slash commands. It should be merged with processUserContentMentions in the future.
+export async function processNovelWeaveUserContentMentions({
 	context, // novelweave_change
 	userContent,
 	cwd,
@@ -75,7 +75,7 @@ export async function processKiloUserContentMentions({
 						)
 
 						// when parsing slash commands, we still want to allow the user to provide their desired context
-						const { processedText, needsRulesFileCheck: needsCheck } = await parseKiloSlashCommands(
+						const { processedText, needsRulesFileCheck: needsCheck } = await parseNovelWeaveSlashCommands(
 							parsedText,
 							localWorkflowToggles, // novelweave_change
 							globalWorkflowToggles, // novelweave_change
@@ -152,7 +152,7 @@ export async function processKiloUserContentMentions({
 
 	let kilorulesError = false
 	if (needsRulesFileCheck) {
-		kilorulesError = await ensureLocalKilorulesDirExists(cwd, GlobalFileNames.kiloRules)
+		kilorulesError = await ensureLocalNovelWeaverulesDirExists(cwd, GlobalFileNames.kiloRules)
 	}
 	return [processedUserContent, kilorulesError]
 }

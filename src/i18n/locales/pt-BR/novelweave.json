@@ -51,25 +51,25 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Gerador de mensagens de commit Kilo Code ativado",
+		"activated": "Gerador de mensagens de commit NovelWeave ativado",
 		"gitNotFound": "⚠️ Repositório Git não encontrado ou git indisponível",
 		"gitInitError": "⚠️ Erro de inicialização do Git: {{error}}",
-		"generating": "Kilo: Gerando mensagem de commit...",
-		"noChanges": "Kilo: Nenhuma alteração encontrada para análise",
-		"generated": "Kilo: Mensagem de commit gerada!",
-		"generationFailed": "Kilo: Falha ao gerar mensagem de commit: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Gerando mensagem usando alterações não preparadas",
-		"activationFailed": "Kilo: Falha ao ativar o gerador de mensagens: {{error}}",
-		"providerRegistered": "Kilo: Provedor de mensagens de commit registrado"
+		"generating": "NovelWeave: Gerando mensagem de commit...",
+		"noChanges": "NovelWeave: Nenhuma alteração encontrada para análise",
+		"generated": "NovelWeave: Mensagem de commit gerada!",
+		"generationFailed": "NovelWeave: Falha ao gerar mensagem de commit: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Gerando mensagem usando alterações não preparadas",
+		"activationFailed": "NovelWeave: Falha ao ativar o gerador de mensagens: {{error}}",
+		"providerRegistered": "NovelWeave: Provedor de mensagens de commit registrado"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (desabilitado)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (desabilitado)",
 				"tokenError": "Um token válido deve ser definido para usar o Autocomplete",
 				"lastCompletion": "Última sugestão:",
 				"sessionTotal": "Custo total da sessão:",
@@ -80,55 +80,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Analisando seu código...",
 			"generating": "Gerando edições sugeridas...",
 			"processing": "Processando edições sugeridas...",
 			"showing": "Exibindo edições sugeridas..."
 		},
 		"input": {
-			"title": "Kilo Code: Tarefa Rápida",
+			"title": "NovelWeave: Tarefa Rápida",
 			"placeholder": "ex., 'refatore esta função para ser mais eficiente'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Gerar Edições Sugeridas",
+			"generateSuggestions": "NovelWeave: Gerar Edições Sugeridas",
 			"displaySuggestions": "Exibir Edições Sugeridas",
 			"cancelSuggestions": "Cancelar Edições Sugeridas",
 			"applyCurrentSuggestion": "Aplicar Edição Sugerida Atual",
 			"applyAllSuggestions": "Aplicar Todas as Edições Sugeridas",
 			"promptCodeSuggestion": "Tarefa Rápida",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Edições Sugeridas"
+			"title": "NovelWeave: Edições Sugeridas"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "Posso te ajudar com tarefas rápidas e edições sugeridas."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "O Kilo Code Autocomplete está sendo bloqueado por um conflito com o GitHub Copilot. Para corrigir isso, você deve desabilitar as sugestões inline do Copilot.",
+			"message": "O NovelWeave Autocomplete está sendo bloqueado por um conflito com o GitHub Copilot. Para corrigir isso, você deve desabilitar as sugestões inline do Copilot.",
 			"disableCopilot": "Desabilitar Copilot",
 			"disableInlineAssist": "Desabilitar Autocomplete"
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo: Descreva o comando que você deseja gerar",
-		"noActiveTerminal": "Kilo: Nenhum terminal ativo encontrado. Por favor, abra um terminal primeiro.",
+		"inputPrompt": "NovelWeave: Descreva o comando que você deseja gerar",
+		"noActiveTerminal": "NovelWeave: Nenhum terminal ativo encontrado. Por favor, abra um terminal primeiro.",
 		"inputPlaceholder": "por exemplo, matar o processo rodando na porta 3001, encontrar arquivos grandes, etc",
-		"generatingProgress": "Kilo: Gerando comando de terminal...",
-		"commandGenerated": "Kilo: Comando gerado: {{command}}",
-		"generationFailed": "Kilo: Falha ao gerar comando: {{error}}",
+		"generatingProgress": "NovelWeave: Gerando comando de terminal...",
+		"commandGenerated": "NovelWeave: Comando gerado: {{command}}",
+		"generationFailed": "NovelWeave: Falha ao gerar comando: {{error}}",
 		"warningDialog": {
 			"title": "Aviso de Segurança do Terminal",
 			"message": "Verifique novamente todos os comandos gerados antes de executá-los. Ações no terminal nem sempre podem ser desfeitas — executar comandos não verificados pode resultar em perda irreversível de dados ou danos ao sistema. Revise e compreenda o comando completamente antes de prosseguir!",
 			"okButton": "Eu entendo",
 			"cancelButton": "Cancelar"
 		},
-		"tipMessage": "Kilo: Pressione {{shortcut}} para gerar comandos de terminal"
+		"tipMessage": "NovelWeave: Pressione {{shortcut}} para gerar comandos de terminal"
 	},
 	"seeNewChanges": {
 		"title": "Exibindo novas alterações",

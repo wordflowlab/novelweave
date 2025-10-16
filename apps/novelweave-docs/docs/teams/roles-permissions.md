@@ -4,7 +4,7 @@ sidebar_label: Team Roles & Permissions
 
 # Team Roles & Permissions
 
-Kilo for Teams uses a three-tier role system designed for clear responsibility separation and secure team management.
+NovelWeave for Teams uses a three-tier role system designed for clear responsibility separation and secure team management.
 
 ## Role Overview
 
@@ -32,7 +32,7 @@ Every team member has one of three roles that determine their access level and c
 
 ### Member
 
-**Standard usage access** - Individual contributors who use Kilo Code for development work.
+**Standard usage access** - Individual contributors who use NovelWeave for development work.
 
 **Key Responsibilities:**
 

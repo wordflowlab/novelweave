@@ -51,25 +51,25 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Kilo Code commit message generator activated",
+		"activated": "NovelWeave commit message generator activated",
 		"gitNotFound": "⚠️ Git repository not found or git not available",
 		"gitInitError": "⚠️ Git initialization error: {{error}}",
-		"generating": "Kilo: Generating commit message...",
-		"noChanges": "Kilo: No changes found to analyze",
-		"generated": "Kilo: Commit message generated!",
-		"generationFailed": "Kilo: Failed to generate commit message: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Generating message using unstaged changes",
-		"activationFailed": "Kilo: Failed to activate message generator: {{error}}",
-		"providerRegistered": "Kilo: Commit message provider registered"
+		"generating": "NovelWeave: Generating commit message...",
+		"noChanges": "NovelWeave: No changes found to analyze",
+		"generated": "NovelWeave: Commit message generated!",
+		"generationFailed": "NovelWeave: Failed to generate commit message: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Generating message using unstaged changes",
+		"activationFailed": "NovelWeave: Failed to activate message generator: {{error}}",
+		"providerRegistered": "NovelWeave: Commit message provider registered"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (disabled)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (disabled)",
 				"tokenError": "A valid token must be set to use Autocomplete",
 				"lastCompletion": "Last suggestion:",
 				"sessionTotal": "Session total cost:",
@@ -80,37 +80,37 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Analyzing your code...",
 			"generating": "Generating suggested edits...",
 			"processing": "Processing suggested edits...",
 			"showing": "Displaying suggested edits..."
 		},
 		"input": {
-			"title": "Kilo Code: Quick Task",
+			"title": "NovelWeave: Quick Task",
 			"placeholder": "e.g., 'refactor this function to be more efficient'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Generate Suggested Edits",
+			"generateSuggestions": "NovelWeave: Generate Suggested Edits",
 			"displaySuggestions": "Display Suggested Edits",
 			"cancelSuggestions": "Cancel Suggested Edits",
 			"applyCurrentSuggestion": "Apply Current Suggested Edit",
 			"applyAllSuggestions": "Apply All Suggested Edits",
 			"promptCodeSuggestion": "Quick Task",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Suggested Edits"
+			"title": "NovelWeave: Suggested Edits"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "I can help you with quick tasks and suggested edits."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "The Kilo Code Autocomplete is being blocked by a conflict with GitHub Copilot. To fix this, you must disable Copilot's inline suggestions.",
+			"message": "The NovelWeave Autocomplete is being blocked by a conflict with GitHub Copilot. To fix this, you must disable Copilot's inline suggestions.",
 			"disableCopilot": "Disable Copilot",
 			"disableInlineAssist": "Disable Autocomplete"
 		}
@@ -122,13 +122,13 @@
 		"error": "Cannot show new changes, an error occured."
 	},
 	"terminalCommandGenerator": {
-		"tipMessage": "Kilo: Press {{shortcut}} to generate terminal commands",
-		"inputPrompt": "Kilo: Describe the command you want to generate",
+		"tipMessage": "NovelWeave: Press {{shortcut}} to generate terminal commands",
+		"inputPrompt": "NovelWeave: Describe the command you want to generate",
 		"inputPlaceholder": "e.g., kill the process running on port 3001, find large files, etc",
-		"noActiveTerminal": "Kilo: No active terminal found. Please open a terminal first.",
-		"generatingProgress": "Kilo: Generating terminal command...",
-		"commandGenerated": "Kilo: Generated command: {{command}}",
-		"generationFailed": "Kilo: Failed to generate command: {{error}}",
+		"noActiveTerminal": "NovelWeave: No active terminal found. Please open a terminal first.",
+		"generatingProgress": "NovelWeave: Generating terminal command...",
+		"commandGenerated": "NovelWeave: Generated command: {{command}}",
+		"generationFailed": "NovelWeave: Failed to generate command: {{error}}",
 		"warningDialog": {
 			"title": "Terminal Safety Warning",
 			"message": "Double-check all generated commands before running them. Terminal actions cannot always be undone— running unverified commands can result in irreversible data loss or system damage. Review and understand the command completely before proceeding!",

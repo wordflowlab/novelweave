@@ -17,7 +17,7 @@ import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
 import { t } from "../../i18n"
 // novelweave_change start
-import { getKiloBaseUriFromToken } from "../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../shared/novelweave/token"
 import { X_NOVELWEAVE_ORGANIZATIONID, X_NOVELWEAVE_TESTER } from "../../shared/novelweave/headers"
 // novelweave_change end
 
@@ -1056,7 +1056,7 @@ export class CustomModesManager {
 				return []
 			}
 
-			const baseUrl = getKiloBaseUriFromToken(novelweaveToken)
+			const baseUrl = getNovelWeaveBaseUriFromToken(novelweaveToken)
 			const headers: Record<string, string> = {
 				Authorization: `Bearer ${novelweaveToken}`,
 				"Content-Type": "application/json",

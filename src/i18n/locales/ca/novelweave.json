@@ -51,25 +51,25 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generador de missatges de commit de Kilo Code activat",
+		"activated": "Generador de missatges de commit de NovelWeave activat",
 		"gitNotFound": "⚠️ No s'ha trobat el repositori Git o git no està disponible",
 		"gitInitError": "⚠️ Error d'inicialització de Git: {{error}}",
-		"generating": "Kilo: Generant missatge de commit...",
-		"noChanges": "Kilo: No s'han trobat canvis per analitzar",
-		"generated": "Kilo: Missatge de commit generat!",
-		"generationFailed": "Kilo: No s'ha pogut generar el missatge de confirmació: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Generant missatge utilitzant canvis no preparats",
-		"providerRegistered": "Kilo: Proveïdor de missatges de «commit» registrat",
-		"activationFailed": "Kilo: No s'ha pogut activar el generador de missatges: {{error}}"
+		"generating": "NovelWeave: Generant missatge de commit...",
+		"noChanges": "NovelWeave: No s'han trobat canvis per analitzar",
+		"generated": "NovelWeave: Missatge de commit generat!",
+		"generationFailed": "NovelWeave: No s'ha pogut generar el missatge de confirmació: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Generant missatge utilitzant canvis no preparats",
+		"providerRegistered": "NovelWeave: Proveïdor de missatges de «commit» registrat",
+		"activationFailed": "NovelWeave: No s'ha pogut activar el generador de missatges: {{error}}"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (desactivat)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (desactivat)",
 				"tokenError": "S'ha d'establir un token vàlid per utilitzar Autocomplete",
 				"lastCompletion": "Últim suggeriment:",
 				"sessionTotal": "Cost total de la sessió:",
@@ -80,55 +80,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Analitzant el teu codi...",
 			"generating": "Generant edicions suggerides...",
 			"processing": "Processant edicions suggerides...",
 			"showing": "Mostrant edicions suggerides..."
 		},
 		"input": {
-			"title": "Kilo Code: Tasca Ràpida",
+			"title": "NovelWeave: Tasca Ràpida",
 			"placeholder": "p. ex., 'refactoritza aquesta funció per ser més eficient'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Generar Edicions Suggerides",
+			"generateSuggestions": "NovelWeave: Generar Edicions Suggerides",
 			"displaySuggestions": "Mostrar Edicions Suggerides",
 			"cancelSuggestions": "Cancel·lar Edicions Suggerides",
 			"applyCurrentSuggestion": "Aplicar Edició Suggerida Actual",
 			"applyAllSuggestions": "Aplicar Totes les Edicions Suggerides",
 			"promptCodeSuggestion": "Tasca Ràpida",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Edicions Suggerides"
+			"title": "NovelWeave: Edicions Suggerides"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "Puc ajudar-te amb tasques ràpides i edicions suggerides."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "El Kilo Code Autocomplete està sent bloquejat per un conflicte amb GitHub Copilot. Per solucionar això, has de desactivar els suggeriments en línia de Copilot.",
+			"message": "El NovelWeave Autocomplete està sent bloquejat per un conflicte amb GitHub Copilot. Per solucionar això, has de desactivar els suggeriments en línia de Copilot.",
 			"disableCopilot": "Desactivar Copilot",
 			"disableInlineAssist": "Desactivar Autocomplete"
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo: Descriu l'ordre que vols generar",
-		"generatingProgress": "Kilo: Generant ordre de terminal...",
-		"noActiveTerminal": "Kilo: No s'ha trobat cap terminal actiu. Si us plau, obriu primer un terminal.",
+		"inputPrompt": "NovelWeave: Descriu l'ordre que vols generar",
+		"generatingProgress": "NovelWeave: Generant ordre de terminal...",
+		"noActiveTerminal": "NovelWeave: No s'ha trobat cap terminal actiu. Si us plau, obriu primer un terminal.",
 		"inputPlaceholder": "p. ex., matar el procés que s'executa al port 3001, trobar fitxers grans, etc.",
-		"commandGenerated": "Kilo: Ordre generada: {{command}}",
-		"generationFailed": "Kilo: Error en generar l'ordre: {{error}}",
+		"commandGenerated": "NovelWeave: Ordre generada: {{command}}",
+		"generationFailed": "NovelWeave: Error en generar l'ordre: {{error}}",
 		"warningDialog": {
 			"title": "Advertència de Seguretat del Terminal",
 			"message": "Comproveu detingudament totes les comandes generades abans d'executar-les. Les accions al terminal no sempre es poden desfer — executar comandes sense verificar pot provocar la pèrdua irreversible de dades o danys al sistema. Reviseu i entengueu completament la comanda abans de continuar!",
 			"okButton": "Ho entenc",
 			"cancelButton": "Cancel·lar"
 		},
-		"tipMessage": "Kilo: Premeu {{shortcut}} per a generar ordres del terminal"
+		"tipMessage": "NovelWeave: Premeu {{shortcut}} per a generar ordres del terminal"
 	},
 	"seeNewChanges": {
 		"title": "Mostrant canvis nous",

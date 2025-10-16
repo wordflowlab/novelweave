@@ -41,7 +41,7 @@ import { CommandExecutionError } from "./CommandExecutionError"
 import ReportBugPreview from "./ReportBugPreview"
 
 import { NewTaskPreview } from "../novelweave/chat/NewTaskPreview" // novelweave_change
-import { KiloChatRowGutterBar } from "../novelweave/chat/KiloChatRowGutterBar" // novelweave_change
+import { NovelWeaveChatRowGutterBar } from "../novelweave/chat/NovelWeaveChatRowGutterBar" // novelweave_change
 import { AutoApprovedRequestLimitWarning } from "./AutoApprovedRequestLimitWarning"
 import { CondenseContextErrorRow, CondensingContextRow, ContextCondenseRow } from "./ContextCondenseRow"
 import CodebaseSearchResultsDisplay from "./CodebaseSearchResultsDisplay"
@@ -97,7 +97,7 @@ interface ChatRowContentProps extends Omit<ChatRowProps, "onHeightChange"> {}
 const ChatRow = memo(
 	(props: ChatRowProps) => {
 		const { highlighted } = props // novelweave_change: Add highlighted prop
-		const { showTaskTimeline } = useExtensionState() // novelweave_change: Used by KiloChatRowGutterBar
+		const { showTaskTimeline } = useExtensionState() // novelweave_change: Used by NovelWeaveChatRowGutterBar
 		const { isLast, onHeightChange, message } = props
 		// Store the previous height to compare with the current height
 		// This allows us to detect changes without causing re-renders
@@ -109,7 +109,7 @@ const ChatRow = memo(
 				className={cn(
 					`px-[15px] py-[10px] pr-[6px] relative ${highlighted ? "animate-message-highlight" : ""}`,
 				)}>
-				{showTaskTimeline && <KiloChatRowGutterBar message={message} />}
+				{showTaskTimeline && <NovelWeaveChatRowGutterBar message={message} />}
 				<ChatRowContent {...props} />
 			</div>,
 		)

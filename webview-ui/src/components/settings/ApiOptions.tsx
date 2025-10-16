@@ -123,7 +123,10 @@ import { ConsecutiveMistakeLimitControl } from "./ConsecutiveMistakeLimitControl
 import { BedrockCustomArn } from "./providers/BedrockCustomArn"
 import { NovelWeave } from "../novelweave/settings/providers/NovelWeave" // novelweave_change
 import { buildDocLink } from "@src/utils/docLinks"
-import { KiloProviderRouting, KiloProviderRoutingManagedByOrganization } from "./providers/KiloProviderRouting"
+import {
+	NovelWeaveProviderRouting,
+	NovelWeaveProviderRoutingManagedByOrganization,
+} from "./providers/NovelWeaveProviderRouting"
 
 export interface ApiOptionsProps {
 	uriScheme: string | undefined
@@ -872,9 +875,9 @@ const ApiOptions = ({
 				// novelweave_change start
 				(selectedProvider === "novelweave" || selectedProvider === "openrouter") &&
 					(apiConfiguration.novelweaveOrganizationId ? (
-						<KiloProviderRoutingManagedByOrganization />
+						<NovelWeaveProviderRoutingManagedByOrganization />
 					) : (
-						<KiloProviderRouting
+						<NovelWeaveProviderRouting
 							apiConfiguration={apiConfiguration}
 							setApiConfigurationField={setApiConfigurationField}
 							novelweaveDefaultModel={novelweaveDefaultModel}

@@ -30,7 +30,7 @@ let j = 3
 
 ```html
 {/* novelweave_change start */}
-<CustomKiloComponent />
+<CustomNovelWeaveComponent />
 {/* novelweave_change end */}
 ```
 

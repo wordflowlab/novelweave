@@ -66,7 +66,7 @@ let userInfoHandler: ((data: { userInfo: CloudUserInfo }) => Promise<void>) | un
 // Your extension is activated the very first time the command is executed.
 export async function activate(context: vscode.ExtensionContext) {
 	extensionContext = context
-	outputChannel = vscode.window.createOutputChannel("Kilo-Code")
+	outputChannel = vscode.window.createOutputChannel("NovelWeave-Code")
 	context.subscriptions.push(outputChannel)
 	outputChannel.appendLine(`${Package.name} extension activated - ${JSON.stringify(Package)}`)
 
@@ -245,11 +245,11 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	// novelweave_change start
 	if (!context.globalState.get("firstInstallCompleted")) {
-		outputChannel.appendLine("First installation detected, opening Kilo Code sidebar!")
+		outputChannel.appendLine("First installation detected, opening NovelWeave sidebar!")
 		try {
 			await vscode.commands.executeCommand("novelweave.SidebarProvider.focus")
 
-			outputChannel.appendLine("Opening Kilo Code walkthrough")
+			outputChannel.appendLine("Opening NovelWeave walkthrough")
 
 			// this can crash, see:
 			// https://discord.com/channels/1349288496988160052/1395865796026040470
@@ -316,7 +316,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		}),
 	)
 
-	// novelweave_change start - Kilo Code specific registrations
+	// novelweave_change start - NovelWeave specific registrations
 	const { kiloCodeWrapped } = getNovelWeaveWrapperProperties()
 	if (!kiloCodeWrapped) {
 		// Only use autocomplete in VS Code
@@ -326,12 +326,12 @@ export async function activate(context: vscode.ExtensionContext) {
 		registerMainThreadForwardingLogger(context)
 	}
 	registerCommitMessageProvider(context, outputChannel) // novelweave_change
-	// novelweave_change end - Kilo Code specific registrations
+	// novelweave_change end - NovelWeave specific registrations
 
 	registerCodeActions(context)
 	registerTerminalActions(context)
 
-	// Allows other extensions to activate once Kilo Code is ready.
+	// Allows other extensions to activate once NovelWeave is ready.
 	vscode.commands.executeCommand(`${Package.name}.activationCompleted`)
 
 	// Implements the `RooCodeAPI` interface.

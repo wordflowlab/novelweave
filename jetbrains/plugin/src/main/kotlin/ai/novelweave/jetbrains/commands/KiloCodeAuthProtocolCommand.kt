@@ -20,7 +20,7 @@ import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 
 /**
- * JetBrains Protocol Command for handling Kilo Code authentication URLs
+ * JetBrains Protocol Command for handling NovelWeave authentication URLs
  *
  * Handles URLs in the format: jetbrains://idea/ai.novelweave.jetbrains.auth?token=HERE
  * and forwards them to the VSCode extension via RPC protocol
@@ -53,7 +53,7 @@ class NovelWeaveAuthProtocolCommand : JBProtocolCommand("ai.novelweave.jetbrains
      * @return null on success, error message on failure
      */
     override suspend fun execute(target: String?, parameters: Map<String, String>, fragment: String?): String? {
-        logger.info("Handling Kilo Code auth protocol command: target=$target, parameters=$parameters")
+        logger.info("Handling NovelWeave auth protocol command: target=$target, parameters=$parameters")
         
         return try {
             // Extract token from parameters
@@ -71,7 +71,7 @@ class NovelWeaveAuthProtocolCommand : JBProtocolCommand("ai.novelweave.jetbrains
             
             null // Success
         } catch (e: Exception) {
-            val errorMsg = "Error handling Kilo Code auth protocol command: ${e.message}"
+            val errorMsg = "Error handling NovelWeave auth protocol command: ${e.message}"
             logger.error(errorMsg, e)
             errorMsg
         }

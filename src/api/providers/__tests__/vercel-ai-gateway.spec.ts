@@ -100,8 +100,8 @@ describe("VercelAiGatewayHandler", () => {
 			// novelweave_change start
 			defaultHeaders: expect.objectContaining({
 				"HTTP-Referer": "https://novelweave.ai",
-				"X-Title": "Kilo Code",
-				"User-Agent": expect.stringContaining("Kilo-Code/"),
+				"X-Title": "NovelWeave",
+				"User-Agent": expect.stringContaining("NovelWeave-Code/"),
 			}),
 			// novelweave_change end
 		})

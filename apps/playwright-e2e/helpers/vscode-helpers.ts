@@ -4,7 +4,7 @@ const modifier = process.platform === "darwin" ? "Meta" : "Control"
 
 export async function verifyExtensionInstalled(page: Page) {
 	try {
-		const activityBarIcon = page.locator('[aria-label*="Kilo"], [title*="Kilo"]').first()
+		const activityBarIcon = page.locator('[aria-label*="NovelWeave"], [title*="NovelWeave"]').first()
 		expect(await activityBarIcon).toBeDefined()
 		console.log("✅ Extension installed!")
 	} catch (_error) {

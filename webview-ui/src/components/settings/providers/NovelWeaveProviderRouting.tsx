@@ -41,7 +41,7 @@ interface Props {
 	novelweaveDefaultModel: string
 }
 
-export const KiloProviderRoutingManagedByOrganization = () => {
+export const NovelWeaveProviderRoutingManagedByOrganization = () => {
 	const { t } = useAppTranslation()
 	return (
 		<div className="flex flex-col gap-1">
@@ -57,7 +57,11 @@ export const KiloProviderRoutingManagedByOrganization = () => {
 	)
 }
 
-export const KiloProviderRouting = ({ apiConfiguration, setApiConfigurationField, novelweaveDefaultModel }: Props) => {
+export const NovelWeaveProviderRouting = ({
+	apiConfiguration,
+	setApiConfigurationField,
+	novelweaveDefaultModel,
+}: Props) => {
 	const { t } = useAppTranslation()
 	const providers = Object.values(useModelProviders(novelweaveDefaultModel, apiConfiguration).data ?? {})
 

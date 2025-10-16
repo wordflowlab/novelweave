@@ -2,7 +2,7 @@
 sidebar_label: OpenRouter
 ---
 
-# 在Kilo Code中使用OpenRouter
+# 在NovelWeave中使用OpenRouter
 
 OpenRouter是一个AI平台，提供来自不同供应商的各种语言模型访问，所有功能都通过单一API实现。这可以简化设置并让你轻松尝试不同模型。
 
@@ -16,11 +16,11 @@ OpenRouter是一个AI平台，提供来自不同供应商的各种语言模型�
 
 ## 支持的模型
 
-OpenRouter支持大量且不断增长的模型。Kilo Code会自动获取可用模型列表。请参考[OpenRouter模型页面](https://openrouter.ai/models)获取完整和最新的列表。
+OpenRouter支持大量且不断增长的模型。NovelWeave会自动获取可用模型列表。请参考[OpenRouter模型页面](https://openrouter.ai/models)获取完整和最新的列表。
 
-## 在Kilo Code中配置
+## 在NovelWeave中配置
 
-1. **打开Kilo Code设置:** 点击Kilo Code面板中的齿轮图标(<Codicon name="gear" />)。
+1. **打开NovelWeave设置:** 点击NovelWeave面板中的齿轮图标(<Codicon name="gear" />)。
 2. **选择供应商:** 从"API Provider"下拉菜单中选择"OpenRouter"。
 3. **输入API密钥:** 将OpenRouter API密钥粘贴到"OpenRouter API Key"字段。
 4. **选择模型:** 从"Model"下拉菜单中选择你需要的模型。
@@ -32,6 +32,6 @@ OpenRouter提供[可选的"middle-out"消息转换](https://openrouter.ai/docs/f
 
 ## 提示和注意事项
 
-* **模型选择:** OpenRouter提供多种模型。尝试找到最适合你需求的模型。
-* **定价:** OpenRouter根据基础模型的定价收费。详情请参阅[OpenRouter模型页面](https://openrouter.ai/models)。
-* **提示缓存:** 部分供应商支持提示缓存。请参阅OpenRouter文档了解支持的模型。
+- **模型选择:** OpenRouter提供多种模型。尝试找到最适合你需求的模型。
+- **定价:** OpenRouter根据基础模型的定价收费。详情请参阅[OpenRouter模型页面](https://openrouter.ai/models)。
+- **提示缓存:** 部分供应商支持提示缓存。请参阅OpenRouter文档了解支持的模型。

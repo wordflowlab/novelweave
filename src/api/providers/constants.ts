@@ -3,7 +3,7 @@ import { Package } from "../../shared/package"
 
 export const DEFAULT_HEADERS = {
 	"HTTP-Referer": "https://novelweave.ai",
-	"X-Title": "Kilo Code",
+	"X-Title": "NovelWeave",
 	[X_NOVELWEAVE_VERSION]: Package.version,
-	"User-Agent": `Kilo-Code/${Package.version}`,
+	"User-Agent": `NovelWeave-Code/${Package.version}`,
 }

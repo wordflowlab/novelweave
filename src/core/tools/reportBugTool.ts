@@ -85,12 +85,12 @@ export async function reportBugTool(
 					params.set("title", title)
 					params.set(
 						"description",
-						`${description}\n\n**System Information:**\n- Provider & Model: ${providerAndModel}\n- Operating System: ${operatingSystem}\n- Kilo Code Version: ${novelweaveVersion}\n- ${systemInfo}`,
+						`${description}\n\n**System Information:**\n- Provider & Model: ${providerAndModel}\n- Operating System: ${operatingSystem}\n- NovelWeave Version: ${novelweaveVersion}\n- ${systemInfo}`,
 					)
 
 					// Use our utility function to create and open the GitHub issue URL
 					// This bypasses VS Code's URI handling issues with special characters
-					await createAndOpenGitHubIssue("Kilo-Org", "novelweave", "bug_report.yml", params)
+					await createAndOpenGitHubIssue("NovelWeave-Org", "novelweave", "bug_report.yml", params)
 				} catch (error) {
 					console.error(`An error occurred while attempting to report the bug: ${error}`)
 				}

@@ -1,6 +1,6 @@
 {
 	"$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
-	"changelog": ["@changesets/changelog-github", { "repo": "Kilo-Org/novelweave" }],
+	"changelog": ["@changesets/changelog-github", { "repo": "NovelWeave-Org/novelweave" }],
 	"commit": false,
 	"fixed": [["novelweave"]],
 	"linked": [],

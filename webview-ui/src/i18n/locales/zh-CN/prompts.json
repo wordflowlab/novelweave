@@ -9,7 +9,7 @@
 		"editModesConfig": "模式设置",
 		"editGlobalModes": "修改全局模式",
 		"editProjectModes": "编辑项目模式 (.novelweavemodes)",
-		"createModeHelpText": "模式是Kilo Code的专属角色，用于定制其行为。<0>了解如何使用模式</0>或<1>自定义模式。</1>",
+		"createModeHelpText": "模式是NovelWeave的专属角色，用于定制其行为。<0>了解如何使用模式</0>或<1>自定义模式。</1>",
 		"selectMode": "搜索模式"
 	},
 	"apiConfiguration": {
@@ -18,7 +18,7 @@
 	},
 	"organizationMode": {
 		"title": "组织模式",
-		"description": "此模式由你的组织提供，无法在此编辑。要修改此模式，请访问 Kilo Code Dashboard。",
+		"description": "此模式由你的组织提供，无法在此编辑。要修改此模式，请访问 NovelWeave Dashboard。",
 		"cannotEdit": "组织模式不可编辑"
 	},
 	"tools": {

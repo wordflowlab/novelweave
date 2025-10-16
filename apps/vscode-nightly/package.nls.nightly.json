@@ -1,7 +1,7 @@
 {
-	"extension.displayName": "Kilo Code Nightly",
-	"views.contextMenu.label": "Kilo Code Nightly",
-	"views.terminalMenu.label": "Kilo Code Nightly",
-	"views.activitybar.title": "Kilo Code Nightly",
-	"configuration.title": "Kilo Code Nightly"
+	"extension.displayName": "NovelWeave Nightly",
+	"views.contextMenu.label": "NovelWeave Nightly",
+	"views.terminalMenu.label": "NovelWeave Nightly",
+	"views.activitybar.title": "NovelWeave Nightly",
+	"configuration.title": "NovelWeave Nightly"
 }

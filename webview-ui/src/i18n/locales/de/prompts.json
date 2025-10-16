@@ -9,7 +9,7 @@
 		"editModesConfig": "Moduskonfiguration bearbeiten",
 		"editGlobalModes": "Globale Modi bearbeiten",
 		"editProjectModes": "Projektmodi bearbeiten (.novelweavemodes)",
-		"createModeHelpText": "Modi sind spezialisierte Personas, die Kilo Codes Verhalten anpassen. <0>Erfahre mehr über die Verwendung von Modi</0> oder <1>die Anpassung von Modi.</1>",
+		"createModeHelpText": "Modi sind spezialisierte Personas, die NovelWeaves Verhalten anpassen. <0>Erfahre mehr über die Verwendung von Modi</0> oder <1>die Anpassung von Modi.</1>",
 		"selectMode": "Modi suchen"
 	},
 	"apiConfiguration": {
@@ -18,7 +18,7 @@
 	},
 	"organizationMode": {
 		"title": "Organisations-Modus",
-		"description": "Dieser Modus wird von deiner Organisation bereitgestellt und kann hier nicht bearbeitet werden. Um diesen Modus zu ändern, besuche bitte das Kilo Code Dashboard.",
+		"description": "Dieser Modus wird von deiner Organisation bereitgestellt und kann hier nicht bearbeitet werden. Um diesen Modus zu ändern, besuche bitte das NovelWeave Dashboard.",
 		"cannotEdit": "Organisations-Modi können nicht bearbeitet werden"
 	},
 	"tools": {
@@ -39,7 +39,7 @@
 	"roleDefinition": {
 		"title": "Rollendefinition",
 		"resetToDefault": "Auf Standardwerte zurücksetzen",
-		"description": "Definiere Kilo Codes Expertise und Persönlichkeit für diesen Modus. Diese Beschreibung prägt, wie Kilo Code sich präsentiert und an Aufgaben herangeht."
+		"description": "Definiere NovelWeaves Expertise und Persönlichkeit für diesen Modus. Diese Beschreibung prägt, wie NovelWeave sich präsentiert und an Aufgaben herangeht."
 	},
 	"description": {
 		"title": "Kurzbeschreibung (für Menschen)",
@@ -110,7 +110,7 @@
 		"types": {
 			"ENHANCE": {
 				"label": "Prompt verbessern",
-				"description": "Verwende die Prompt-Verbesserung, um maßgeschneiderte Vorschläge oder Verbesserungen für deine Eingaben zu erhalten. Dies stellt sicher, dass Kilo Code deine Absicht versteht und die bestmöglichen Antworten liefert. Verfügbar über das ✨-Symbol im Chat."
+				"description": "Verwende die Prompt-Verbesserung, um maßgeschneiderte Vorschläge oder Verbesserungen für deine Eingaben zu erhalten. Dies stellt sicher, dass NovelWeave deine Absicht versteht und die bestmöglichen Antworten liefert. Verfügbar über das ✨-Symbol im Chat."
 			},
 			"CONDENSE": {
 				"label": "Kontextverdichtung",
@@ -187,7 +187,7 @@
 		},
 		"roleDefinition": {
 			"label": "Rollendefinition",
-			"description": "Definiere Kilo Codes Expertise und Persönlichkeit für diesen Modus."
+			"description": "Definiere NovelWeaves Expertise und Persönlichkeit für diesen Modus."
 		},
 		"whenToUse": {
 			"label": "Wann zu verwenden (optional)",

@@ -16,7 +16,7 @@ export const getNovelWeaveWrapperProperties = (): NovelWeaveWrapperProperties =>
 		kiloCodeWrapperVersion = wrapperMatch[3].trim() || null
 		kiloCodeWrapperTitle =
 			kiloCodeWrapperCode === "cli"
-				? "Kilo Code CLI"
+				? "NovelWeave CLI"
 				: JETBRAIN_PRODUCTS[kiloCodeWrapperCode as keyof typeof JETBRAIN_PRODUCTS]?.name || "JetBrains IDE"
 	}
 

@@ -27,7 +27,7 @@
 	"command.terminal.explainCommand.title": "Explain This Command",
 	"command.terminal.generateCommand.title": "NovelWeave: Generate Terminal Command",
 	"command.acceptInput.title": "Accept Input/Suggestion",
-	"command.generateCommitMessage.title": "Generate Commit Message with Kilo",
+	"command.generateCommitMessage.title": "Generate Commit Message with NovelWeave",
 	"command.profile.title": "Profile",
 	"configuration.title": "NovelWeave",
 	"command.toggleAutoApprove.title": "Toggle Auto-Approve",

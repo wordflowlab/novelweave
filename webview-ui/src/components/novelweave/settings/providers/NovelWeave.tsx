@@ -11,7 +11,7 @@ import { ModelPicker } from "../../../settings/ModelPicker"
 import { vscode } from "@src/utils/vscode"
 import { OrganizationSelector } from "../../common/OrganizationSelector"
 import { NovelWeaveWrapperProperties } from "../../../../../../src/shared/novelweave/wrapper"
-import { useKiloIdentity } from "@src/utils/novelweave/useKiloIdentity"
+import { useNovelWeaveIdentity } from "@src/utils/novelweave/useNovelWeaveIdentity"
 
 type NovelWeaveProps = {
 	apiConfiguration: ProviderSettings
@@ -39,7 +39,7 @@ export const NovelWeave = ({
 	novelweaveDefaultModel,
 }: NovelWeaveProps) => {
 	const { t } = useAppTranslation()
-	
+
 	const handleInputChange = useCallback(
 		<K extends keyof ProviderSettings, E>(
 			field: K,
@@ -52,7 +52,7 @@ export const NovelWeave = ({
 	)
 
 	// Use the existing hook to get user identity
-	const userIdentity = useKiloIdentity(apiConfiguration.novelweaveToken || "", "")
+	const userIdentity = useNovelWeaveIdentity(apiConfiguration.novelweaveToken || "", "")
 	const isNovelWeaveAiUser = userIdentity.endsWith("@novelweave.ai")
 
 	const areNovelweaveWarningsDisabled = apiConfiguration.novelweaveTesterWarningsDisabledUntil
@@ -117,7 +117,7 @@ export const NovelWeave = ({
 				defaultModelId={novelweaveDefaultModel}
 				models={routerModels?.["novelweave-openrouter"] ?? {}}
 				modelIdKey="novelweaveModel"
-				serviceName="Kilo Code"
+				serviceName="NovelWeave"
 				serviceUrl="https://novelweave.ai"
 				organizationAllowList={organizationAllowList}
 			/>

@@ -55,13 +55,13 @@
 		"activated": "NovelWeave: 提交信息生成器已启动",
 		"gitNotFound": "⚠️ Git 仓库未找到或 git 不可用",
 		"gitInitError": "⚠️ Git 初始化错误：{{error}}",
-		"generating": "Kilo: 正在生成提交信息...",
-		"noChanges": "Kilo: 未发现可分析的更改",
-		"generated": "Kilo: 已生成提交信息！",
-		"generationFailed": "Kilo：生成提交信息失败：{{errorMessage}}",
-		"generatingFromUnstaged": "Kilo：使用未暂存的更改生成消息",
-		"providerRegistered": "Kilo：提交消息提供程序已注册",
-		"activationFailed": "Kilo：消息生成器激活失败：{{error}}"
+		"generating": "NovelWeave: 正在生成提交信息...",
+		"noChanges": "NovelWeave: 未发现可分析的更改",
+		"generated": "NovelWeave: 已生成提交信息！",
+		"generationFailed": "NovelWeave：生成提交信息失败：{{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave：使用未暂存的更改生成消息",
+		"providerRegistered": "NovelWeave：提交消息提供程序已注册",
+		"activationFailed": "NovelWeave：消息生成器激活失败：{{error}}"
 	},
 	"seeNewChanges": {
 		"title": "显示新更改",
@@ -123,12 +123,12 @@
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo：描述您想要生成的命令",
+		"inputPrompt": "NovelWeave：描述您想要生成的命令",
 		"inputPlaceholder": "例如，终止在3001端口上运行的进程，查找大文件等",
-		"noActiveTerminal": "Kilo：未找到活动终端。请先打开一个终端。",
-		"generatingProgress": "Kilo：正在生成终端命令...",
-		"commandGenerated": "Kilo：生成的命令：{{command}}",
-		"generationFailed": "Kilo：命令生成失败：{{error}}",
+		"noActiveTerminal": "NovelWeave：未找到活动终端。请先打开一个终端。",
+		"generatingProgress": "NovelWeave：正在生成终端命令...",
+		"commandGenerated": "NovelWeave：生成的命令：{{command}}",
+		"generationFailed": "NovelWeave：命令生成失败：{{error}}",
 		"warningDialog": {
 			"title": "终端安全警告",
 			"message": "在运行生成的命令之前请再次检查。终端操作并非总是可以撤销——运行未经验证的命令可能导致不可逆转的数据丢失或系统损坏。在继续操作前，请完全理解并检查命令！",

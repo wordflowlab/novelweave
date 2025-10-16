@@ -3,7 +3,7 @@ import { CompletionUsage, OpenRouterHandler } from "./openrouter"
 import { getModelParams } from "../transform/model-params"
 import { getModels } from "./fetchers/modelCache"
 import { DEEP_SEEK_DEFAULT_TEMPERATURE, openRouterDefaultModelId, openRouterDefaultModelInfo } from "@roo-code/types"
-import { getKiloBaseUriFromToken } from "../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../shared/novelweave/token"
 import { ApiHandlerCreateMessageMetadata } from ".."
 import { getModelEndpoints } from "./fetchers/modelEndpointCache"
 import { getNovelweaveDefaultModel } from "./novelweave/getNovelweaveDefaultModel"
@@ -22,7 +22,7 @@ export class NovelweaveOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	constructor(options: ApiHandlerOptions) {
-		const baseUri = getKiloBaseUriFromToken(options.novelweaveToken ?? "")
+		const baseUri = getNovelWeaveBaseUriFromToken(options.novelweaveToken ?? "")
 		options = {
 			...options,
 			openRouterBaseUrl: `${baseUri}/api/openrouter/`,
@@ -61,7 +61,7 @@ export class NovelweaveOpenrouterHandler extends OpenRouterHandler {
 		if (!model.inputPrice && !model.outputPrice) {
 			return 0
 		}
-		// https://github.com/Kilo-Org/novelweave-backend/blob/eb3d382df1e933a089eea95b9c4387db0c676e35/src/lib/processUsage.ts#L281
+		// https://github.com/NovelWeave-Org/novelweave-backend/blob/eb3d382df1e933a089eea95b9c4387db0c676e35/src/lib/processUsage.ts#L281
 		if (lastUsage.is_byok) {
 			return lastUsage.cost_details?.upstream_inference_cost || 0
 		}
@@ -106,7 +106,11 @@ export class NovelweaveOpenrouterHandler extends OpenRouterHandler {
 				modelId: this.options.novelweaveModel,
 				endpoint: this.options.openRouterSpecificProvider,
 			}),
-			getNovelweaveDefaultModel(this.options.novelweaveToken, this.options.novelweaveOrganizationId, this.options),
+			getNovelweaveDefaultModel(
+				this.options.novelweaveToken,
+				this.options.novelweaveOrganizationId,
+				this.options,
+			),
 		])
 
 		this.models = models

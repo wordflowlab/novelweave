@@ -52,40 +52,47 @@ NovelWeave implements the proven seven-step novel creation methodology:
 ## 📚 Seven-Step Methodology
 
 ### Step 1: `/constitution` - Creative Constitution
+
 Define your uncompromisable writing principles, style guidelines, and core values that will guide your entire novel.
 
 ### Step 2: `/specify` - Story Specification
+
 Like a product requirements document (PRD), define exactly what story you want to create, target audience, and success criteria.
 
 ### Step 3: `/clarify` - Critical Clarifications
+
 AI identifies ambiguities in your specification and generates up to 5 key questions to eliminate confusion before writing.
 
 ### Step 4: `/plan` - Creative Plan
+
 Transform abstract requirements into concrete technical solutions: chapter structure, character arcs, world-building, and plot timeline.
 
 ### Step 5: `/tasks` - Task Breakdown
+
 Break down the plan into executable writing tasks with clear priorities and dependencies.
 
 ### Step 6: `/write` - Execute Writing
+
 Write based on your tasks list, following your constitution principles and creative plan.
 
 ### Step 7: `/analyze` - Comprehensive Validation
+
 Validate plot consistency, timeline accuracy, character development, and adherence to your creative principles.
 
 > 📖 **Detailed Methodology**: Learn more from [novel-writer documentation](https://github.com/wordflowlab/novel-writer)
 
 ## 🔧 NovelWeave vs novel-writer CLI
 
-| Feature | novel-writer CLI | NovelWeave VSCode |
-|---------|------------------|-------------------|
-| **Interface** | Command-line | Graphical UI |
-| **Installation** | `npm install -g` | VSCode Marketplace |
-| **AI Integration** | Basic | Full AI chat & assistance |
-| **Project Management** | File system | VSCode Workspace + UI panels |
-| **Slash Commands** | ✅ | ✅ |
-| **Visual Tracking** | ❌ | ✅ (Plot, characters, timeline) |
-| **Learning Curve** | CLI familiarity needed | Intuitive UI |
-| **Best For** | Tech-savvy writers | All writers, especially VSCode users |
+| Feature                | novel-writer CLI       | NovelWeave VSCode                    |
+| ---------------------- | ---------------------- | ------------------------------------ |
+| **Interface**          | Command-line           | Graphical UI                         |
+| **Installation**       | `npm install -g`       | VSCode Marketplace                   |
+| **AI Integration**     | Basic                  | Full AI chat & assistance            |
+| **Project Management** | File system            | VSCode Workspace + UI panels         |
+| **Slash Commands**     | ✅                     | ✅                                   |
+| **Visual Tracking**    | ❌                     | ✅ (Plot, characters, timeline)      |
+| **Learning Curve**     | CLI familiarity needed | Intuitive UI                         |
+| **Best For**           | Tech-savvy writers     | All writers, especially VSCode users |
 
 **They work together!** Use novel-writer CLI for automation and scripts, while NovelWeave provides the visual interface and AI interaction.
 
@@ -100,18 +107,21 @@ Validate plot consistency, timeline accuracy, character development, and adheren
 ## 📖 Features in Detail
 
 ### AI-Powered Writing Assistant
+
 - **Smart Continuation** - AI suggests next paragraphs based on your style
 - **Character Voice** - Maintain consistent character personalities
 - **Plot Suggestions** - AI helps resolve plot holes and pacing issues
 - **Style Analysis** - Feedback on writing style and readability
 
 ### Project Organization
+
 - **Chapter Management** - Navigate and organize chapters in sidebar
 - **Character Profiles** - Track character development and relationships
 - **World Building** - Manage settings, rules, and lore
 - **Plot Threads** - Visualize and track multiple storylines
 
 ### Quality Assurance
+
 - **Consistency Checks** - Validate character traits, timeline, and facts
 - **Plot Tracking** - Ensure all plot threads are resolved
 - **Timeline Management** - Chronological accuracy validation
@@ -151,7 +161,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- Built on the [Kilo Code](https://github.com/Kilo-Org/novelweave) architecture
+- Built on the [NovelWeave](https://github.com/NovelWeave-Org/novelweave) architecture
 - Methodology from [novel-writer](https://github.com/wordflowlab/novel-writer)
 - Inspired by [Spec Kit](https://github.com/sublayerapp/spec-kit) principles
 

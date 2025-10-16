@@ -23,7 +23,7 @@ function asObjectSafe(value: any): object {
 
 		return {}
 	} catch (error) {
-		console.warn("Kilo Code <Language Model API>: Failed to parse object:", error)
+		console.warn("NovelWeave <Language Model API>: Failed to parse object:", error)
 		return {}
 	}
 }

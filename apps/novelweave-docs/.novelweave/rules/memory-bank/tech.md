@@ -97,7 +97,7 @@ npx docusaurus build
 
 ### GitHub Integration
 
-- **Repository**: https://github.com/Kilo-Org/docs
+- **Repository**: https://github.com/NovelWeave-Org/docs
 - **Edit Links**: Direct links to GitHub for documentation editing
 - **Issue Reporting**: Integrated issue creation workflow
 
@@ -106,7 +106,7 @@ npx docusaurus build
 - **Discord**: https://novelweave.ai/discord
 - **Reddit**: https://www.reddit.com/r/novelweave/
 - **Twitter**: https://x.com/novelweave
-- **YouTube**: https://www.youtube.com/@Kilo-Code
+- **YouTube**: https://www.youtube.com/@NovelWeave-Code
 
 ### VS Code Marketplace
 

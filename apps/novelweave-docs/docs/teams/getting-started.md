@@ -2,9 +2,9 @@
 sidebar_label: Getting Started
 ---
 
-# Get Started with Kilo for Teams in 10 Minutes
+# Get Started with NovelWeave for Teams in 10 Minutes
 
-Kilo for Teams brings transparent AI coding to your entire engineering organization. No markup on AI costs, no vendor lock-in, complete usage visibility.
+NovelWeave for Teams brings transparent AI coding to your entire engineering organization. No markup on AI costs, no vendor lock-in, complete usage visibility.
 
 **Launch Date:** September 10, 2025 | **Pricing:** $29/user/month
 
@@ -61,7 +61,7 @@ Kilo for Teams brings transparent AI coding to your entire engineering organizat
 Team members receive invitation emails with these steps:
 
 1. Accept the team invitation
-2. Install Kilo Code from [VS Code Marketplace](vscode:extension/novelweave.novelweave)
+2. Install NovelWeave from [VS Code Marketplace](vscode:extension/novelweave.novelweave)
 3. Sign in with their invited email
 4. Start coding with AI assistance
 

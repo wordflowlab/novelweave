@@ -224,7 +224,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "手动自动完成（{{keybinding}}）",
-				"description": "需要快速修复、补全或重构？Kilo 将使用周围上下文提供即时改进，保持你的工作流。<DocsLink>查看快捷键</DocsLink>"
+				"description": "需要快速修复、补全或重构？NovelWeave 将使用周围上下文提供即时改进，保持你的工作流。<DocsLink>查看快捷键</DocsLink>"
 			},
 			"keybindingNotFound": "未找到"
 		}

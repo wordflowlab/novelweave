@@ -1,10 +1,10 @@
 import React from "react"
-import { ButtonLink } from "./ButtonLink"
+// import { ButtonLink } from "./ButtonLink"
 import { ButtonSecondary } from "./ButtonSecondary"
 import Logo from "./Logo"
 import { useAppTranslation } from "@/i18n/TranslationContext"
-import { getNovelWeaveBackendSignUpUrl } from "../helpers"
-import { useExtensionState } from "@/context/ExtensionStateContext"
+// import { getNovelWeaveBackendSignUpUrl } from "../helpers"
+// import { useExtensionState } from "@/context/ExtensionStateContext"
 
 interface NovelWeaveAuthProps {
 	onManualConfigClick?: () => void
@@ -12,7 +12,7 @@ interface NovelWeaveAuthProps {
 }
 
 const NovelWeaveAuth: React.FC<NovelWeaveAuthProps> = ({ onManualConfigClick, className = "" }) => {
-	const { uriScheme, uiKind, kiloCodeWrapperProperties } = useExtensionState()
+	// const { uriScheme, uiKind, kiloCodeWrapperProperties } = useExtensionState()
 
 	const { t } = useAppTranslation()
 

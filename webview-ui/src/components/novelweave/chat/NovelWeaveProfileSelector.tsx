@@ -10,7 +10,7 @@ interface ApiConfigMeta {
 	name: string
 }
 
-interface KiloProfileSelectorProps {
+interface NovelWeaveProfileSelectorProps {
 	currentConfigId: string
 	currentApiConfigName?: string
 	displayName: string
@@ -21,7 +21,7 @@ interface KiloProfileSelectorProps {
 	initiallyOpen?: boolean
 }
 
-export const KiloProfileSelector = ({
+export const NovelWeaveProfileSelector = ({
 	currentConfigId,
 	currentApiConfigName,
 	displayName,
@@ -30,7 +30,7 @@ export const KiloProfileSelector = ({
 	togglePinnedApiConfig,
 	selectApiConfigDisabled = false,
 	initiallyOpen = false,
-}: KiloProfileSelectorProps) => {
+}: NovelWeaveProfileSelectorProps) => {
 	const { t } = useAppTranslation()
 
 	// Hide if there is only one profile

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-export function KiloContextWindowProgressTokensUsed({ currentPercent }: { currentPercent: number }) {
+export function NovelWeaveContextWindowProgressTokensUsed({ currentPercent }: { currentPercent: number }) {
 	const highlightNearLimit = currentPercent >= 50 // novelweave_change
 	return (
 		<div

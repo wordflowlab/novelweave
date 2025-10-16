@@ -62,9 +62,9 @@ describe("OpenRouterHandler", () => {
 			apiKey: mockOptions.openRouterApiKey,
 			defaultHeaders: {
 				"HTTP-Referer": "https://novelweave.ai",
-				"X-Title": "Kilo Code",
+				"X-Title": "NovelWeave",
 				"X-NovelWeave-Version": Package.version,
-				"User-Agent": `Kilo-Code/${Package.version}`,
+				"User-Agent": `NovelWeave-Code/${Package.version}`,
 			},
 		})
 	})

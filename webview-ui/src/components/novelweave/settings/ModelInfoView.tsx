@@ -5,7 +5,7 @@ import { ModelInfoSupportsItem } from "@/components/settings/ModelInfoView"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger, StandardTooltip } from "@/components/ui"
 import { FreeModelsInfoView } from "../FreeModelsLink"
 import { useQuery } from "@tanstack/react-query"
-import { getKiloBaseUriFromToken } from "@roo/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "@roo/novelweave/token"
 import { telemetryClient } from "@/utils/TelemetryClient"
 import { useModelProviders } from "@/components/ui/hooks/useSelectedModel"
 
@@ -94,7 +94,9 @@ export const NovelweaveModelInfoView = ({
 		queryFn: async () => {
 			try {
 				return (
-					await fetch(`${getKiloBaseUriFromToken(apiConfiguration.novelweaveToken ?? "")}/api/modelstats`)
+					await fetch(
+						`${getNovelWeaveBaseUriFromToken(apiConfiguration.novelweaveToken ?? "")}/api/modelstats`,
+					)
 				).json()
 			} catch (err) {
 				if (err instanceof Error) {

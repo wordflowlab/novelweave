@@ -28,9 +28,9 @@ export interface FieldMetadata {
 export const FIELD_REGISTRY: Record<string, FieldMetadata> = {
 	// Novelweave fields
 	novelweaveToken: {
-		label: "Kilo Code Token",
+		label: "NovelWeave Token",
 		type: "password",
-		placeholder: "Enter your Kilo Code token...",
+		placeholder: "Enter your NovelWeave token...",
 	},
 	novelweaveOrganizationId: {
 		label: "Organization ID",

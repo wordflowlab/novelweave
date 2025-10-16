@@ -1,5 +1,5 @@
 {
-	"name": "Kilo Code Development",
+	"name": "NovelWeave Development",
 	"dockerFile": "Dockerfile",
 	"context": "..",
 
@@ -49,7 +49,7 @@
 	},
 
 	"postCreateCommand": "bash .devcontainer/setup.sh",
-	"postStartCommand": "echo '🚀 Kilo Code devcontainer is ready!'",
+	"postStartCommand": "echo '🚀 NovelWeave devcontainer is ready!'",
 
 	"remoteUser": "root",
 	"containerUser": "root",

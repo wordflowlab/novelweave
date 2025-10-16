@@ -35,7 +35,7 @@ async function main() {
 		define: {
 			"process.env.PKG_NAME": '"kilo-code-nightly"',
 			"process.env.PKG_VERSION": `"${overrideJson.version}"`,
-			"process.env.PKG_OUTPUT_CHANNEL": '"Kilo-Code-Nightly"',
+			"process.env.PKG_OUTPUT_CHANNEL": '"NovelWeave-Code-Nightly"',
 			...(gitSha ? { "process.env.PKG_SHA": `"${gitSha}"` } : {}),
 		},
 	}

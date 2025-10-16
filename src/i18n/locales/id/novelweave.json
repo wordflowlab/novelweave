@@ -51,25 +51,25 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generator pesan komit Kilo Code diaktifkan",
+		"activated": "Generator pesan komit NovelWeave diaktifkan",
 		"gitNotFound": "⚠️ Repositori Git tidak ditemukan atau git tidak tersedia",
 		"gitInitError": "⚠️ Kesalahan inisialisasi Git: {{error}}",
-		"generating": "Kilo: Menghasilkan pesan komit...",
-		"noChanges": "Kilo: Tidak ada perubahan yang ditemukan untuk dianalisis",
-		"generated": "Kilo: Pesan komit dihasilkan!",
-		"generationFailed": "Kilo: Gagal menghasilkan pesan komit: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Menghasilkan pesan menggunakan perubahan yang belum ditahapkan",
-		"activationFailed": "Kilo: Gagal mengaktifkan generator pesan: {{error}}",
-		"providerRegistered": "Kilo: Penyedia pesan komit terdaftar"
+		"generating": "NovelWeave: Menghasilkan pesan komit...",
+		"noChanges": "NovelWeave: Tidak ada perubahan yang ditemukan untuk dianalisis",
+		"generated": "NovelWeave: Pesan komit dihasilkan!",
+		"generationFailed": "NovelWeave: Gagal menghasilkan pesan komit: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Menghasilkan pesan menggunakan perubahan yang belum ditahapkan",
+		"activationFailed": "NovelWeave: Gagal mengaktifkan generator pesan: {{error}}",
+		"providerRegistered": "NovelWeave: Penyedia pesan komit terdaftar"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (dinonaktifkan)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (dinonaktifkan)",
 				"tokenError": "Token yang valid harus diatur untuk menggunakan Autocomplete",
 				"lastCompletion": "Saran terakhir:",
 				"sessionTotal": "Total biaya sesi:",
@@ -80,55 +80,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Menganalisis kode Anda...",
 			"generating": "Menghasilkan suntingan yang disarankan...",
 			"processing": "Memproses suntingan yang disarankan...",
 			"showing": "Menampilkan suntingan yang disarankan..."
 		},
 		"input": {
-			"title": "Kilo Code: Tugas Cepat",
+			"title": "NovelWeave: Tugas Cepat",
 			"placeholder": "mis., 'refaktor fungsi ini agar lebih efisien'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Hasilkan Suntingan yang Disarankan",
+			"generateSuggestions": "NovelWeave: Hasilkan Suntingan yang Disarankan",
 			"displaySuggestions": "Tampilkan Suntingan yang Disarankan",
 			"cancelSuggestions": "Batalkan Suntingan yang Disarankan",
 			"applyCurrentSuggestion": "Terapkan Suntingan yang Disarankan Saat Ini",
 			"applyAllSuggestions": "Terapkan Semua Suntingan yang Disarankan",
 			"promptCodeSuggestion": "Tugas Cepat",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Suntingan yang Disarankan"
+			"title": "NovelWeave: Suntingan yang Disarankan"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "Saya dapat membantu Anda dengan tugas cepat dan suntingan yang disarankan."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
+			"message": "NovelWeave Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
 			"disableCopilot": "Nonaktifkan Copilot",
 			"disableInlineAssist": "Nonaktifkan Autocomplete"
 		}
 	},
 	"terminalCommandGenerator": {
 		"inputPlaceholder": "mis., matikan proses yang berjalan di port 3001, temukan file besar, dll",
-		"noActiveTerminal": "Kilo: Tidak ada terminal aktif yang ditemukan. Silakan buka terminal terlebih dahulu.",
-		"inputPrompt": "Kilo: Jelaskan perintah yang ingin Anda hasilkan",
-		"generatingProgress": "Kilo: Menghasilkan perintah terminal...",
-		"generationFailed": "Kilo: Gagal menghasilkan perintah: {{error}}",
-		"commandGenerated": "Kilo: Perintah yang dihasilkan: {{command}}",
+		"noActiveTerminal": "NovelWeave: Tidak ada terminal aktif yang ditemukan. Silakan buka terminal terlebih dahulu.",
+		"inputPrompt": "NovelWeave: Jelaskan perintah yang ingin Anda hasilkan",
+		"generatingProgress": "NovelWeave: Menghasilkan perintah terminal...",
+		"generationFailed": "NovelWeave: Gagal menghasilkan perintah: {{error}}",
+		"commandGenerated": "NovelWeave: Perintah yang dihasilkan: {{command}}",
 		"warningDialog": {
 			"title": "Peringatan Keamanan Terminal",
 			"okButton": "Saya Mengerti",
 			"message": "Periksa kembali semua perintah yang dihasilkan sebelum menjalankannya. Tindakan terminal tidak selalu dapat dibatalkan—menjalankan perintah yang belum diverifikasi dapat mengakibatkan kehilangan data atau kerusakan sistem yang tidak dapat dipulihkan. Tinjau dan pahami perintah sepenuhnya sebelum melanjutkan!",
 			"cancelButton": "Batal"
 		},
-		"tipMessage": "Kilo: Tekan {{shortcut}} untuk menghasilkan perintah terminal"
+		"tipMessage": "NovelWeave: Tekan {{shortcut}} untuk menghasilkan perintah terminal"
 	},
 	"seeNewChanges": {
 		"title": "Menampilkan perubahan baru",

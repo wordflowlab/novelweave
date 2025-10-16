@@ -23,8 +23,8 @@ import { DropdownOptionType, Button, StandardTooltip } from "@/components/ui" //
 
 import Thumbnails from "../common/Thumbnails"
 import { ModeSelector } from "./ModeSelector"
-import KiloModeSelector from "../novelweave/KiloModeSelector"
-import { KiloProfileSelector } from "../novelweave/chat/KiloProfileSelector" // novelweave_change
+import NovelWeaveModeSelector from "../novelweave/NovelWeaveModeSelector"
+import { NovelWeaveProfileSelector } from "../novelweave/chat/NovelWeaveProfileSelector" // novelweave_change
 import { MAX_IMAGES_PER_MESSAGE } from "./ChatView"
 import ContextMenu from "./ContextMenu"
 import { ImageWarningBanner } from "./ImageWarningBanner" // novelweave_change
@@ -1586,8 +1586,8 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 							className={cn("flex", "justify-between", "items-center", "mt-auto")}>
 							<div className={cn("flex", "items-center", "gap-1", "min-w-0")}>
 								<div className="shrink-0">
-									{/* novelweave_change start: KiloModeSelector instead of ModeSelector */}
-									<KiloModeSelector
+									{/* novelweave_change start: NovelWeaveModeSelector instead of ModeSelector */}
+									<NovelWeaveModeSelector
 										value={mode}
 										onChange={setMode}
 										modeShortcutText={modeShortcutText}
@@ -1596,7 +1596,7 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 									{/* novelweave_change end */}
 								</div>
 
-								<KiloProfileSelector
+								<NovelWeaveProfileSelector
 									currentConfigId={currentConfigId}
 									currentApiConfigName={currentApiConfigName}
 									displayName={displayName}

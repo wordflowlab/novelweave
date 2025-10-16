@@ -12,7 +12,7 @@ import {
 test.describe("E2E Chat Test", () => {
 	test("should configure credentials and send a message", async ({ workbox: page, takeScreenshot }: TestFixtures) => {
 		await verifyExtensionInstalled(page)
-		await waitForWebviewText(page, "Welcome to Kilo Code!")
+		await waitForWebviewText(page, "Welcome to NovelWeave!")
 
 		await page.waitForTimeout(1000) // Let the page settle to avoid flakes
 

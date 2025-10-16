@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "novelweave",
-	"version": "4.104.0",
+	"version": "0.1.0",
 	"icon": "assets/icons/novelweave-icon.png",
 	"readme": "readme.md",
 	"galleryBanner": {
@@ -22,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Kilo-Org/novelweave"
+		"url": "https://github.com/wordflowlab/novelweave"
 	},
 	"homepage": "https://novelweave.ai",
 	"categories": [

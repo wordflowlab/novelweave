@@ -13,7 +13,7 @@
 		"cancel": "Cancel"
 	},
 	"ui": {
-		"initializing": "Kilo Code is initializing...",
+		"initializing": "NovelWeave is initializing...",
 		"systemInformation": "System Information"
 	}
 }

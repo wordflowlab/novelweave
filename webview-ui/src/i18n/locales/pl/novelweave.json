@@ -1,7 +1,7 @@
 {
 	"welcome": {
-		"greeting": "Witaj w Kilo Code!",
-		"introText1": "Kilo Code to darmowy, otwartoźródłowy agent kodowania AI.",
+		"greeting": "Witaj w NovelWeave!",
+		"introText1": "NovelWeave to darmowy, otwartoźródłowy agent kodowania AI.",
 		"introText2": "Współpracuje z najnowszymi modelami AI, takimi jak Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5 i ponad 450 innymi.",
 		"introText3": "Stwórz darmowe konto i otrzymaj $20 bonusowych kredytów przy pierwszym doładowaniu.",
 		"ctaButton": "Rozpocznij",
@@ -11,7 +11,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Dodaj kredyt",
-		"lowBalance": "Twój stan konta Kilo Code jest niski"
+		"lowBalance": "Twój stan konta NovelWeave jest niski"
 	},
 	"pagination": {
 		"previous": "Poprzednia",
@@ -34,14 +34,14 @@
 			"mcp": "Serwery MCP"
 		},
 		"provider": {
-			"account": "Konto Kilo Code",
-			"apiKey": "Klucz API Kilo Code",
-			"login": "Zaloguj się do Kilo Code",
-			"logout": "Wyloguj się z Kilo Code",
+			"account": "Konto NovelWeave",
+			"apiKey": "Klucz API NovelWeave",
+			"login": "Zaloguj się do NovelWeave",
+			"logout": "Wyloguj się z NovelWeave",
 			"providerRouting": {
 				"title": "Routing dostawców",
 				"managedByOrganization": "Ustawienia routingu dostawców są zarządzane przez Twoją organizację.",
-				"description": "Kilo Code kieruje żądania do najlepszych dostępnych dostawców dla Twojego modelu. Domyślnie żądania są równoważone obciążeniem między najlepszymi dostawcami, aby zmaksymalizować czas działania. Możesz jednak wybrać konkretnego dostawcę do użycia dla tego modelu.",
+				"description": "NovelWeave kieruje żądania do najlepszych dostępnych dostawców dla Twojego modelu. Domyślnie żądania są równoważone obciążeniem między najlepszymi dostawcami, aby zmaksymalizować czas działania. Możesz jednak wybrać konkretnego dostawcę do użycia dla tego modelu.",
 				"sorting": {
 					"default": "Domyślne sortowanie dostawców",
 					"price": "Preferuj dostawców z niższą ceną",
@@ -56,12 +56,12 @@
 					"zdr": "Zerowe przechowywanie danych"
 				}
 			},
-			"automaticFetch": "Najnowsze modele są automatycznie dostępne w Kilo Code. Jeśli nie jesteś pewien, który model wybrać, Kilo Code działa najlepiej z zalecanymi modelami wymienionymi na górze <strong>pogrubioną czcionką</strong>."
+			"automaticFetch": "Najnowsze modele są automatycznie dostępne w NovelWeave. Jeśli nie jesteś pewien, który model wybrać, NovelWeave działa najlepiej z zalecanymi modelami wymienionymi na górze <strong>pogrubioną czcionką</strong>."
 		},
 		"modelInfo": {
 			"contextWindow": "Okno kontekstu",
 			"providerBreakdown": "Zestawienie Cen i Możliwości Dostawcy",
-			"averageNovelWeaveCost": "To jest średni rzeczywisty koszt za korzystanie z Kilo Code z tym modelem w ciągu ostatniego tygodnia. Może być niższy niż podana cena ze względu na wykorzystanie pamięci podręcznej promptów.",
+			"averageNovelWeaveCost": "To jest średni rzeczywisty koszt za korzystanie z NovelWeave z tym modelem w ciągu ostatniego tygodnia. Może być niższy niż podana cena ze względu na wykorzystanie pamięci podręcznej promptów.",
 			"table": {
 				"provider": "Dostawca",
 				"context": "Punkt końcowy może przetworzyć tę liczbę tokenów (wejście + wyjście).",
@@ -74,15 +74,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Zezwól na odczyt bardzo dużych plików",
-				"description": "Gdy włączone, Kilo Code będzie wykonywać odczyty bardzo dużych plików lub wyjść MCP, nawet jeśli istnieje duże prawdopodobieństwo przepełnienia okna kontekstu (rozmiar zawartości >80% okna kontekstu)."
+				"description": "Gdy włączone, NovelWeave będzie wykonywać odczyty bardzo dużych plików lub wyjść MCP, nawet jeśli istnieje duże prawdopodobieństwo przepełnienia okna kontekstu (rozmiar zawartości >80% okna kontekstu)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Włącz powiadomienia systemowe",
-			"description": "Gdy włączone, Kilo Code będzie wysyłać powiadomienia systemowe o ważnych wydarzeniach, takich jak zakończenie zadania lub błędy.",
+			"description": "Gdy włączone, NovelWeave będzie wysyłać powiadomienia systemowe o ważnych wydarzeniach, takich jak zakończenie zadania lub błędy.",
 			"testButton": "Testuj powiadomienie",
-			"testTitle": "Kilo Code",
-			"testMessage": "To jest testowe powiadomienie z Kilo Code."
+			"testTitle": "NovelWeave",
+			"testMessage": "To jest testowe powiadomienie z NovelWeave."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -97,7 +97,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code chce skondensować Twoją rozmowę",
+			"wantsToCondense": "NovelWeave chce skondensować Twoją rozmowę",
 			"condenseConversation": "Skondensuj Rozmowę"
 		},
 		"seeNewChanges": "Pokaż nowe zmiany",
@@ -126,15 +126,15 @@
 	},
 	"docs": "Dokumentacja",
 	"rules": {
-		"tooltip": "Zarządzaj Regułami i Przepływami Pracy Kilo Code",
-		"ariaLabel": "Reguły Kilo Code",
+		"tooltip": "Zarządzaj Regułami i Przepływami Pracy NovelWeave",
+		"ariaLabel": "Reguły NovelWeave",
 		"tabs": {
 			"rules": "Reguły",
 			"workflows": "Przepływy Pracy"
 		},
 		"description": {
-			"rules": "Reguły pozwalają dostarczyć Kilo Code instrukcje, których powinien przestrzegać we wszystkich trybach i dla wszystkich promptów. To trwały sposób dołączania kontekstu i preferencji dla wszystkich rozmów w twoim obszarze roboczym lub globalnie.",
-			"workflows": "Przepływy pracy to przygotowany szablon dla rozmowy. Przepływy pracy pozwalają zdefiniować prompty, których często używasz, i mogą zawierać serię kroków, aby poprowadzić Kilo Code przez powtarzalne zadania, takie jak wdrażanie usługi lub przesyłanie PR. Aby wywołać przepływ pracy, wpisz",
+			"rules": "Reguły pozwalają dostarczyć NovelWeave instrukcje, których powinien przestrzegać we wszystkich trybach i dla wszystkich promptów. To trwały sposób dołączania kontekstu i preferencji dla wszystkich rozmów w twoim obszarze roboczym lub globalnie.",
+			"workflows": "Przepływy pracy to przygotowany szablon dla rozmowy. Przepływy pracy pozwalają zdefiniować prompty, których często używasz, i mogą zawierać serię kroków, aby poprowadzić NovelWeave przez powtarzalne zadania, takie jak wdrażanie usługi lub przesyłanie PR. Aby wywołać przepływ pracy, wpisz",
 			"workflowsInChat": "w czacie."
 		},
 		"sections": {
@@ -204,11 +204,11 @@
 			"keybindingDescription": "Funkcje Autocomplete mogą być wyzwalane przez polecenia. Możesz skonfigurować <DocsLink>Skróty Klawiszowe tutaj</DocsLink>.",
 			"enableAutoTrigger": {
 				"label": "Włącz Autocomplete",
-				"description": "Gdy włączone, Kilo Code automatycznie wyzwoli Autocomplete, gdy przestaniesz pisać. Może to być przydatne do szybkich poprawek i sugestii."
+				"description": "Gdy włączone, NovelWeave automatycznie wyzwoli Autocomplete, gdy przestaniesz pisać. Może to być przydatne do szybkich poprawek i sugestii."
 			},
 			"autoTriggerDelay": {
 				"label": "Opóźnienie Automatycznego Wyzwalania",
-				"description": "Opóźnienie w sekundach przed tym, jak Kilo Code wyzwoli Autocomplete po tym, jak przestaniesz pisać. Krótsze opóźnienie oznacza szybsze sugestie, ale może być bardziej zasobożerne."
+				"description": "Opóźnienie w sekundach przed tym, jak NovelWeave wyzwoli Autocomplete po tym, jak przestaniesz pisać. Krótsze opóźnienie oznacza szybsze sugestie, ale może być bardziej zasobożerne."
 			},
 			"enableQuickInlineTaskKeybinding": {
 				"label": "Szybkie zadanie ({{keybinding}})",
@@ -216,7 +216,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "Ręczne uzupełnianie ({{keybinding}})",
-				"description": "Potrzebujesz szybkiej poprawki, uzupełnienia lub refaktoryzacji? Kilo użyje otaczającego kontekstu, aby zaoferować natychmiastowe ulepszenia, utrzymując cię w przepływie. <DocsLink>Zobacz skrót</DocsLink>"
+				"description": "Potrzebujesz szybkiej poprawki, uzupełnienia lub refaktoryzacji? NovelWeave użyje otaczającego kontekstu, aby zaoferować natychmiastowe ulepszenia, utrzymując cię w przepływie. <DocsLink>Zobacz skrót</DocsLink>"
 			},
 			"keybindingNotFound": "nie znaleziono"
 		}

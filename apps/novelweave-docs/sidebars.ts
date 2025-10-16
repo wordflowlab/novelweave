@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Using Kilo Code",
+			label: "Using NovelWeave",
 			items: [
 				"basic-usage/the-chat-interface",
 				"basic-usage/model-selection-guide",
@@ -98,7 +98,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Kilo for Teams",
+			label: "NovelWeave for Teams",
 			items: [
 				"teams/getting-started",
 				"teams/roles-permissions",
@@ -116,7 +116,7 @@ const sidebars: SidebarsConfig = {
 				"advanced-usage/prompt-engineering",
 				{
 					type: "category",
-					label: "Customizing Kilo Code",
+					label: "Customizing NovelWeave",
 					items: [
 						"advanced-usage/custom-rules",
 						"advanced-usage/custom-instructions",
@@ -154,7 +154,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Extending Kilo Code",
+			label: "Extending NovelWeave",
 			items: [
 				"advanced-usage/local-models",
 				{

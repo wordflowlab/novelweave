@@ -1,10 +1,10 @@
-# Contributing to Kilo Code
+# Contributing to NovelWeave
 
-Kilo Code is an open-source project that welcomes contributions from developers of all skill levels. This guide will help you get started with contributing to Kilo Code, whether you're fixing bugs, adding features, improving documentation, or sharing custom modes.
+NovelWeave is an open-source project that welcomes contributions from developers of all skill levels. This guide will help you get started with contributing to NovelWeave, whether you're fixing bugs, adding features, improving documentation, or sharing custom modes.
 
 ## Ways to Contribute
 
-There are many ways to contribute to Kilo Code:
+There are many ways to contribute to NovelWeave:
 
 1. **Code Contributions**: Implement new features or fix bugs
 2. **Documentation**: Improve existing docs or create new guides
@@ -44,82 +44,85 @@ git checkout -b your-branch-name
 ### Testing Your Changes
 
 - Run the test suite:
-  ```bash
-  npm test
-  ```
+    ```bash
+    npm test
+    ```
 - Manually test your changes in the development extension
 
 ### Creating a Pull Request
 
 1. Push your changes to your fork:
-   ```bash
-   git push origin your-branch-name
-   ```
 
-2. Go to the [Kilo Code repository](https://github.com/Kilo-Org/novelweave)
+    ```bash
+    git push origin your-branch-name
+    ```
+
+2. Go to the [NovelWeave repository](https://github.com/NovelWeave-Org/novelweave)
 
 3. Click "New Pull Request" and select "compare across forks"
 
 4. Select your fork and branch
 
 5. Fill out the PR template with:
-   - A clear description of the changes
-   - Any related issues
-   - Testing steps
-   - Screenshots (if applicable)
+    - A clear description of the changes
+    - Any related issues
+    - Testing steps
+    - Screenshots (if applicable)
 
 ## Creating Custom Modes
 
-Custom modes are a powerful way to extend Kilo Code's capabilities. To create and share a custom mode:
+Custom modes are a powerful way to extend NovelWeave's capabilities. To create and share a custom mode:
 
 1. Follow the [Custom Modes documentation](/features/custom-modes) to create your mode
 
 2. Test your mode thoroughly
 
-3. Share your mode with the community by submitting a [GitHub Discussion](https://github.com/Kilo-Org/novelweave/discussions)
+3. Share your mode with the community by submitting a [GitHub Discussion](https://github.com/NovelWeave-Org/novelweave/discussions)
 
 ## Documentation Contributions
 
 Documentation improvements are highly valued contributions:
 
 1. Follow the documentation style guide:
-   - Use clear, concise language
-   - Include examples where appropriate
-   - Use absolute paths starting from `/docs/` for internal links
-   - Don't include `.md` extensions in links
+
+    - Use clear, concise language
+    - Include examples where appropriate
+    - Use absolute paths starting from `/docs/` for internal links
+    - Don't include `.md` extensions in links
 
 2. Test your documentation changes by running the docs site locally:
-   ```bash
-   cd docs
-   npm install
-   npm start
-   ```
+
+    ```bash
+    cd docs
+    npm install
+    npm start
+    ```
 
 3. Submit a PR with your documentation changes
 
 ## Community Guidelines
 
-When participating in the Kilo Code community:
+When participating in the NovelWeave community:
 
 - Be respectful and inclusive
 - Provide constructive feedback
 - Help newcomers get started
-- Follow the [Code of Conduct](https://github.com/Kilo-Org/novelweave/blob/main/CODE_OF_CONDUCT.md)
+- Follow the [Code of Conduct](https://github.com/NovelWeave-Org/novelweave/blob/main/CODE_OF_CONDUCT.md)
 
 ## Getting Help
 
 If you need help with your contribution:
 
 - Join our [Discord community](https://novelweave.ai/discord) for real-time support
-- Ask questions on [GitHub Discussions](https://github.com/Kilo-Org/novelweave/discussions)
+- Ask questions on [GitHub Discussions](https://github.com/NovelWeave-Org/novelweave/discussions)
 - Visit our [Reddit community](https://www.reddit.com/r/NovelWeave)
 
 ## Recognition
 
-All contributors are valued members of the Kilo Code community. Contributors are recognized in:
+All contributors are valued members of the NovelWeave community. Contributors are recognized in:
 
 - Release notes
 - The project's README
 - The contributors list on GitHub
 
-Thank you for contributing to Kilo Code and helping make AI-powered coding assistance better for everyone!
+Thank you for contributing to NovelWeave and helping make AI-powered coding assistance better for everyone!

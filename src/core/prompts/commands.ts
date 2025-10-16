@@ -56,23 +56,23 @@ ${userInput}
 
 export const newRuleToolResponse = (userInput: string) =>
 	`<explicit_instructions type="new_rule">
-The user has explicitly asked you to help them create a new Kilo rule file inside the .novelweave/rules top-level directory based on the conversation up to this point in time. The user may have provided instructions or additional information for you to consider when creating the new Kilo rule.
-When creating a new Kilo rule file, you should NOT overwrite or alter an existing Kilo rule file. To create the Kilo rule file you MUST use the new_rule tool. The new_rule tool can be used in any of the modes.
+The user has explicitly asked you to help them create a new NovelWeave rule file inside the .novelweave/rules top-level directory based on the conversation up to this point in time. The user may have provided instructions or additional information for you to consider when creating the new NovelWeave rule.
+When creating a new NovelWeave rule file, you should NOT overwrite or alter an existing NovelWeave rule file. To create the NovelWeave rule file you MUST use the new_rule tool. The new_rule tool can be used in any of the modes.
 The new_rule tool is defined below:
 Description:
-Your task is to create a new Kilo rule file which includes guidelines on how to approach developing code in tandem with the user, which is project specific. This includes but is not limited to: desired conversational style, favorite project dependencies, coding styles, naming conventions, architectural choices, ui/ux preferences, etc.
-The Kilo rule file must be formatted as markdown and be a '.md' file. The name of the file you generate must be as succinct as possible and be encompassing the main overarching concept of the rules you added to the file (e.g., 'memory-bank.md' or 'project-overview.md'). Please also explicitly ask the user to review the newly created rule.
+Your task is to create a new NovelWeave rule file which includes guidelines on how to approach developing code in tandem with the user, which is project specific. This includes but is not limited to: desired conversational style, favorite project dependencies, coding styles, naming conventions, architectural choices, ui/ux preferences, etc.
+The NovelWeave rule file must be formatted as markdown and be a '.md' file. The name of the file you generate must be as succinct as possible and be encompassing the main overarching concept of the rules you added to the file (e.g., 'memory-bank.md' or 'project-overview.md'). Please also explicitly ask the user to review the newly created rule.
 Parameters:
-- Path: (required) The path of the file to write to (relative to the current working directory). This will be the Kilo rule file you create, and it must be placed inside the .novelweave/rules top-level directory (create this if it doesn't exist). The filename created CANNOT be "default-clineignore.md". For filenames, use hyphens ("-") instead of underscores ("_") to separate words.
-- Content: (required) The content to write to the file. ALWAYS provide the COMPLETE intended content of the file, without any truncation or omissions. You MUST include ALL parts of the file, even if they haven't been modified. The content for the Kilo rule file MUST be created according to the following instructions:
-  1. Format the Kilo rule file to have distinct guideline sections, each with their own markdown heading, starting with "## Brief overview". Under each of these headings, include bullet points fully fleshing out the details, with examples and/or trigger cases ONLY when applicable.
-  2. These guidelines can be specific to the task(s) or project worked on thus far, or cover more high-level concepts. Guidelines can include coding conventions, general design patterns, preferred tech stack including favorite libraries and language, communication style with Kilo (verbose vs concise), prompting strategies, naming conventions, testing strategies, comment verbosity, time spent on architecting prior to development, and other preferences.
+- Path: (required) The path of the file to write to (relative to the current working directory). This will be the NovelWeave rule file you create, and it must be placed inside the .novelweave/rules top-level directory (create this if it doesn't exist). The filename created CANNOT be "default-clineignore.md". For filenames, use hyphens ("-") instead of underscores ("_") to separate words.
+- Content: (required) The content to write to the file. ALWAYS provide the COMPLETE intended content of the file, without any truncation or omissions. You MUST include ALL parts of the file, even if they haven't been modified. The content for the NovelWeave rule file MUST be created according to the following instructions:
+  1. Format the NovelWeave rule file to have distinct guideline sections, each with their own markdown heading, starting with "## Brief overview". Under each of these headings, include bullet points fully fleshing out the details, with examples and/or trigger cases ONLY when applicable.
+  2. These guidelines can be specific to the task(s) or project worked on thus far, or cover more high-level concepts. Guidelines can include coding conventions, general design patterns, preferred tech stack including favorite libraries and language, communication style with NovelWeave (verbose vs concise), prompting strategies, naming conventions, testing strategies, comment verbosity, time spent on architecting prior to development, and other preferences.
   3. When creating guidelines, you should not invent preferences or make assumptions based on what you think a typical user might want. These should be specific to the conversation you had with the user. Your guidelines / rules should not be overly verbose.
   4. Your guidelines should NOT be a recollection of the conversation up to this point in time, meaning you should NOT be including arbitrary details of the conversation.
 Usage:
 <new_rule>
 <path>.novelweave/rules/{file name}.md</path>
-<content>Kilo rule file content here</content>
+<content>NovelWeave rule file content here</content>
 </new_rule>
 Example:
 <new_rule>
@@ -98,7 +98,7 @@ Example:
 </content>
 <line_count>30</line_count>
 </new_rule>
-The user provided the following input when they indicated that they wanted to create a new Kilo rule file.
+The user provided the following input when they indicated that they wanted to create a new NovelWeave rule file.
 <user_input>
 ${userInput}
 </user_input>
@@ -122,7 +122,7 @@ Usage:
 <title>Title of the issue</title>
 <description>Detailed description of the issue, including steps to reproduce if relevant.</description>
 </report_bug>
-When you call the report_bug tool, the issue will be created at @https://github.com/Kilo-Org/novelweave/issues
+When you call the report_bug tool, the issue will be created at @https://github.com/NovelWeave-Org/novelweave/issues
 The user provided the following input when they indicated that they wanted to submit a bug report.
 <user_input>
 ${userInput}

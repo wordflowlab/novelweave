@@ -48,7 +48,7 @@ class ExtensionManager : Disposable {
         
         // Create extension identifier
         val name = packageJson.name
-        val publisher = "Kilo Code"
+        val publisher = "NovelWeave"
         val extensionIdentifier = ExtensionIdentifier("$publisher.$name")
         
         // Create extension description
@@ -59,7 +59,7 @@ class ExtensionManager : Disposable {
             displayName = packageJson.displayName,
             description = packageJson.description,
             version = packageJson.version ?: "1.0.0",
-            publisher = "Kilo Code",
+            publisher = "NovelWeave",
             main = packageJson.main ?: "./dist/extension.js",
             activationEvents = packageJson.activationEvents ?: listOf("onStartupFinished"),
             extensionLocation = URI.file(extensionPath),

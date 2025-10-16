@@ -1,10 +1,10 @@
-# 为 Kilo Code 做贡献
+# 为 NovelWeave 做贡献
 
-Kilo Code 是一个开源项目，欢迎所有技能水平的开发者贡献代码。本指南将帮助你开始为 Kilo Code 做出贡献，无论是修复错误、添加功能、改进文档还是分享自定义模式。
+NovelWeave 是一个开源项目，欢迎所有技能水平的开发者贡献代码。本指南将帮助你开始为 NovelWeave 做出贡献，无论是修复错误、添加功能、改进文档还是分享自定义模式。
 
 ## 贡献方式
 
-有多种方式可以为 Kilo Code 做出贡献：
+有多种方式可以为 NovelWeave 做出贡献：
 
 1. **代码贡献**：实现新功能或修复错误
 2. **文档**：改进现有文档或创建新指南
@@ -44,82 +44,85 @@ git checkout -b your-branch-name
 ### 测试你的更改
 
 - 运行测试套件：
-  ```bash
-  npm test
-  ```
+    ```bash
+    npm test
+    ```
 - 在开发扩展中手动测试你的更改
 
 ### 创建拉取请求
 
 1. 将你的更改推送到你的 fork：
-   ```bash
-   git push origin your-branch-name
-   ```
 
-2. 前往 [Kilo Code 仓库](https://github.com/Kilo-Org/novelweave)
+    ```bash
+    git push origin your-branch-name
+    ```
+
+2. 前往 [NovelWeave 仓库](https://github.com/NovelWeave-Org/novelweave)
 
 3. 点击 "New Pull Request" 并选择 "compare across forks"
 
 4. 选择你的 fork 和分支
 
 5. 填写 PR 模板，包括：
-   - 更改的清晰描述
-   - 任何相关问题
-   - 测试步骤
-   - 截图（如适用）
+    - 更改的清晰描述
+    - 任何相关问题
+    - 测试步骤
+    - 截图（如适用）
 
 ## 创建自定义模式
 
-自定义模式是扩展 Kilo Code 功能的强大方式。要创建并分享自定义模式：
+自定义模式是扩展 NovelWeave 功能的强大方式。要创建并分享自定义模式：
 
 1. 按照 [自定义模式文档](/features/custom-modes) 创建你的模式
 
 2. 彻底测试你的模式
 
-3. 通过提交 [GitHub Discussion](https://github.com/Kilo-Org/novelweave/discussions) 与社区分享你的模式
+3. 通过提交 [GitHub Discussion](https://github.com/NovelWeave-Org/novelweave/discussions) 与社区分享你的模式
 
 ## 文档贡献
 
 文档改进是非常有价值的贡献：
 
 1. 遵循文档风格指南：
-   - 使用清晰、简洁的语言
-   - 在适当时包含示例
-   - 使用以 `/docs/` 开头的绝对路径作为内部链接
-   - 不要在链接中包含 `.md` 扩展名
+
+    - 使用清晰、简洁的语言
+    - 在适当时包含示例
+    - 使用以 `/docs/` 开头的绝对路径作为内部链接
+    - 不要在链接中包含 `.md` 扩展名
 
 2. 通过本地运行文档站点测试你的文档更改：
-   ```bash
-   cd docs
-   npm install
-   npm start
-   ```
+
+    ```bash
+    cd docs
+    npm install
+    npm start
+    ```
 
 3. 提交包含文档更改的 PR
 
 ## 社区准则
 
-参与 Kilo Code 社区时：
+参与 NovelWeave 社区时：
 
 - 保持尊重和包容
 - 提供建设性的反馈
 - 帮助新手入门
-- 遵守 [行为准则](https://github.com/Kilo-Org/novelweave/blob/main/CODE_OF_CONDUCT.md)
+- 遵守 [行为准则](https://github.com/NovelWeave-Org/novelweave/blob/main/CODE_OF_CONDUCT.md)
 
 ## 获取帮助
 
 如果你需要帮助：
 
 - 加入我们的 [Discord 社区](https://novelweave.ai/discord) 获取实时支持
-- 在 [GitHub Discussions](https://github.com/Kilo-Org/novelweave/discussions) 上提问
+- 在 [GitHub Discussions](https://github.com/NovelWeave-Org/novelweave/discussions) 上提问
 - 访问我们的 [Reddit 社区](https://www.reddit.com/r/NovelWeave)
 
 ## 致谢
 
-所有贡献者都是 Kilo Code 社区的重要成员。贡献者将在以下地方获得认可：
+所有贡献者都是 NovelWeave 社区的重要成员。贡献者将在以下地方获得认可：
 
 - 发布说明
 - 项目的 README
 - GitHub 上的贡献者列表
 
-感谢你为 Kilo Code 做出贡献，帮助让 AI 驱动的编码辅助对每个人更好！
+感谢你为 NovelWeave 做出贡献，帮助让 AI 驱动的编码辅助对每个人更好！

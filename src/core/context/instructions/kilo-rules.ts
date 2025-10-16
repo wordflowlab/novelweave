@@ -7,7 +7,7 @@ import fs from "fs/promises"
  * Doesn't do anything if .novelweave/rules dir already exists or doesn't exist
  * Returns whether there are any uncaught errors
  */
-export async function ensureLocalKilorulesDirExists(
+export async function ensureLocalNovelWeaverulesDirExists(
 	kilorulePath: string,
 	defaultRuleFilename: string,
 ): Promise<boolean> {

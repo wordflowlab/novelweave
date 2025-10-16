@@ -11,20 +11,20 @@ SPDX-License-Identifier: Apache-2.0
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Kilo Code</name>
+    <name>NovelWeave</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://kilocode.ai">Kilo Code</vendor>
+    <vendor url="https://kilocode.ai">NovelWeave</vendor>
 
     <!-- Resource bundles for internationalization -->
     <resource-bundle>messages.JetbrainsBundle</resource-bundle>
-    <resource-bundle>messages.KilocodeBundle</resource-bundle>
+    <resource-bundle>messages.NovelWeavecodeBundle</resource-bundle>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        <h1>Kilo Code AI Agent</h1>
+        <h1>NovelWeave AI Agent</h1>
         <p>Open Source AI coding assistant for planning, building, and fixing code.</p>
    ]]></description>
    
@@ -42,11 +42,11 @@ SPDX-License-Identifier: Apache-2.0
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <projectService serviceImplementation="ai.kilocode.jetbrains.plugin.WecoderPluginService"/>
-        <jbProtocolCommand implementation="ai.kilocode.jetbrains.commands.KiloCodeAuthProtocolCommand" />
+        <jbProtocolCommand implementation="ai.kilocode.jetbrains.commands.NovelWeaveCodeAuthProtocolCommand" />
         <postStartupActivity implementation="ai.kilocode.jetbrains.plugin.WecoderPlugin"/>
         <editorFactoryListener implementation="ai.kilocode.jetbrains.editor.EditorListener"/>
         <toolWindow factoryClass="ai.kilocode.jetbrains.ui.RooToolWindowFactory"
-                    id="Kilo Code"
+                    id="NovelWeave"
                     secondary="true"
                     icon="/icons/kilo-dark.svg"
                     anchor="right" />
@@ -109,7 +109,7 @@ SPDX-License-Identifier: Apache-2.0
             <reference ref="kilocode.settingsButtonClicked" />
         </group>
 
-        <group id="kilocode.RightClickMenu" text="Kilo Code" description="kilocode main menu"  icon="/icons/kilo-dark-small.svg" popup="true">
+        <group id="kilocode.RightClickMenu" text="NovelWeave" description="kilocode main menu"  icon="/icons/kilo-dark-small.svg" popup="true">
             <group id="kilocode.RightClick.Chat" class="ai.kilocode.jetbrains.actions.RightClickChatActionGroup"
                    text="Chat" description="kilocode chat tool"/>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 
 import { formatLargeNumber } from "@/utils/format"
 import { calculateTokenDistribution } from "@/utils/model-utils"
-import { KiloContextWindowProgressTokensUsed } from "../novelweave/chat/KiloContextWindowProgressTokensUsed"
+import { NovelWeaveContextWindowProgressTokensUsed } from "../novelweave/chat/NovelWeaveContextWindowProgressTokensUsed"
 import { StandardTooltip } from "@/components/ui"
 
 interface ContextWindowProgressProps {
@@ -68,7 +68,7 @@ export const ContextWindowProgress = ({ contextWindow, contextTokens, maxTokens 
 								style={{ width: `${currentPercent}%` }}
 								data-testid="context-tokens-used">
 								{/* Current tokens used - darkest */}
-								<KiloContextWindowProgressTokensUsed currentPercent={currentPercent} />
+								<NovelWeaveContextWindowProgressTokensUsed currentPercent={currentPercent} />
 							</div>
 
 							{/* Container for reserved tokens */}

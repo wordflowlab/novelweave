@@ -15,9 +15,9 @@ vi.mock("vscode", () => ({
 vi.mock("../../../shared/package", () => ({
 	Package: {
 		name: "novelweave",
-		publisher: "Kilo-Org",
+		publisher: "NovelWeave-Org",
 		version: "1.0.0",
-		outputChannel: "Kilo-Code",
+		outputChannel: "NovelWeave-Code",
 	},
 }))
 

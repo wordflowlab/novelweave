@@ -30,7 +30,7 @@ const DescriptionWithLink: React.FC<DescriptionWithLinkProps> = ({ children, hre
 	</p>
 )
 
-const KiloRulesToggleModal: React.FC = () => {
+const NovelWeaveRulesToggleModal: React.FC = () => {
 	const { t } = useTranslation()
 
 	const [isVisible, setIsVisible] = useState(false)
@@ -212,4 +212,4 @@ const StyledTabButton = styled.button<{ $isActive: boolean }>`
 	}
 `
 
-export default KiloRulesToggleModal
+export default NovelWeaveRulesToggleModal

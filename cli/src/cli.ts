@@ -47,11 +47,11 @@ export class CLI {
 		}
 
 		try {
-			logs.info("Initializing Kilo Code CLI...", "CLI")
+			logs.info("Initializing NovelWeave CLI...", "CLI")
 
 			// Set terminal title
 			const folderName = basename(this.options.workspace || process.cwd())
-			process.stdout.write(`\x1b]0;Kilo Code - ${folderName}\x07`)
+			process.stdout.write(`\x1b]0;NovelWeave - ${folderName}\x07`)
 
 			// Create Jotai store
 			this.store = createStore()
@@ -115,7 +115,7 @@ export class CLI {
 			await this.requestRouterModels()
 
 			this.isInitialized = true
-			logs.info("Kilo Code CLI initialized successfully", "CLI")
+			logs.info("NovelWeave CLI initialized successfully", "CLI")
 		} catch (error) {
 			logs.error("Failed to initialize CLI", "CLI", { error })
 			throw error
@@ -174,7 +174,7 @@ export class CLI {
 	 */
 	async dispose(): Promise<void> {
 		try {
-			logs.info("Disposing Kilo Code CLI...", "CLI")
+			logs.info("Disposing NovelWeave CLI...", "CLI")
 
 			// Determine exit code based on CI mode and exit reason
 			let exitCode = 0
@@ -220,7 +220,7 @@ export class CLI {
 			this.store = null
 
 			this.isInitialized = false
-			logs.info("Kilo Code CLI disposed", "CLI")
+			logs.info("NovelWeave CLI disposed", "CLI")
 
 			// Exit process with appropriate code
 			process.exit(exitCode)

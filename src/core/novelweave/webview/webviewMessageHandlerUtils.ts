@@ -5,7 +5,7 @@ import { t } from "../../../i18n"
 import { WebviewMessage } from "../../../shared/WebviewMessage"
 import { Task } from "../../task/Task"
 import axios from "axios"
-import { getKiloBaseUriFromToken } from "../../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../../shared/novelweave/token"
 
 // Helper function to delete messages for resending
 const deleteMessagesForResend = async (cline: Task, originalMessageIndex: number, originalMessageTs: number) => {
@@ -95,7 +95,7 @@ export const fetchNovelweaveNotificationsHandler = async (provider: ClineProvide
 			headers["X-NOVELWEAVE-TESTER"] = "SUPPRESS"
 		}
 
-		const response = await axios.get(`${getKiloBaseUriFromToken(novelweaveToken)}/api/users/notifications`, {
+		const response = await axios.get(`${getNovelWeaveBaseUriFromToken(novelweaveToken)}/api/users/notifications`, {
 			headers,
 			timeout: 5000,
 		})

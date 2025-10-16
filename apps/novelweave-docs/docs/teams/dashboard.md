@@ -4,7 +4,7 @@ sidebar_label: Dashboard Overview
 
 # Teams Dashboard
 
-The Kilo for Teams dashboard provides complete visibility into your team's AI usage, costs, and management.
+The NovelWeave for Teams dashboard provides complete visibility into your team's AI usage, costs, and management.
 
 <center>
 <img src="/docs/img/teams/dashboard.png" alt="Invite your team members" width="700" />
@@ -89,7 +89,7 @@ Interactive graphs displaying:
 
 ## Billing Tab
 
-Complete financial management for your Kilo for Teams subscription.
+Complete financial management for your NovelWeave for Teams subscription.
 
 - **Available credits** remaining
 - **Downloadable invoices** for expense reporting
@@ -106,11 +106,11 @@ Complete financial management for your Kilo for Teams subscription.
 
 ## Subscriptions Tab
 
-Manage your Kilo for Teams plan and seat allocation.
+Manage your NovelWeave for Teams plan and seat allocation.
 
 ### Current Plan Details
 
-- **Plan type** (Kilo for Teams)
+- **Plan type** (NovelWeave for Teams)
 - **Monthly cost** per seat ($29/user/month)
 - **Billing cycle** dates and next charge
 - **Plan benefits** and included features

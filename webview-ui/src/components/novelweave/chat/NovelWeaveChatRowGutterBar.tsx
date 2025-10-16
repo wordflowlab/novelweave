@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 import { getTaskTimelineMessageColor } from "@/utils/messageColors"
 import type { ClineMessage } from "@roo-code/types"
 
-export function KiloChatRowGutterBar({ message }: { message: ClineMessage }) {
+export function NovelWeaveChatRowGutterBar({ message }: { message: ClineMessage }) {
 	const { hoveringTaskTimeline } = useExtensionState()
 
 	return (

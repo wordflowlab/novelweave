@@ -5,7 +5,7 @@ import { RooCodeEventName, type ClineMessage } from "@roo-code/types"
 import { waitUntilCompleted } from "./utils"
 import { setDefaultSuiteTimeout } from "./test-utils"
 
-suite("Kilo Code Task", function () {
+suite("NovelWeave Task", function () {
 	setDefaultSuiteTimeout(this)
 
 	test("Should handle prompt and response correctly", async () => {
@@ -28,9 +28,10 @@ suite("Kilo Code Task", function () {
 
 		assert.ok(
 			!!messages.find(
-				({ say, text }) => (say === "completion_result" || say === "text") && text?.includes("My name is Kilo"),
+				({ say, text }) =>
+					(say === "completion_result" || say === "text") && text?.includes("My name is NovelWeave"),
 			),
-			`Completion should include "My name is Kilo"`,
+			`Completion should include "My name is NovelWeave"`,
 		)
 	})
 })

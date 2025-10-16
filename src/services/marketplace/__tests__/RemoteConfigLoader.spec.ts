@@ -15,7 +15,7 @@ vi.mock("@roo-code/cloud", () => ({
 
 // novelweave_change start
 vi.mock("../../../shared/novelweave/token", () => ({
-	getKiloBaseUriFromToken: () => "https://test.api.com",
+	getNovelWeaveBaseUriFromToken: () => "https://test.api.com",
 }))
 // novelweave_change end
 

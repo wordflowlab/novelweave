@@ -13,7 +13,7 @@
 		"cancel": "취소"
 	},
 	"ui": {
-		"initializing": "Kilo Code를 초기화하는 중...",
+		"initializing": "NovelWeave를 초기화하는 중...",
 		"systemInformation": "시스템 정보"
 	}
 }

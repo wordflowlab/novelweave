@@ -4,27 +4,27 @@ sidebar_label: Migrating from Other Tools
 
 # Migrating from Other Tools
 
-Switch to Kilo for Teams from other AI coding tools and experience transparent pricing, no vendor lock-in, and superior team management capabilities.
+Switch to NovelWeave for Teams from other AI coding tools and experience transparent pricing, no vendor lock-in, and superior team management capabilities.
 
-## Why Teams Switch to Kilo
+## Why Teams Switch to NovelWeave
 
 ### Transparency vs. Opacity
 
 **Other AI coding vendors** hide their true costs behind opaque subscription models, leaving you wondering what you're actually paying for.
 
-**Kilo for Teams** shows you exactly what each AI request costs - no markup, no hidden fees, complete transparency.
+**NovelWeave for Teams** shows you exactly what each AI request costs - no markup, no hidden fees, complete transparency.
 
 ### No Rate Limiting
 
 **Other tools** slow you down with rate limits and model switching when you need AI most.
 
-**Kilo for Teams** never limits your usage - pay for what you use, use what you need.
+**NovelWeave for Teams** never limits your usage - pay for what you use, use what you need.
 
 ### True Team Management
 
 **Other solutions** offer basic user management with limited visibility.
 
-**Kilo for Teams** provides comprehensive team analytics, role-based permissions, and detailed usage insights.
+**NovelWeave for Teams** provides comprehensive team analytics, role-based permissions, and detailed usage insights.
 
 ## Migrating from Cursor
 
@@ -36,7 +36,7 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 - **Vendor lock-in** with proprietary systems
 - **Hidden model switching** that degrades quality
 
-### What You Gain with Kilo for Teams
+### What You Gain with NovelWeave for Teams
 
 - **Transparent AI costs** - See exactly what providers charge
 - **No rate limiting** - Use AI when you need it most
@@ -50,10 +50,10 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 
 1. **Audit current Cursor usage** across your team
 2. **Identify active users** and their usage patterns
-3. **Calculate current costs** (if visible) vs. Kilo for Teams pricing
+3. **Calculate current costs** (if visible) vs. NovelWeave for Teams pricing
 4. **Plan migration timeline** to minimize disruption
 
-**Step 2: Kilo for Teams Setup**
+**Step 2: NovelWeave for Teams Setup**
 
 1. **Create organization** at [app.novelweave.com](https://app.novelweave.com)
 2. **Subscribe to Teams** with appropriate seat count
@@ -62,21 +62,21 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 
 **Step 3: Team Migration**
 
-1. **Invite team members** to Kilo for Teams
-2. **Install Kilo Code extension** alongside Cursor initially
+1. **Invite team members** to NovelWeave for Teams
+2. **Install NovelWeave extension** alongside Cursor initially
 3. **Migrate projects gradually** starting with non-critical work
-4. **Train team** on Kilo Code features and workflows
+4. **Train team** on NovelWeave features and workflows
 
 **Step 4: Full Transition**
 
-1. **Monitor usage patterns** in Kilo for Teams dashboard
+1. **Monitor usage patterns** in NovelWeave for Teams dashboard
 2. **Optimize settings** based on team feedback
 3. **Cancel Cursor subscriptions** once fully migrated
 4. **Uninstall Cursor** from team machines
 
 ### Cursor Feature Mapping
 
-| Cursor Feature         | Kilo for Teams Equivalent             |
+| Cursor Feature         | NovelWeave for Teams Equivalent       |
 | ---------------------- | ------------------------------------- |
 | AI Chat                | Chat interface with multiple modes    |
 | Code Generation        | Code mode with advanced tools         |
@@ -95,7 +95,7 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 - **Microsoft ecosystem lock-in** - Tied to Microsoft services
 - **Limited customization** - Few options for team-specific needs
 
-### Kilo for Teams Advantages
+### NovelWeave for Teams Advantages
 
 - **Multiple AI providers** - Choose from 18+ model providers
 - **Advanced team management** - Roles, permissions, and analytics
@@ -108,13 +108,13 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 **Phase 1: Parallel Usage (Week 1-2)**
 
 1. **Keep GitHub Copilot** active during transition
-2. **Install Kilo Code** extension for team members
-3. **Start with simple tasks** in Kilo Code
+2. **Install NovelWeave** extension for team members
+3. **Start with simple tasks** in NovelWeave
 4. **Compare results** and team satisfaction
 
 **Phase 2: Gradual Transition (Week 3-4)**
 
-1. **Use Kilo Code** for new projects
+1. **Use NovelWeave** for new projects
 2. **Migrate existing projects** one at a time
 3. **Train team** on advanced features
 4. **Optimize usage patterns** based on analytics
@@ -123,12 +123,12 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 
 1. **Disable GitHub Copilot** for most team members
 2. **Cancel GitHub Copilot** subscriptions
-3. **Optimize Kilo for Teams** settings
+3. **Optimize NovelWeave for Teams** settings
 4. **Document new workflows** and best practices
 
 ### GitHub Copilot Feature Comparison
 
-| GitHub Copilot   | Kilo for Teams                   | Advantage              |
+| GitHub Copilot   | NovelWeave for Teams             | Advantage              |
 | ---------------- | -------------------------------- | ---------------------- |
 | Code suggestions | AI-powered code generation       | ✅ More model choices  |
 | Chat interface   | Multi-mode chat system           | ✅ Specialized modes   |
@@ -164,16 +164,16 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 
 - [ ] Audit current AI coding tool usage
 - [ ] Identify team members and their roles
-- [ ] Calculate current costs vs. Kilo for Teams pricing
+- [ ] Calculate current costs vs. NovelWeave for Teams pricing
 - [ ] Plan migration timeline and milestones
 - [ ] Prepare team communication and training
 
 **Migration Execution**
 
-- [ ] Set up Kilo for Teams organization
+- [ ] Set up NovelWeave for Teams organization
 - [ ] Configure team settings and policies
 - [ ] Invite team members and assign roles
-- [ ] Install Kilo Code extension across team
+- [ ] Install NovelWeave extension across team
 - [ ] Start with pilot projects or non-critical work
 
 **Post-Migration Optimization**
@@ -195,7 +195,7 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 - Rate limiting forces inefficient workflows
 - Model switching without notification
 
-**Kilo for Teams Transparent Pricing**
+**NovelWeave for Teams Transparent Pricing**
 
 - Pay exactly what AI providers charge
 - See cost of every request in real-time
@@ -211,7 +211,7 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 3. **Opportunity costs** from limited model access
 4. **Management overhead** from poor team visibility
 
-**Kilo for Teams Benefits**
+**NovelWeave for Teams Benefits**
 
 1. **Transparent AI costs** (typically 30-50% lower)
 2. **Productivity gains** from no rate limiting
@@ -222,11 +222,11 @@ Switch to Kilo for Teams from other AI coding tools and experience transparent p
 
 **10-person team, moderate AI usage:**
 
-| Tool           | Monthly Cost    | Hidden Costs         | Total       |
-| -------------- | --------------- | -------------------- | ----------- |
-| Cursor Pro     | $200/month      | Rate limiting losses | ~$300/month |
-| GitHub Copilot | $190/month      | Limited model access | ~$250/month |
-| Kilo for Teams | $290 + AI costs | None                 | ~$200/month |
+| Tool                 | Monthly Cost    | Hidden Costs         | Total       |
+| -------------------- | --------------- | -------------------- | ----------- |
+| Cursor Pro           | $200/month      | Rate limiting losses | ~$300/month |
+| GitHub Copilot       | $190/month      | Limited model access | ~$250/month |
+| NovelWeave for Teams | $290 + AI costs | None                 | ~$200/month |
 
 _Actual savings vary based on usage patterns and team efficiency gains._
 
@@ -236,7 +236,7 @@ _Actual savings vary based on usage patterns and team efficiency gains._
 
 **Week 1: Basics**
 
-- Kilo Code extension installation and setup
+- NovelWeave extension installation and setup
 - Basic chat interface and mode usage
 - Understanding transparent pricing model
 - Team dashboard overview

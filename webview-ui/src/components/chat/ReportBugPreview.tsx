@@ -50,7 +50,7 @@ const ReportBugPreview: React.FC<ReportBugPreviewProps> = ({ data }) => {
 
 				{bugData.novelweave_version && (
 					<div>
-						<div className="font-semibold">Kilo Code Version</div>
+						<div className="font-semibold">NovelWeave Version</div>
 						<MarkdownBlock markdown={bugData.novelweave_version} />
 					</div>
 				)}

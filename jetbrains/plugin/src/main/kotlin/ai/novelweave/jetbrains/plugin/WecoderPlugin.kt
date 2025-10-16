@@ -117,7 +117,7 @@ class WecoderPlugin : StartupActivity.DumbAware {
         val osArch = System.getProperty("os.arch")
         
         LOG.info(
-            "Initializing Kilo Code plugin for project: ${project.name}, " +
+            "Initializing NovelWeave plugin for project: ${project.name}, " +
             "OS: $osName $osVersion ($osArch), " +
             "IDE: ${appInfo.fullApplicationName} (build ${appInfo.build}), " +
             "Plugin version: $pluginVersion, " +
@@ -135,14 +135,14 @@ class WecoderPlugin : StartupActivity.DumbAware {
             
             // Register project-level resource disposal
             Disposer.register(project, Disposable {
-                LOG.info("Disposing Kilo Code plugin for project: ${project.name}")
+                LOG.info("Disposing NovelWeave plugin for project: ${project.name}")
                 pluginService.dispose()
                 // SystemObjectProvider is now project-scoped and will be disposed automatically
             })
 
-            LOG.info("Kilo Code plugin initialized successfully for project: ${project.name}")
+            LOG.info("NovelWeave plugin initialized successfully for project: ${project.name}")
         } catch (e: Exception) {
-            LOG.error("Failed to initialize Kilo Code plugin", e)
+            LOG.error("Failed to initialize NovelWeave plugin", e)
         }
     }
 }

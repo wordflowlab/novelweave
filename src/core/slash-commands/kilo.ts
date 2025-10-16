@@ -21,9 +21,9 @@ function enabledWorkflowToggles(workflowToggles: ClineRulesToggles) {
 
 /**
  * This file is a duplicate of parseSlashCommands, but it adds a check for the newrule command
- * and processes Kilo-specific slash commands. It should be merged with parseSlashCommands in the future.
+ * and processes NovelWeave-specific slash commands. It should be merged with parseSlashCommands in the future.
  */
-export async function parseKiloSlashCommands(
+export async function parseNovelWeaveSlashCommands(
 	text: string,
 	localWorkflowToggles: ClineRulesToggles,
 	globalWorkflowToggles: ClineRulesToggles,

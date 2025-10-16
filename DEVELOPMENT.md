@@ -1,6 +1,6 @@
-# Kilo Code Development Guide
+# NovelWeave Development Guide
 
-Welcome to the Kilo Code development guide! This document will help you set up your development environment and understand how to work with the codebase. Whether you're fixing bugs, adding features, or just exploring the code, this guide will get you started.
+Welcome to the NovelWeave development guide! This document will help you set up your development environment and understand how to work with the codebase. Whether you're fixing bugs, adding features, or just exploring the code, this guide will get you started.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ Before you begin, choose one of the following development environment options:
 ### Option 1: Native Development (Recommended for MacOS/Linux/Windows Subsystem for Linux)
 
 1. **Git** - For version control
-2. **Node.js** (version [v20.19.2](https://github.com/Kilo-Org/novelweave/blob/main/.nvmrc) recommended)
+2. **Node.js** (version [v20.19.2](https://github.com/NovelWeave-Org/novelweave/blob/main/.nvmrc) recommended)
 3. **pnpm** - Package manager (https://pnpm.io/)
 4. **Visual Studio Code** - Our recommended IDE for development
 
@@ -38,7 +38,7 @@ Before you begin, choose one of the following development environment options:
 1. **Fork and Clone the Repository**:
 
     - **Fork the Repository**:
-        - Visit the [Kilo Code GitHub repository](https://github.com/Kilo-Org/novelweave)
+        - Visit the [NovelWeave GitHub repository](https://github.com/NovelWeave-Org/novelweave)
         - Click the "Fork" button in the top-right corner to create your own copy.
     - **Clone Your Fork**:
         ```bash
@@ -63,7 +63,7 @@ While not strictly necessary for running the extension, these extensions are rec
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Integrates ESLint into VS Code.
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Integrates Prettier into VS Code.
 
-The full list of recommended extensions is [here](https://github.com/Kilo-Org/novelweave/blob/main/.vscode/extensions.json)
+The full list of recommended extensions is [here](https://github.com/NovelWeave-Org/novelweave/blob/main/.vscode/extensions.json)
 
 #### Devcontainer Setup (Recommended for Windows)
 
@@ -142,7 +142,7 @@ The project is organized into several key directories:
 To run the extension in development mode:
 
 1. Press `F5` (or select **Run** → **Start Debugging**) in VSCode
-2. This will open a new VSCode window with Kilo Code loaded
+2. This will open a new VSCode window with NovelWeave loaded
 
 ### Hot Reloading
 
@@ -186,7 +186,7 @@ Replace `[version]` with the current version number.
 
 ## Testing
 
-Kilo Code uses several types of tests to ensure quality:
+NovelWeave uses several types of tests to ensure quality:
 
 ### Unit Tests
 
@@ -245,18 +245,18 @@ These hooks help maintain code quality and consistency. If you encounter issues 
 ### Debugging Tips
 
 - Use `console.log()` statements in your code for debugging
-- Check the Output panel in VSCode (View > Output) and select "Kilo Code" from the dropdown
+- Check the Output panel in VSCode (View > Output) and select "NovelWeave" from the dropdown
 - For webview issues, use the browser developer tools in the webview (right-click > "Inspect Element")
 
 ## Contributing
 
-We welcome contributions to Kilo Code! Here's how you can help:
+We welcome contributions to NovelWeave! Here's how you can help:
 
-1. **Report an issue** using [GitHub Issues](https://github.com/Kilo-Org/novelweave/issues)
+1. **Report an issue** using [GitHub Issues](https://github.com/NovelWeave-Org/novelweave/issues)
 2. **Find an issue** and submit a Pull Request with your fix
 3. **Write tests** to improve Code Coverage
 4. **Improve Documentation** at [novelweave.ai/docs](https://novelweave.ai/docs)
-5. **Suggest a new feature** using [GitHub Discussions](https://github.com/Kilo-Org/novelweave/discussions/categories/ideas)!
+5. **Suggest a new feature** using [GitHub Discussions](https://github.com/NovelWeave-Org/novelweave/discussions/categories/ideas)!
 6. Want to **implement something new**? Awesome! We'd be glad to support you on [Discord](https://discord.gg/Ja6BkfyTzJ)!
 
 ## Community

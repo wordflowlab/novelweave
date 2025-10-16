@@ -1,7 +1,7 @@
 import axios from "axios"
 import * as yaml from "yaml"
 import { z } from "zod"
-import { getKiloBaseUriFromToken } from "../../shared/novelweave/token" // novelweave_change
+import { getNovelWeaveBaseUriFromToken } from "../../shared/novelweave/token" // novelweave_change
 import {
 	type MarketplaceItem,
 	type MarketplaceItemType,
@@ -24,7 +24,7 @@ export class RemoteConfigLoader {
 	private cacheDuration = 5 * 60 * 1000 // 5 minutes
 
 	constructor() {
-		this.apiBaseUrl = getKiloBaseUriFromToken()
+		this.apiBaseUrl = getNovelWeaveBaseUriFromToken()
 	}
 
 	async loadAllItems(hideMarketplaceMcps = false): Promise<MarketplaceItem[]> {

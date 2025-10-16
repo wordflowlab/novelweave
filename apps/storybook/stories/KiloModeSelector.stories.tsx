@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import KiloModeSelector from "../../../webview-ui/src/components/novelweave/KiloModeSelector"
+import NovelWeaveModeSelector from "../../../webview-ui/src/components/novelweave/NovelWeaveModeSelector"
 import { Mode } from "@roo/modes"
 import { DEFAULT_MODES } from "@roo-code/types"
 import { withI18n } from "../src/decorators/withI18n"
@@ -16,12 +16,12 @@ interface WrapperProps {
 	initiallyOpen?: boolean
 }
 
-const KiloModeSelectorWrapper = (props: WrapperProps) => {
+const NovelWeaveModeSelectorWrapper = (props: WrapperProps) => {
 	const [selectedMode, setSelectedMode] = useState<Mode>(props.value || "code")
 
 	return (
 		<div style={{ padding: "20px", minHeight: "400px", maxWidth: "300px" }}>
-			<KiloModeSelector
+			<NovelWeaveModeSelector
 				{...props}
 				value={selectedMode}
 				onChange={setSelectedMode}
@@ -31,9 +31,9 @@ const KiloModeSelectorWrapper = (props: WrapperProps) => {
 	)
 }
 
-const meta: Meta<typeof KiloModeSelectorWrapper> = {
-	title: "Chat/KiloModeSelector",
-	component: KiloModeSelectorWrapper,
+const meta: Meta<typeof NovelWeaveModeSelectorWrapper> = {
+	title: "Chat/NovelWeaveModeSelector",
+	component: NovelWeaveModeSelectorWrapper,
 	decorators: [withI18n, withTheme, withTooltipProvider],
 }
 

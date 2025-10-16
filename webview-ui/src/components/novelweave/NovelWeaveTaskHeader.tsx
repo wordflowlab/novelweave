@@ -43,7 +43,7 @@ export interface TaskHeaderProps {
 	todos?: any[]
 }
 
-const KiloTaskHeader = ({
+const NovelWeaveTaskHeader = ({
 	task,
 	tokensIn,
 	tokensOut,
@@ -336,4 +336,4 @@ export const highlightText = (text?: string, withShadow = true, customModes?: an
 	return [text]
 }
 
-export default memo(KiloTaskHeader)
+export default memo(NovelWeaveTaskHeader)

@@ -108,12 +108,12 @@ import {
 	checkpointRestore,
 	checkpointDiff,
 } from "../checkpoints"
-import { processKiloUserContentMentions } from "../mentions/processKiloUserContentMentions" // novelweave_change
+import { processNovelWeaveUserContentMentions } from "../mentions/processNovelWeaveUserContentMentions" // novelweave_change
 import { refreshWorkflowToggles } from "../context/instructions/workflows" // novelweave_change
 import { parseMentions } from "../mentions" // novelweave_change
-import { parseKiloSlashCommands } from "../slash-commands/kilo" // novelweave_change
+import { parseNovelWeaveSlashCommands } from "../slash-commands/kilo" // novelweave_change
 import { GlobalFileNames } from "../../shared/globalFileNames" // novelweave_change
-import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules" // novelweave_change
+import { ensureLocalNovelWeaverulesDirExists } from "../context/instructions/kilo-rules" // novelweave_change
 import { getMessagesSinceLastSummary, summarizeConversation } from "../condense"
 import { Gpt5Metadata, ClineMessageWithMetadata } from "./types"
 import { MessageQueueService } from "../message-queue/MessageQueueService"
@@ -1101,7 +1101,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		contextCondense?: ContextCondense,
 	): Promise<undefined> {
 		if (this.abort) {
-			throw new Error(`[Kilo Code#say] task ${this.taskId}.${this.instanceId} aborted`)
+			throw new Error(`[NovelWeave#say] task ${this.taskId}.${this.instanceId} aborted`)
 		}
 
 		if (partial !== undefined) {
@@ -1221,7 +1221,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		})()
 		await this.say(
 			"error",
-			`Kilo Code tried to use ${toolName}${
+			`NovelWeave tried to use ${toolName}${
 				relPath ? ` for '${relPath.toPosix()}'` : ""
 			} without value for required parameter '${paramName}'. ${novelweaveExtraText}Retrying...`,
 		)
@@ -1854,7 +1854,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			} = (await this.providerRef.deref()?.getState()) ?? {}
 
 			// novelweave_change start
-			const [parsedUserContent, needsRulesFileCheck] = await processKiloUserContentMentions({
+			const [parsedUserContent, needsRulesFileCheck] = await processNovelWeaveUserContentMentions({
 				context: this.getContext(),
 				userContent: currentUserContent,
 				cwd: this.cwd,
@@ -2504,11 +2504,12 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 							)
 
 							// when parsing slash commands, we still want to allow the user to provide their desired context
-							const { processedText, needsRulesFileCheck: needsCheck } = await parseKiloSlashCommands(
-								parsedText,
-								localWorkflowToggles,
-								globalWorkflowToggles,
-							)
+							const { processedText, needsRulesFileCheck: needsCheck } =
+								await parseNovelWeaveSlashCommands(
+									parsedText,
+									localWorkflowToggles,
+									globalWorkflowToggles,
+								)
 
 							if (needsCheck) {
 								needsClinerulesFileCheck = true
@@ -2538,7 +2539,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		// After processing content, check clinerulesData if needed
 		let clinerulesError = false
 		if (needsClinerulesFileCheck) {
-			clinerulesError = await ensureLocalKilorulesDirExists(this.cwd, GlobalFileNames.kiloRules)
+			clinerulesError = await ensureLocalNovelWeaverulesDirExists(this.cwd, GlobalFileNames.kiloRules)
 		}
 
 		// Return all results
@@ -2616,7 +2617,8 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				{
 					maxConcurrentFileReads: maxConcurrentFileReads ?? 5,
 					todoListEnabled: apiConfiguration?.todoListEnabled ?? true,
-					useAgentRules: vscode.workspace.getConfiguration("novelweave").get<boolean>("useAgentRules") ?? true,
+					useAgentRules:
+						vscode.workspace.getConfiguration("novelweave").get<boolean>("useAgentRules") ?? true,
 					newTaskRequireTodos: vscode.workspace
 						.getConfiguration("novelweave")
 						.get<boolean>("newTaskRequireTodos", false),

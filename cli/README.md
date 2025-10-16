@@ -1,6 +1,6 @@
-# Kilo Code CLI
+# NovelWeave CLI
 
-Terminal User Interface for Kilo Code
+Terminal User Interface for NovelWeave
 
 ## Installation
 
@@ -8,13 +8,13 @@ Terminal User Interface for Kilo Code
 npm install -g @novelweave/cli@alpha
 ```
 
-Then, make sure you place your Kilo Code API token in the CLI config:
+Then, make sure you place your NovelWeave API token in the CLI config:
 
 ```bash
 novelweave config # this opens up your editor
 ```
 
-You can find your Kilo Code API token on your profile page at [app.novelweave.ai](https://app.novelweave.ai), and place it in the `novelweaveToken` field in the CLI config.
+You can find your NovelWeave API token on your profile page at [app.novelweave.ai](https://app.novelweave.ai), and place it in the `novelweaveToken` field in the CLI config.
 
 ## Known Issues
 
@@ -24,7 +24,7 @@ We don't detect the theme of your terminal, and are aware the the current theme 
 
 ### Outdated dependency warnings
 
-When installing Kilo Code CLI you'll be greeted by some scary looking dependency deprecation warnings. We're aware of the issue and will resolve it shortly.
+When installing NovelWeave CLI you'll be greeted by some scary looking dependency deprecation warnings. We're aware of the issue and will resolve it shortly.
 
 ### Windows Support
 
@@ -47,7 +47,7 @@ novelweave --workspace /path/to/project
 
 ### CI Mode (Non-Interactive)
 
-CI mode allows Kilo Code to run in automated environments like CI/CD pipelines without requiring user interaction.
+CI mode allows NovelWeave to run in automated environments like CI/CD pipelines without requiring user interaction.
 
 ```bash
 # Run in CI mode with a prompt
@@ -154,7 +154,7 @@ This instructs the AI to proceed without user input.
 
 ```yaml
 # GitHub Actions example
-- name: Run Kilo Code
+- name: Run NovelWeave
   run: |
       echo "Implement the new feature" | novelweave --ci --timeout 600
 ```

@@ -62,7 +62,7 @@ describe("GhostModelPerformance", () => {
 		}
 	}
 
-	describe("Kilo Code", () => {
+	describe("NovelWeave", () => {
 		it("google/gemini-2.5-flash", async () => {
 			if (!KEYS.NOVELWEAVE) {
 				return

@@ -9,7 +9,7 @@
 		"editModesConfig": "モード設定を編集",
 		"editGlobalModes": "グローバルモードを編集",
 		"editProjectModes": "プロジェクトモードを編集 (.novelweavemodes)",
-		"createModeHelpText": "モードはKilo Codeの振る舞いを調整する専門的なペルソナです。<0>モードの使用について学ぶ</0>か、<1>モードのカスタマイズについて学ぶ</1>。",
+		"createModeHelpText": "モードはNovelWeaveの振る舞いを調整する専門的なペルソナです。<0>モードの使用について学ぶ</0>か、<1>モードのカスタマイズについて学ぶ</1>。",
 		"selectMode": "モードを検索"
 	},
 	"apiConfiguration": {
@@ -18,7 +18,7 @@
 	},
 	"organizationMode": {
 		"title": "組織モード",
-		"description": "このモードは組織によって提供されており、ここでは編集できません。このモードを変更するには、Kilo Code Dashboardにアクセスしてください。",
+		"description": "このモードは組織によって提供されており、ここでは編集できません。このモードを変更するには、NovelWeave Dashboardにアクセスしてください。",
 		"cannotEdit": "組織モードは編集できません"
 	},
 	"tools": {
@@ -39,7 +39,7 @@
 	"roleDefinition": {
 		"title": "役割の定義",
 		"resetToDefault": "デフォルトにリセット",
-		"description": "このモードのKilo Codeの専門知識と個性を定義します。この説明は、Kilo Codeが自身をどのように表現し、タスクにどのように取り組むかを形作ります。"
+		"description": "このモードのNovelWeaveの専門知識と個性を定義します。この説明は、NovelWeaveが自身をどのように表現し、タスクにどのように取り組むかを形作ります。"
 	},
 	"description": {
 		"title": "短い説明（人間向け）",
@@ -110,7 +110,7 @@
 		"types": {
 			"ENHANCE": {
 				"label": "プロンプトを強化",
-				"description": "プロンプト強化を使用して、入力に合わせたカスタマイズされた提案や改善を得ることができます。これにより、Kilo Codeがあなたの意図を理解し、最適な回答を提供できます。チャットの✨アイコンから利用できます。"
+				"description": "プロンプト強化を使用して、入力に合わせたカスタマイズされた提案や改善を得ることができます。これにより、NovelWeaveがあなたの意図を理解し、最適な回答を提供できます。チャットの✨アイコンから利用できます。"
 			},
 			"CONDENSE": {
 				"label": "コンテキスト圧縮",
@@ -187,7 +187,7 @@
 		},
 		"roleDefinition": {
 			"label": "役割の定義",
-			"description": "このモードのKilo Codeの専門知識と個性を定義します。"
+			"description": "このモードのNovelWeaveの専門知識と個性を定義します。"
 		},
 		"whenToUse": {
 			"label": "使用タイミング（オプション）",

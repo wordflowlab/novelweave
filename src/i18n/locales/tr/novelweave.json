@@ -46,16 +46,16 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Kilo Code commit mesajı oluşturucu etkinleştirildi",
+		"activated": "NovelWeave commit mesajı oluşturucu etkinleştirildi",
 		"gitNotFound": "⚠️ Git deposu bulunamadı veya git kullanılamıyor",
 		"gitInitError": "⚠️ Git başlatma hatası: {{error}}",
-		"generating": "Kilo: Commit mesajı oluşturuluyor...",
-		"noChanges": "Kilo: Analiz edilecek değişiklik bulunamadı",
-		"generated": "Kilo: Commit mesajı oluşturuldu!",
-		"generationFailed": "Kilo: Commit mesajı oluşturulamadı: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Hazırlanmamış değişikliklerle mesaj oluşturuluyor",
-		"activationFailed": "Kilo: Mesaj oluşturucu etkinleştirilemedi: {{error}}",
-		"providerRegistered": "Kilo: Commit mesajı sağlayıcısı kaydedildi"
+		"generating": "NovelWeave: Commit mesajı oluşturuluyor...",
+		"noChanges": "NovelWeave: Analiz edilecek değişiklik bulunamadı",
+		"generated": "NovelWeave: Commit mesajı oluşturuldu!",
+		"generationFailed": "NovelWeave: Commit mesajı oluşturulamadı: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Hazırlanmamış değişikliklerle mesaj oluşturuluyor",
+		"activationFailed": "NovelWeave: Mesaj oluşturucu etkinleştirilemedi: {{error}}",
+		"providerRegistered": "NovelWeave: Commit mesajı sağlayıcısı kaydedildi"
 	},
 	"checkpoints": {
 		"nestedGitRepos": "Kontrol noktaları kullanılamaz, çünkü şu konumda iç içe Git deposu tespit edildi: {{path}}. Kontrol noktaları özelliğini kullanmak için iç içe Git depolarını kaldırın veya taşıyın ya da bu uyarıyı gizlemek için ayarlarda kontrol noktalarını devre dışı bırakın.",
@@ -64,12 +64,12 @@
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (devre dışı)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (devre dışı)",
 				"tokenError": "Autocomplete kullanmak için geçerli bir token ayarlanmalı",
 				"lastCompletion": "Son öneri:",
 				"sessionTotal": "Oturum toplam maliyeti:",
@@ -80,55 +80,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Kodun analiz ediliyor...",
 			"generating": "Önerilen düzenlemeler oluşturuluyor...",
 			"processing": "Önerilen düzenlemeler işleniyor...",
 			"showing": "Önerilen düzenlemeler gösteriliyor..."
 		},
 		"input": {
-			"title": "Kilo Code: Hızlı Görev",
+			"title": "NovelWeave: Hızlı Görev",
 			"placeholder": "örn., 'bu fonksiyonu daha verimli olacak şekilde yeniden düzenle'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Önerilen Düzenlemeler Oluştur",
+			"generateSuggestions": "NovelWeave: Önerilen Düzenlemeler Oluştur",
 			"displaySuggestions": "Önerilen Düzenlemeleri Göster",
 			"cancelSuggestions": "Önerilen Düzenlemeleri İptal Et",
 			"applyCurrentSuggestion": "Mevcut Önerilen Düzenlemeyi Uygula",
 			"applyAllSuggestions": "Tüm Önerilen Düzenlemeleri Uygula",
 			"promptCodeSuggestion": "Hızlı Görev",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Önerilen Düzenlemeler"
+			"title": "NovelWeave: Önerilen Düzenlemeler"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "Hızlı görevler ve önerilen düzenlemeler konusunda sana yardımcı olabilirim."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete, GitHub Copilot ile bir çakışma nedeniyle engelleniyor. Bunu düzeltmek için Copilot'un satır içi önerilerini devre dışı bırakmalısın.",
+			"message": "NovelWeave Autocomplete, GitHub Copilot ile bir çakışma nedeniyle engelleniyor. Bunu düzeltmek için Copilot'un satır içi önerilerini devre dışı bırakmalısın.",
 			"disableCopilot": "Copilot'u Devre Dışı Bırak",
 			"disableInlineAssist": "Autocomplete'i Devre Dışı Bırak"
 		}
 	},
 	"terminalCommandGenerator": {
-		"noActiveTerminal": "Kilo: Aktif terminal bulunamadı. Lütfen önce bir terminal açın.",
-		"inputPrompt": "Kilo: Oluşturmak istediğiniz komutu açıklayın",
+		"noActiveTerminal": "NovelWeave: Aktif terminal bulunamadı. Lütfen önce bir terminal açın.",
+		"inputPrompt": "NovelWeave: Oluşturmak istediğiniz komutu açıklayın",
 		"inputPlaceholder": "örn., 3001 portunda çalışan işlemi sonlandır, büyük dosyaları bul, vb.",
-		"generatingProgress": "Kilo: Uçbirim komutu oluşturuluyor...",
-		"commandGenerated": "Kilo: Oluşturulan komut: {{command}}",
-		"generationFailed": "Kilo: Komut oluşturulamadı: {{error}}",
+		"generatingProgress": "NovelWeave: Uçbirim komutu oluşturuluyor...",
+		"commandGenerated": "NovelWeave: Oluşturulan komut: {{command}}",
+		"generationFailed": "NovelWeave: Komut oluşturulamadı: {{error}}",
 		"warningDialog": {
 			"title": "Uçbirim Güvenlik Uyarısı",
 			"okButton": "Anlıyorum",
 			"message": "Oluşturulan tüm komutları çalıştırmadan önce iki kez kontrol edin. Terminal eylemleri her zaman geri alınamaz— doğrulanmamış komutları çalıştırmak geri döndürülemez veri kaybına veya sistem hasarına neden olabilir. İlerlemeden önce komutu tamamen inceleyin ve anlayın!",
 			"cancelButton": "İptal"
 		},
-		"tipMessage": "Kilo: Terminal komutları oluşturmak için {{shortcut}} tuşuna basın"
+		"tipMessage": "NovelWeave: Terminal komutları oluşturmak için {{shortcut}} tuşuna basın"
 	},
 	"seeNewChanges": {
 		"title": "Yeni değişiklikler gösteriliyor",

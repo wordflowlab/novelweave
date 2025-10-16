@@ -26,7 +26,7 @@ vi.mock("../../core/config/ProviderSettingsManager", () => ({
 vi.mock("../../i18n", () => ({
 	t: vi.fn((key: string, params?: any) => {
 		const translations: Record<string, string> = {
-			"novelweave:terminalCommandGenerator.inputPrompt": "Kilo: Describe the command you want to generate",
+			"novelweave:terminalCommandGenerator.inputPrompt": "NovelWeave: Describe the command you want to generate",
 			"novelweave:terminalCommandGenerator.inputPlaceholder":
 				"e.g., kill the process running on port 3001, find large files, etc",
 			"novelweave:terminalCommandGenerator.noActiveTerminal":
@@ -120,7 +120,7 @@ describe("generateTerminalCommand", () => {
 		})
 
 		expect(vscode.window.showInputBox).toHaveBeenCalledWith({
-			prompt: "Kilo: Describe the command you want to generate",
+			prompt: "NovelWeave: Describe the command you want to generate",
 			placeHolder: "e.g., kill the process running on port 3001, find large files, etc",
 			ignoreFocusOut: true,
 		})

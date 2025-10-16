@@ -3,7 +3,7 @@ import * as vscode from "vscode"
 
 import { setDefaultSuiteTimeout } from "./test-utils"
 
-suite("Kilo Code Extension", function () {
+suite("NovelWeave Extension", function () {
 	setDefaultSuiteTimeout(this)
 
 	test("Commands should be registered", async () => {
@@ -32,7 +32,9 @@ suite("Kilo Code Extension", function () {
 			"terminalExplainCommand",
 		]
 
-		const commands = new Set((await vscode.commands.getCommands(true)).filter((cmd) => cmd.startsWith("novelweave")))
+		const commands = new Set(
+			(await vscode.commands.getCommands(true)).filter((cmd) => cmd.startsWith("novelweave")),
+		)
 
 		for (const command of expectedCommands) {
 			assert.ok(commands.has(`novelweave.${command}`), `Command ${command} should be registered`)

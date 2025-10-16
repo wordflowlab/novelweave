@@ -1,6 +1,6 @@
 # Development Environment
 
-<!-- Please refer to the [DEVELOPMENT.md](https://github.com/Kilo-Org/novelweave/blob/main/DEVELOPMENT.md) guide in the main repository for detailed instructions on setting up the development environment. -->
+<!-- Please refer to the [DEVELOPMENT.md](https://github.com/NovelWeave-Org/novelweave/blob/main/DEVELOPMENT.md) guide in the main repository for detailed instructions on setting up the development environment. -->
 
 This document will help you set up your development environment and understand how to work with the codebase. Whether you're fixing bugs, adding features, or just exploring the code, this guide will get you started.
 
@@ -9,7 +9,7 @@ This document will help you set up your development environment and understand h
 Before you begin, make sure you have the following installed:
 
 1. **Git** - For version control
-2. **Node.js** (version [v20.18.1](https://github.com/Kilo-Org/novelweave/blob/main/.nvmrc) or higher recommended) and npm
+2. **Node.js** (version [v20.18.1](https://github.com/NovelWeave-Org/novelweave/blob/main/.nvmrc) or higher recommended) and npm
 3. **Visual Studio Code** - Our recommended IDE for development
 
 ## Getting Started
@@ -19,7 +19,7 @@ Before you begin, make sure you have the following installed:
 1. **Fork and Clone the Repository**:
 
     - **Fork the Repository**:
-        - Visit the [Kilo Code GitHub repository](https://github.com/Kilo-Org/novelweave)
+        - Visit the [NovelWeave GitHub repository](https://github.com/NovelWeave-Org/novelweave)
         - Click the "Fork" button in the top-right corner to create your own copy.
     - **Clone Your Fork**:
         ```bash
@@ -44,7 +44,7 @@ While not strictly necessary for running the extension, these extensions are rec
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Integrates ESLint into VS Code.
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Integrates Prettier into VS Code.
 
-The full list of recommended extensions is [here](https://github.com/Kilo-Org/novelweave/blob/main/.vscode/extensions.json)
+The full list of recommended extensions is [here](https://github.com/NovelWeave-Org/novelweave/blob/main/.vscode/extensions.json)
 
 ### Project Structure
 
@@ -80,7 +80,7 @@ This will:
 To run the extension in development mode:
 
 1. Press `F5` (or select **Run** → **Start Debugging**) in VSCode
-2. This will open a new VSCode window with Kilo Code loaded
+2. This will open a new VSCode window with NovelWeave loaded
 
 ### Hot Reloading
 
@@ -109,7 +109,7 @@ Replace `[version]` with the current version number.
 
 ## Testing
 
-Kilo Code uses several types of tests to ensure quality:
+NovelWeave uses several types of tests to ensure quality:
 
 ### Unit Tests
 
@@ -143,7 +143,7 @@ E2E tests verify the extension works correctly within VSCode:
     npm run test:integration
     ```
 
-For more details on E2E tests, see [e2e/VSCODE_INTEGRATION_TESTS.md](https://github.com/Kilo-Org/novelweave/blob/main/e2e/VSCODE_INTEGRATION_TESTS.md).
+For more details on E2E tests, see [e2e/VSCODE_INTEGRATION_TESTS.md](https://github.com/NovelWeave-Org/novelweave/blob/main/e2e/VSCODE_INTEGRATION_TESTS.md).
 
 ## Linting and Type Checking
 
@@ -188,5 +188,5 @@ These hooks help maintain code quality and consistency. If you encounter issues 
 ### Debugging Tips
 
 - Use `console.log()` statements in your code for debugging
-- Check the Output panel in VSCode (View > Output) and select "Kilo Code" from the dropdown
+- Check the Output panel in VSCode (View > Output) and select "NovelWeave" from the dropdown
 - For webview issues, use the browser developer tools in the webview (right-click > "Inspect Element")

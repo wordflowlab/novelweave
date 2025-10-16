@@ -1,5 +1,5 @@
 import { openRouterDefaultModelId, type ProviderSettings } from "@roo-code/types"
-import { getKiloBaseUriFromToken } from "../../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../../shared/novelweave/token"
 import { TelemetryService } from "@roo-code/telemetry"
 import { z } from "zod"
 import { fetchWithTimeout } from "./fetchWithTimeout"
@@ -24,7 +24,7 @@ async function fetchNovelweaveDefaultModel(
 ): Promise<string> {
 	try {
 		const path = organizationId ? `/organizations/${organizationId}/defaults` : `/defaults`
-		const url = `${getKiloBaseUriFromToken(novelweaveToken)}/api${path}`
+		const url = `${getNovelWeaveBaseUriFromToken(novelweaveToken)}/api${path}`
 
 		const headers: Record<string, string> = {
 			...DEFAULT_HEADERS,

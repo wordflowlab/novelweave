@@ -1,7 +1,7 @@
 {
 	"welcome": {
-		"greeting": "Kilo Code에 오신 것을 환영합니다!",
-		"introText1": "Kilo Code는 무료 오픈소스 AI 코딩 에이전트입니다.",
+		"greeting": "NovelWeave에 오신 것을 환영합니다!",
+		"introText1": "NovelWeave는 무료 오픈소스 AI 코딩 에이전트입니다.",
 		"introText2": "Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5 및 450개 이상의 최신 AI 모델과 함께 작동합니다.",
 		"introText3": "무료 계정을 만들고 첫 충전 시 $20 보너스 크레딧을 받으세요.",
 		"ctaButton": "시작하기",
@@ -11,7 +11,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "크레딧 추가",
-		"lowBalance": "Kilo Code 잔액이 부족합니다"
+		"lowBalance": "NovelWeave 잔액이 부족합니다"
 	},
 	"pagination": {
 		"previous": "이전",
@@ -41,15 +41,15 @@
 			"mcp": "MCP 서버"
 		},
 		"provider": {
-			"account": "Kilo Code 계정",
-			"apiKey": "Kilo Code API 키",
-			"login": "Kilo Code에 로그인",
-			"logout": "Kilo Code에서 로그아웃",
-			"automaticFetch": "최신 모델은 Kilo Code에서 자동으로 사용할 수 있습니다. 어떤 모델을 선택할지 확실하지 않다면, Kilo Code는 상단에 <strong>굵은 글씨</strong>로 나열된 권장 모델과 가장 잘 작동합니다.",
+			"account": "NovelWeave 계정",
+			"apiKey": "NovelWeave API 키",
+			"login": "NovelWeave에 로그인",
+			"logout": "NovelWeave에서 로그아웃",
+			"automaticFetch": "최신 모델은 NovelWeave에서 자동으로 사용할 수 있습니다. 어떤 모델을 선택할지 확실하지 않다면, NovelWeave는 상단에 <strong>굵은 글씨</strong>로 나열된 권장 모델과 가장 잘 작동합니다.",
 			"providerRouting": {
 				"title": "공급자 라우팅",
 				"managedByOrganization": "공급자 라우팅 설정은 귀하의 조직에서 관리됩니다.",
-				"description": "Kilo Code는 모델에 가장 적합한 공급자에게 요청을 라우팅합니다. 기본적으로 요청은 가동 시간을 최대화하기 위해 상위 공급자에게 로드 밸런싱됩니다. 그러나 이 모델에 사용할 특정 공급자를 선택할 수 있습니다.",
+				"description": "NovelWeave는 모델에 가장 적합한 공급자에게 요청을 라우팅합니다. 기본적으로 요청은 가동 시간을 최대화하기 위해 상위 공급자에게 로드 밸런싱됩니다. 그러나 이 모델에 사용할 특정 공급자를 선택할 수 있습니다.",
 				"sorting": {
 					"default": "기본 공급자 정렬",
 					"price": "낮은 가격의 공급자 우선",
@@ -68,7 +68,7 @@
 		"modelInfo": {
 			"contextWindow": "컨텍스트 창",
 			"providerBreakdown": "공급자 가격 및 기능 세부사항",
-			"averageNovelWeaveCost": "이는 지난 주 동안 이 모델을 사용한 Kilo Code의 실제 평균 비용입니다. 프롬프트 캐시 활용으로 인해 표시된 가격보다 낮을 수 있습니다.",
+			"averageNovelWeaveCost": "이는 지난 주 동안 이 모델을 사용한 NovelWeave의 실제 평균 비용입니다. 프롬프트 캐시 활용으로 인해 표시된 가격보다 낮을 수 있습니다.",
 			"table": {
 				"provider": "공급자",
 				"context": "엔드포인트가 처리할 수 있는 토큰 수입니다 (입력 + 출력).",
@@ -81,15 +81,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "매우 큰 파일 읽기 허용",
-				"description": "활성화되면 Kilo Code는 컨텍스트 창을 오버플로할 가능성이 높더라도 매우 큰 파일이나 MCP 출력 읽기를 수행합니다 (콘텐츠 크기가 컨텍스트 창의 80% 이상)."
+				"description": "활성화되면 NovelWeave는 컨텍스트 창을 오버플로할 가능성이 높더라도 매우 큰 파일이나 MCP 출력 읽기를 수행합니다 (콘텐츠 크기가 컨텍스트 창의 80% 이상)."
 			}
 		},
 		"systemNotifications": {
 			"label": "시스템 알림 활성화",
-			"description": "활성화되면 Kilo Code는 작업 완료나 오류와 같은 중요한 이벤트에 대한 시스템 알림을 보냅니다.",
+			"description": "활성화되면 NovelWeave는 작업 완료나 오류와 같은 중요한 이벤트에 대한 시스템 알림을 보냅니다.",
 			"testButton": "알림 테스트",
-			"testTitle": "Kilo Code",
-			"testMessage": "이것은 Kilo Code의 테스트 알림입니다."
+			"testTitle": "NovelWeave",
+			"testMessage": "이것은 NovelWeave의 테스트 알림입니다."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -104,7 +104,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code가 대화를 요약하고자 합니다",
+			"wantsToCondense": "NovelWeave가 대화를 요약하고자 합니다",
 			"condenseConversation": "대화 요약하기"
 		},
 		"seeNewChanges": "새 변경사항 보기",
@@ -133,15 +133,15 @@
 	},
 	"docs": "문서",
 	"rules": {
-		"tooltip": "Kilo Code 규칙 및 워크플로우 관리",
-		"ariaLabel": "Kilo Code 규칙",
+		"tooltip": "NovelWeave 규칙 및 워크플로우 관리",
+		"ariaLabel": "NovelWeave 규칙",
 		"tabs": {
 			"rules": "규칙",
 			"workflows": "워크플로우"
 		},
 		"description": {
-			"rules": "규칙을 사용하면 Kilo Code가 모든 모드와 모든 프롬프트에서 따라야 할 지침을 제공할 수 있습니다. 이는 워크스페이스나 전역적으로 모든 대화에 컨텍스트와 기본 설정을 포함하는 지속적인 방법입니다.",
-			"workflows": "워크플로우는 대화를 위한 준비된 템플릿입니다. 워크플로우를 사용하면 자주 사용하는 프롬프트를 정의할 수 있으며, 서비스 배포나 PR 제출과 같은 반복적인 작업을 통해 Kilo Code를 안내하는 일련의 단계를 포함할 수 있습니다. 워크플로우를 호출하려면 다음과 같이 입력하세요",
+			"rules": "규칙을 사용하면 NovelWeave가 모든 모드와 모든 프롬프트에서 따라야 할 지침을 제공할 수 있습니다. 이는 워크스페이스나 전역적으로 모든 대화에 컨텍스트와 기본 설정을 포함하는 지속적인 방법입니다.",
+			"workflows": "워크플로우는 대화를 위한 준비된 템플릿입니다. 워크플로우를 사용하면 자주 사용하는 프롬프트를 정의할 수 있으며, 서비스 배포나 PR 제출과 같은 반복적인 작업을 통해 NovelWeave를 안내하는 일련의 단계를 포함할 수 있습니다. 워크플로우를 호출하려면 다음과 같이 입력하세요",
 			"workflowsInChat": "채팅에서."
 		},
 		"sections": {
@@ -211,11 +211,11 @@
 			"keybindingDescription": "Autocomplete 기능은 명령으로 트리거할 수 있습니다. <DocsLink>키보드 단축키를 여기서</DocsLink> 구성할 수 있습니다.",
 			"enableAutoTrigger": {
 				"label": "Autocomplete 활성화",
-				"description": "활성화되면 타이핑을 멈췄을 때 Kilo Code가 자동으로 Autocomplete를 트리거합니다. 빠른 수정과 제안에 유용할 수 있습니다."
+				"description": "활성화되면 타이핑을 멈췄을 때 NovelWeave가 자동으로 Autocomplete를 트리거합니다. 빠른 수정과 제안에 유용할 수 있습니다."
 			},
 			"autoTriggerDelay": {
 				"label": "자동 트리거 지연",
-				"description": "타이핑을 멈춘 후 Kilo Code가 Autocomplete를 트리거하기까지의 초 단위 지연. 지연이 짧을수록 제안이 빨라지지만 리소스를 더 많이 사용할 수 있습니다."
+				"description": "타이핑을 멈춘 후 NovelWeave가 Autocomplete를 트리거하기까지의 초 단위 지연. 지연이 짧을수록 제안이 빨라지지만 리소스를 더 많이 사용할 수 있습니다."
 			},
 			"enableQuickInlineTaskKeybinding": {
 				"label": "빠른 작업 ({{keybinding}})",
@@ -223,7 +223,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "수동 자동완성({{keybinding}})",
-				"description": "빠른 수정, 완성 또는 리팩토링이 필요하신가요? Kilo가 주변 컨텍스트를 사용하여 즉각적인 개선사항을 제공하여 플로우를 유지합니다. <DocsLink>단축키 보기</DocsLink>"
+				"description": "빠른 수정, 완성 또는 리팩토링이 필요하신가요? NovelWeave가 주변 컨텍스트를 사용하여 즉각적인 개선사항을 제공하여 플로우를 유지합니다. <DocsLink>단축키 보기</DocsLink>"
 			},
 			"keybindingNotFound": "찾을 수 없음"
 		}

@@ -46,25 +46,25 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Генератор сообщений коммитов Kilo Code активирован",
+		"activated": "Генератор сообщений коммитов NovelWeave активирован",
 		"gitNotFound": "⚠️ Репозиторий Git не найден или git недоступен",
 		"gitInitError": "⚠️ Ошибка инициализации Git: {{error}}",
-		"generating": "Kilo: Генерация сообщения коммита...",
-		"noChanges": "Kilo: Изменения для анализа не найдены",
-		"generated": "Kilo: Сообщение коммита сгенерировано!",
-		"generationFailed": "Kilo: Ошибка генерации сообщения коммита: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Генерация сообщения с использованием незафиксированных изменений",
-		"activationFailed": "Kilo: Не удалось активировать генератор сообщений: {{error}}",
-		"providerRegistered": "Kilo: Поставщик сообщений коммитов зарегистрирован"
+		"generating": "NovelWeave: Генерация сообщения коммита...",
+		"noChanges": "NovelWeave: Изменения для анализа не найдены",
+		"generated": "NovelWeave: Сообщение коммита сгенерировано!",
+		"generationFailed": "NovelWeave: Ошибка генерации сообщения коммита: {{errorMessage}}",
+		"generatingFromUnstaged": "NovelWeave: Генерация сообщения с использованием незафиксированных изменений",
+		"activationFailed": "NovelWeave: Не удалось активировать генератор сообщений: {{error}}",
+		"providerRegistered": "NovelWeave: Поставщик сообщений коммитов зарегистрирован"
 	},
 	"ghost": {
 		"statusBar": {
-			"enabled": "$(sparkle) Kilo Code Autocomplete",
-			"disabled": "$(circle-slash) Kilo Code Autocomplete",
-			"warning": "$(warning) Kilo Code Autocomplete",
+			"enabled": "$(sparkle) NovelWeave Autocomplete",
+			"disabled": "$(circle-slash) NovelWeave Autocomplete",
+			"warning": "$(warning) NovelWeave Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (отключено)",
+				"basic": "NovelWeave Autocomplete",
+				"disabled": "NovelWeave Autocomplete (отключено)",
 				"tokenError": "Для использования Autocomplete необходимо установить действительный токен",
 				"lastCompletion": "Последнее предложение:",
 				"sessionTotal": "Общая стоимость сессии:",
@@ -75,55 +75,55 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "NovelWeave Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "NovelWeave",
 			"analyzing": "Анализирую твой код...",
 			"generating": "Генерирую предлагаемые правки...",
 			"processing": "Обрабатываю предлагаемые правки...",
 			"showing": "Показываю предлагаемые правки..."
 		},
 		"input": {
-			"title": "Kilo Code: Быстрая Задача",
+			"title": "NovelWeave: Быстрая Задача",
 			"placeholder": "напр., 'рефактори эту функцию для большей эффективности'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Генерировать Предлагаемые Правки",
+			"generateSuggestions": "NovelWeave: Генерировать Предлагаемые Правки",
 			"displaySuggestions": "Показать Предлагаемые Правки",
 			"cancelSuggestions": "Отменить Предлагаемые Правки",
 			"applyCurrentSuggestion": "Применить Текущую Предлагаемую Правку",
 			"applyAllSuggestions": "Применить Все Предлагаемые Правки",
 			"promptCodeSuggestion": "Быстрая Задача",
-			"category": "Kilo Code"
+			"category": "NovelWeave"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Предлагаемые Правки"
+			"title": "NovelWeave: Предлагаемые Правки"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "NovelWeave Agent",
 			"name": "Agent",
 			"description": "Я могу помочь тебе с быстрыми задачами и предлагаемыми правками."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete блокируется конфликтом с GitHub Copilot. Чтобы исправить это, ты должен отключить встроенные предложения Copilot.",
+			"message": "NovelWeave Autocomplete блокируется конфликтом с GitHub Copilot. Чтобы исправить это, ты должен отключить встроенные предложения Copilot.",
 			"disableCopilot": "Отключить Copilot",
 			"disableInlineAssist": "Отключить Autocomplete"
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo: Опишите команду, которую вы хотите сгенерировать",
+		"inputPrompt": "NovelWeave: Опишите команду, которую вы хотите сгенерировать",
 		"inputPlaceholder": "например, завершить процесс, работающий на порту 3001, найти большие файлы и т.д.",
-		"generatingProgress": "Kilo: Создание команды терминала...",
-		"generationFailed": "Kilo: Не удалось сгенерировать команду: {{error}}",
-		"commandGenerated": "Kilo: Сгенерированная команда: {{command}}",
-		"noActiveTerminal": "Kilo: Активный терминал не найден. Пожалуйста, сначала откройте терминал.",
+		"generatingProgress": "NovelWeave: Создание команды терминала...",
+		"generationFailed": "NovelWeave: Не удалось сгенерировать команду: {{error}}",
+		"commandGenerated": "NovelWeave: Сгенерированная команда: {{command}}",
+		"noActiveTerminal": "NovelWeave: Активный терминал не найден. Пожалуйста, сначала откройте терминал.",
 		"warningDialog": {
 			"title": "Предупреждение о безопасности терминала",
 			"okButton": "Я понимаю",
 			"message": "Перепроверяйте все сгенерированные команды перед их выполнением. Действия в терминале не всегда можно отменить — запуск непроверенных команд может привести к необратимой потере данных или повреждению системы. Полностью просмотрите и осознайте команду перед тем, как продолжить!",
 			"cancelButton": "Отменить"
 		},
-		"tipMessage": "Kilo: Нажмите {{shortcut}}, чтобы сгенерировать команды терминала"
+		"tipMessage": "NovelWeave: Нажмите {{shortcut}}, чтобы сгенерировать команды терминала"
 	},
 	"checkpoints": {
 		"nestedGitRepos": "Контрольные точки недоступны, поскольку обнаружен вложенный Git-репозиторий по адресу: {{path}}. Пожалуйста, удалите или переместите вложенные Git-репозитории для использования функции контрольных точек или отключите контрольные точки в настройках, чтобы скрыть это предупреждение.",

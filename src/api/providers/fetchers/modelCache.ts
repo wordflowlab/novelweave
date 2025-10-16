@@ -19,7 +19,7 @@ import { getGlamaModels } from "./glama"
 import { getUnboundModels } from "./unbound"
 import { getLiteLLMModels } from "./litellm"
 import { GetModelsOptions } from "../../../shared/api"
-import { getKiloBaseUriFromToken } from "../../../shared/novelweave/token"
+import { getNovelWeaveBaseUriFromToken } from "../../../shared/novelweave/token"
 import { getOllamaModels } from "./ollama"
 import { getLMStudioModels } from "./lmstudio"
 import { getIOIntelligenceModels } from "./io-intelligence"
@@ -97,11 +97,13 @@ export const getModels = async (options: GetModelsOptions): Promise<ModelRecord>
 			case "novelweave-openrouter":
 				models = await getOpenRouterModels({
 					openRouterBaseUrl:
-						getKiloBaseUriFromToken(options.novelweaveToken ?? "") +
+						getNovelWeaveBaseUriFromToken(options.novelweaveToken ?? "") +
 						(options.novelweaveOrganizationId
 							? `/api/organizations/${options.novelweaveOrganizationId}`
 							: "/api/openrouter"),
-					headers: options.novelweaveToken ? { Authorization: `Bearer ${options.novelweaveToken}` } : undefined,
+					headers: options.novelweaveToken
+						? { Authorization: `Bearer ${options.novelweaveToken}` }
+						: undefined,
 				})
 				break
 			case "chutes":

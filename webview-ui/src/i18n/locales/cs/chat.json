@@ -1,5 +1,5 @@
 {
-	"greeting": "Co pro tebe může Kilo Code udělat?",
+	"greeting": "Co pro tebe může NovelWeave udělat?",
 	"task": {
 		"title": "Úkol",
 		"seeMore": "Zobrazit více",
@@ -19,7 +19,7 @@
 		"sharePublicly": "Sdílet veřejně",
 		"sharePubliclyDescription": "Kdokoli s odkazem má přístup",
 		"connectToCloud": "Připojit ke cloudu",
-		"connectToCloudDescription": "Přihlaste se do Kilo Code Cloud pro sdílení úkolů",
+		"connectToCloudDescription": "Přihlaste se do NovelWeave Cloud pro sdílení úkolů",
 		"sharingDisabledByOrganization": "Sdílení zakázáno organizací",
 		"shareSuccessOrganization": "Odkaz organizace zkopírován do schránky",
 		"shareSuccessPublic": "Veřejný odkaz zkopírován do schránky",
@@ -176,50 +176,50 @@
 		"tokens": "tokeny"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code chce načíst podrobné instrukce pro pomoc s aktuálním úkolem"
+		"wantsToFetch": "NovelWeave chce načíst podrobné instrukce pro pomoc s aktuálním úkolem"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code chce přečíst tento soubor:",
-		"wantsToReadMultiple": "Kilo Code chce přečíst více souborů:",
-		"wantsToReadAndXMore": "Kilo Code chce přečíst tento soubor a {{count}} dalších:",
-		"wantsToReadOutsideWorkspace": "Kilo Code chce přečíst tento soubor mimo pracovní prostor:",
-		"didRead": "Kilo Code přečetl tento soubor:",
-		"wantsToEdit": "Kilo Code chce upravit tento soubor:",
-		"wantsToEditOutsideWorkspace": "Kilo Code chce upravit tento soubor mimo pracovní prostor:",
-		"wantsToEditProtected": "Kilo Code chce upravit chráněný konfigurační soubor:",
-		"wantsToApplyBatchChanges": "Kilo Code chce aplikovat změny na více souborů:",
-		"wantsToGenerateImage": "Kilo Code chce vygenerovat obrázek:",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code chce vygenerovat obrázek mimo pracovní prostor:",
-		"wantsToGenerateImageProtected": "Kilo Code chce vygenerovat obrázek v chráněném umístění:",
-		"didGenerateImage": "Kilo Code vygeneroval obrázek:",
-		"wantsToCreate": "Kilo Code chce vytvořit nový soubor:",
-		"wantsToSearchReplace": "Kilo Code chce hledat a nahradit v tomto souboru:",
-		"didSearchReplace": "Kilo Code provedl hledání a nahrazení v tomto souboru:",
-		"wantsToInsert": "Kilo Code chce vložit obsah do tohoto souboru:",
-		"wantsToInsertWithLineNumber": "Kilo Code chce vložit obsah do tohoto souboru na řádek {{lineNumber}}:",
-		"wantsToInsertAtEnd": "Kilo Code chce přidat obsah na konec tohoto souboru:"
+		"wantsToRead": "NovelWeave chce přečíst tento soubor:",
+		"wantsToReadMultiple": "NovelWeave chce přečíst více souborů:",
+		"wantsToReadAndXMore": "NovelWeave chce přečíst tento soubor a {{count}} dalších:",
+		"wantsToReadOutsideWorkspace": "NovelWeave chce přečíst tento soubor mimo pracovní prostor:",
+		"didRead": "NovelWeave přečetl tento soubor:",
+		"wantsToEdit": "NovelWeave chce upravit tento soubor:",
+		"wantsToEditOutsideWorkspace": "NovelWeave chce upravit tento soubor mimo pracovní prostor:",
+		"wantsToEditProtected": "NovelWeave chce upravit chráněný konfigurační soubor:",
+		"wantsToApplyBatchChanges": "NovelWeave chce aplikovat změny na více souborů:",
+		"wantsToGenerateImage": "NovelWeave chce vygenerovat obrázek:",
+		"wantsToGenerateImageOutsideWorkspace": "NovelWeave chce vygenerovat obrázek mimo pracovní prostor:",
+		"wantsToGenerateImageProtected": "NovelWeave chce vygenerovat obrázek v chráněném umístění:",
+		"didGenerateImage": "NovelWeave vygeneroval obrázek:",
+		"wantsToCreate": "NovelWeave chce vytvořit nový soubor:",
+		"wantsToSearchReplace": "NovelWeave chce hledat a nahradit v tomto souboru:",
+		"didSearchReplace": "NovelWeave provedl hledání a nahrazení v tomto souboru:",
+		"wantsToInsert": "NovelWeave chce vložit obsah do tohoto souboru:",
+		"wantsToInsertWithLineNumber": "NovelWeave chce vložit obsah do tohoto souboru na řádek {{lineNumber}}:",
+		"wantsToInsertAtEnd": "NovelWeave chce přidat obsah na konec tohoto souboru:"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code chce zobrazit soubory nejvyšší úrovně v tomto adresáři:",
-		"didViewTopLevel": "Kilo Code zobrazil soubory nejvyšší úrovně v tomto adresáři:",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code chce zobrazit soubory nejvyšší úrovně v tomto adresáři (mimo pracovní prostor):",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code zobrazil soubory nejvyšší úrovně v tomto adresáři (mimo pracovní prostor):",
-		"wantsToViewRecursive": "Kilo Code chce rekurzivně zobrazit všechny soubory v tomto adresáři:",
-		"didViewRecursive": "Kilo Code rekurzivně zobrazil všechny soubory v tomto adresáři:",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code chce rekurzivně zobrazit všechny soubory v tomto adresáři (mimo pracovní prostor):",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code rekurzivně zobrazil všechny soubory v tomto adresáři (mimo pracovní prostor):",
-		"wantsToViewDefinitions": "Kilo Code chce zobrazit názvy definic zdrojového kódu použité v tomto adresáři:",
-		"didViewDefinitions": "Kilo Code zobrazil názvy definic zdrojového kódu použité v tomto adresáři:",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code chce zobrazit názvy definic zdrojového kódu použité v tomto adresáři (mimo pracovní prostor):",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code zobrazil názvy definic zdrojového kódu použité v tomto adresáři (mimo pracovní prostor):",
-		"wantsToSearch": "Kilo Code chce hledat v tomto adresáři <code>{{regex}}</code>:",
-		"didSearch": "Kilo Code hledal v tomto adresáři <code>{{regex}}</code>:",
-		"wantsToSearchOutsideWorkspace": "Kilo Code chce hledat v tomto adresáři (mimo pracovní prostor) <code>{{regex}}</code>:",
-		"didSearchOutsideWorkspace": "Kilo Code hledal v tomto adresáři (mimo pracovní prostor) <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "NovelWeave chce zobrazit soubory nejvyšší úrovně v tomto adresáři:",
+		"didViewTopLevel": "NovelWeave zobrazil soubory nejvyšší úrovně v tomto adresáři:",
+		"wantsToViewTopLevelOutsideWorkspace": "NovelWeave chce zobrazit soubory nejvyšší úrovně v tomto adresáři (mimo pracovní prostor):",
+		"didViewTopLevelOutsideWorkspace": "NovelWeave zobrazil soubory nejvyšší úrovně v tomto adresáři (mimo pracovní prostor):",
+		"wantsToViewRecursive": "NovelWeave chce rekurzivně zobrazit všechny soubory v tomto adresáři:",
+		"didViewRecursive": "NovelWeave rekurzivně zobrazil všechny soubory v tomto adresáři:",
+		"wantsToViewRecursiveOutsideWorkspace": "NovelWeave chce rekurzivně zobrazit všechny soubory v tomto adresáři (mimo pracovní prostor):",
+		"didViewRecursiveOutsideWorkspace": "NovelWeave rekurzivně zobrazil všechny soubory v tomto adresáři (mimo pracovní prostor):",
+		"wantsToViewDefinitions": "NovelWeave chce zobrazit názvy definic zdrojového kódu použité v tomto adresáři:",
+		"didViewDefinitions": "NovelWeave zobrazil názvy definic zdrojového kódu použité v tomto adresáři:",
+		"wantsToViewDefinitionsOutsideWorkspace": "NovelWeave chce zobrazit názvy definic zdrojového kódu použité v tomto adresáři (mimo pracovní prostor):",
+		"didViewDefinitionsOutsideWorkspace": "NovelWeave zobrazil názvy definic zdrojového kódu použité v tomto adresáři (mimo pracovní prostor):",
+		"wantsToSearch": "NovelWeave chce hledat v tomto adresáři <code>{{regex}}</code>:",
+		"didSearch": "NovelWeave hledal v tomto adresáři <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "NovelWeave chce hledat v tomto adresáři (mimo pracovní prostor) <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "NovelWeave hledal v tomto adresáři (mimo pracovní prostor) <code>{{regex}}</code>:"
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code chce hledat v kódové základně <code>{{query}}</code>:",
-		"wantsToSearchWithPath": "Kilo Code chce hledat v kódové základně <code>{{query}}</code> v <code>{{path}}</code>:",
+		"wantsToSearch": "NovelWeave chce hledat v kódové základně <code>{{query}}</code>:",
+		"wantsToSearchWithPath": "NovelWeave chce hledat v kódové základně <code>{{query}}</code> v <code>{{path}}</code>:",
 		"didSearch_one": "Nalezen 1 výsledek",
 		"didSearch_other": "Nalezeno {{count}} výsledků",
 		"resultTooltip": "Skóre podobnosti: {{score}} (klikni pro otevření souboru)"
@@ -246,24 +246,24 @@
 	"response": "Odpověď",
 	"arguments": "Argumenty",
 	"text": {
-		"rooSaid": "Kilo řekl"
+		"rooSaid": "NovelWeave řekl"
 	},
 	"feedback": {
 		"youSaid": "Řekl jsi"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code chce použít nástroj na MCP serveru {{serverName}}:",
-		"wantsToAccessResource": "Kilo Code chce přistupovat k prostředku na MCP serveru {{serverName}}:"
+		"wantsToUseTool": "NovelWeave chce použít nástroj na MCP serveru {{serverName}}:",
+		"wantsToAccessResource": "NovelWeave chce přistupovat k prostředku na MCP serveru {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code chce přepnout do režimu {{mode}}",
-		"wantsToSwitchWithReason": "Kilo Code chce přepnout do režimu {{mode}}, protože: {{reason}}",
-		"didSwitch": "Kilo Code přepnul do režimu {{mode}}",
-		"didSwitchWithReason": "Kilo Code přepnul do režimu {{mode}}, protože: {{reason}}"
+		"wantsToSwitch": "NovelWeave chce přepnout do režimu {{mode}}",
+		"wantsToSwitchWithReason": "NovelWeave chce přepnout do režimu {{mode}}, protože: {{reason}}",
+		"didSwitch": "NovelWeave přepnul do režimu {{mode}}",
+		"didSwitchWithReason": "NovelWeave přepnul do režimu {{mode}}, protože: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code chce vytvořit nový podúkol v režimu {{mode}}:",
-		"wantsToFinish": "Kilo Code chce dokončit tento podúkol",
+		"wantsToCreate": "NovelWeave chce vytvořit nový podúkol v režimu {{mode}}:",
+		"wantsToFinish": "NovelWeave chce dokončit tento podúkol",
 		"newTaskContent": "Instrukce podúkolu",
 		"completionContent": "Podúkol dokončen",
 		"resultContent": "Výsledky podúkolu",
@@ -271,21 +271,21 @@
 		"completionInstructions": "Podúkol dokončen! Můžeš zkontrolovat výsledky a navrhnout jakékoli opravy nebo další kroky. Pokud vše vypadá dobře, potvrď pro vrácení výsledku do nadřazeného úkolu."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code má otázku:"
+		"hasQuestion": "NovelWeave má otázku:"
 	},
 	"taskCompleted": "Úkol dokončen",
 	"error": "Chyba",
 	"diffError": {
 		"title": "Úprava neúspěšná"
 	},
-	"troubleMessage": "Kilo Code má potíže...",
+	"troubleMessage": "NovelWeave má potíže...",
 	"powershell": {
 		"issues": "Zdá se, že máš problémy s Windows PowerShell, prosím podívej se na toto"
 	},
 	"autoApprove": {
 		"title": "Automatické schvalování:",
 		"none": "Žádné",
-		"description": "Automatické schvalování umožňuje Kilo Code provádět akce bez žádání o povolení. Zapni pouze pro akce, kterým plně důvěřuješ. Podrobnější konfigurace je dostupná v <settingsLink>Nastavení</settingsLink>.",
+		"description": "Automatické schvalování umožňuje NovelWeave provádět akce bez žádání o povolení. Zapni pouze pro akce, kterým plně důvěřuješ. Podrobnější konfigurace je dostupná v <settingsLink>Nastavení</settingsLink>.",
 		"selectOptionsFirst": "Nejprve vyber alespoň jednu možnost níže pro povolení automatického schvalování",
 		"toggleAriaLabel": "Přepnout automatické schvalování",
 		"disabledAriaLabel": "Automatické schvalování zakázáno - nejprve vyber možnosti",
@@ -303,16 +303,16 @@
 		"title": "Režimy",
 		"marketplace": "Tržiště režimů",
 		"settings": "Nastavení režimů",
-		"description": "Specializované persony které přizpůsobují chování Kilo Code.",
+		"description": "Specializované persony které přizpůsobují chování NovelWeave.",
 		"searchPlaceholder": "Hledat režimy...",
 		"noResults": "Nebyly nalezeny žádné výsledky",
 		"organizationModes": "Režimy organizace"
 	},
 	"announcement": {
-		"title": "🎉 Vydán Kilo Code {{version}}",
-		"description": "Kilo Code {{version}} přináší hlavní nové funkce a vylepšení na základě tvé zpětné vazby.",
+		"title": "🎉 Vydán NovelWeave {{version}}",
+		"description": "NovelWeave {{version}} přináší hlavní nové funkce a vylepšení na základě tvé zpětné vazby.",
 		"whatsNew": "Co je nového",
-		"feature1": "<bold>Spuštění Kilo Code Marketplace</bold>: Tržiště je nyní živé! Objevuj a instaluj režimy a MCP snadněji než kdy dříve.",
+		"feature1": "<bold>Spuštění NovelWeave Marketplace</bold>: Tržiště je nyní živé! Objevuj a instaluj režimy a MCP snadněji než kdy dříve.",
 		"feature2": "<bold>Modely Gemini 2.5</bold>: Přidána podpora pro nové modely Gemini 2.5 Pro, Flash a Flash Lite.",
 		"feature3": "<bold>Podpora souborů Excel a další</bold>: Přidána podpora souborů Excel (.xlsx) a mnoho oprav chyb a vylepšení!",
 		"hideButton": "Skrýt oznámení",
@@ -338,7 +338,7 @@
 		"countdownDisplay": "{{count}}s"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code chce použít prohlížeč:",
+		"rooWantsToUse": "NovelWeave chce použít prohlížeč:",
 		"consoleLogs": "Záznamy konzole",
 		"noNewLogs": "(Žádné nové záznamy)",
 		"screenshot": "Snímek obrazovky prohlížeče",
@@ -372,18 +372,18 @@
 	"profileViolationWarning": "Aktuální profil porušuje nastavení tvé organizace",
 	"shellIntegration": {
 		"title": "Varování provádění příkazu",
-		"description": "Tvůj příkaz se provádí bez integrace shellu terminálu VSCode. Pro potlačení tohoto varování můžeš vypnout integraci shellu v sekci <strong>Terminal</strong> <settingsLink>nastavení Kilo Code</settingsLink> nebo vyřešit integraci terminálu VSCode pomocí odkazu níže.",
+		"description": "Tvůj příkaz se provádí bez integrace shellu terminálu VSCode. Pro potlačení tohoto varování můžeš vypnout integraci shellu v sekci <strong>Terminal</strong> <settingsLink>nastavení NovelWeave</settingsLink> nebo vyřešit integraci terminálu VSCode pomocí odkazu níže.",
 		"troubleshooting": "Klikni zde pro dokumentaci integrace shellu."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Dosažen limit automaticky schválených požadavků",
-			"description": "Kilo Code dosáhl automaticky schváleného limitu {{count}} API požadavků. Chceš resetovat počítadlo a pokračovat v úkolu?",
+			"description": "NovelWeave dosáhl automaticky schváleného limitu {{count}} API požadavků. Chceš resetovat počítadlo a pokračovat v úkolu?",
 			"button": "Resetovat a pokračovat"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Dosažen limit automaticky schválených nákladů",
-			"description": "Kilo Code dosáhl limitu automaticky schválených nákladů ${{count}}. Chceš resetovat náklady a pokračovat v úkolu?",
+			"description": "NovelWeave dosáhl limitu automaticky schválených nákladů ${{count}}. Chceš resetovat náklady a pokračovat v úkolu?",
 			"button": "Resetovat a pokračovat"
 		}
 	},
@@ -434,8 +434,8 @@
 	},
 	"generateCommitMessage": "Vygenerovat commit zprávu",
 	"slashCommand": {
-		"wantsToRun": "Kilo Code chce spustit slash příkaz:",
-		"didRun": "Kilo Code spustil slash příkaz:"
+		"wantsToRun": "NovelWeave chce spustit slash příkaz:",
+		"didRun": "NovelWeave spustil slash příkaz:"
 	},
 	"contextMenu": {
 		"noResults": "Žádné výsledky",

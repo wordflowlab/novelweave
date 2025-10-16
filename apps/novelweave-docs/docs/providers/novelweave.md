@@ -1,16 +1,16 @@
 ---
-sidebar_label: Kilo Code Provider
+sidebar_label: NovelWeave Provider
 ---
 
-# Using Kilo Code's Built-in Provider
+# Using NovelWeave's Built-in Provider
 
-Kilo Code provides its own built-in API provider that gives you access to the latest frontier coding models through a simple registration process. No need to manage API keys from multiple providers - just sign up and start coding.
+NovelWeave provides its own built-in API provider that gives you access to the latest frontier coding models through a simple registration process. No need to manage API keys from multiple providers - just sign up and start coding.
 
 **Website:** [https://novelweave.ai/](https://novelweave.ai/)
 
 ## Getting Started
 
-When you sign up for Kilo Code, you can start immediately with free models, or top up your account for the first time to get bonus credits.
+When you sign up for NovelWeave, you can start immediately with free models, or top up your account for the first time to get bonus credits.
 
 To claim your bonus credits:
 
@@ -20,32 +20,32 @@ To claim your bonus credits:
 
 ## Registration Process
 
-Kilo Code offers a streamlined registration that connects you directly to frontier coding models:
+NovelWeave offers a streamlined registration that connects you directly to frontier coding models:
 
-1. **Start Registration:** Click "Try Kilo Code for Free" in the extension
+1. **Start Registration:** Click "Try NovelWeave for Free" in the extension
 2. **Sign In:** Use your Google account to sign in at novelweave.ai
 3. **Authorize VS Code:**
     - novelweave.ai will prompt you to open Visual Studio Code
     - For web-based IDEs, you'll copy the API key manually instead
 4. **Complete Setup:** Allow VS Code to open the authorization URL when prompted
 
-<!-- <img src="/img/setting-up/signupflow.gif" alt="Sign up and registration flow with Kilo Code" width="600" /> -->
+<!-- <img src="/img/setting-up/signupflow.gif" alt="Sign up and registration flow with NovelWeave" width="600" /> -->
 
 ## Supported Models
 
-Kilo Code provides access to the latest frontier coding models through its built-in provider. The specific models available are automatically updated and managed by the Kilo Code service, ensuring you always have access to the most capable models for coding tasks.
+NovelWeave provides access to the latest frontier coding models through its built-in provider. The specific models available are automatically updated and managed by the NovelWeave service, ensuring you always have access to the most capable models for coding tasks.
 
-## Configuration in Kilo Code
+## Configuration in NovelWeave
 
-Once you've completed the registration process, Kilo Code is automatically configured:
+Once you've completed the registration process, NovelWeave is automatically configured:
 
-1. **Automatic Setup:** After successful registration, Kilo Code is ready to use immediately
+1. **Automatic Setup:** After successful registration, NovelWeave is ready to use immediately
 2. **No API Key Management:** Your authentication is handled seamlessly through the registration process
-3. **Model Selection:** Access to frontier models is provided automatically through your Kilo Code account
+3. **Model Selection:** Access to frontier models is provided automatically through your NovelWeave account
 
 ### Provider Routing
 
-Kilo Code can route to many different inference providers. For personal accounts, provider routing behavior can be controlled in the API Provider settings under Provider Routing.
+NovelWeave can route to many different inference providers. For personal accounts, provider routing behavior can be controlled in the API Provider settings under Provider Routing.
 
 #### Provider Sorting
 
@@ -64,7 +64,7 @@ Kilo Code can route to many different inference providers. For personal accounts
 
 ## Connected Accounts
 
-With the Kilo Code provider, if you sign up with Google you can also connect other sign in accounts - like GitHub - by:
+With the NovelWeave provider, if you sign up with Google you can also connect other sign in accounts - like GitHub - by:
 
 1. Go to your profile
 2. Select [**Connected Accounts**](https://app.novelweave.ai/connected-accounts)
@@ -75,10 +75,10 @@ With the Kilo Code provider, if you sign up with Google you can also connect oth
 
 ## Tips and Notes
 
-- **Free Credits:** New users receive free credits to explore Kilo Code's capabilities
+- **Free Credits:** New users receive free credits to explore NovelWeave's capabilities
 - **Identity Verification:** The temporary hold system ensures service reliability while preventing misuse
 - **Seamless Integration:** No need to manage multiple API keys or provider configurations
 - **Latest Models:** Automatic access to the most current frontier coding models
 - **Support Available:** Contact [hi@novelweave.ai](mailto:hi@novelweave.ai) for questions about pricing or tokens
 
-For detailed setup instructions, see [Setting up Kilo Code](/getting-started/setting-up).
+For detailed setup instructions, see [Setting up NovelWeave](/getting-started/setting-up).

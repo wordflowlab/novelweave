@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { ProfileDataResponsePayload } from "@roo/WebviewMessage"
 import { vscode } from "@/utils/vscode"
 
-export function useKiloIdentity(novelweaveToken: string, machineId: string) {
-	const [kiloIdentity, setKiloIdentity] = useState("")
+export function useNovelWeaveIdentity(novelweaveToken: string, machineId: string) {
+	const [kiloIdentity, setNovelWeaveIdentity] = useState("")
 	useEffect(() => {
 		const handleMessage = (event: MessageEvent) => {
 			if (event.data.type === "profileDataResponse") {
@@ -12,14 +12,17 @@ export function useKiloIdentity(novelweaveToken: string, machineId: string) {
 				const tokenFromMessage = payload?.data?.novelweaveToken || ""
 				const email = payload?.data?.user?.email || ""
 				if (!success) {
-					console.error("KILOTEL: Failed to identify Kilo user, message doesn't indicate success:", payload)
+					console.error(
+						"KILOTEL: Failed to identify NovelWeave user, message doesn't indicate success:",
+						payload,
+					)
 				} else if (tokenFromMessage !== novelweaveToken) {
-					console.error("KILOTEL: Failed to identify Kilo user, token mismatch:", payload)
+					console.error("KILOTEL: Failed to identify NovelWeave user, token mismatch:", payload)
 				} else if (!email) {
-					console.error("KILOTEL: Failed to identify Kilo user, email missing:", payload)
+					console.error("KILOTEL: Failed to identify NovelWeave user, email missing:", payload)
 				} else {
-					console.debug("KILOTEL: Kilo user identified:", email)
-					setKiloIdentity(email)
+					console.debug("KILOTEL: NovelWeave user identified:", email)
+					setNovelWeaveIdentity(email)
 					window.removeEventListener("message", handleMessage)
 				}
 			}
@@ -32,8 +35,8 @@ export function useKiloIdentity(novelweaveToken: string, machineId: string) {
 				type: "fetchProfileDataRequest",
 			})
 		} else {
-			console.debug("KILOTEL: no Kilo user")
-			setKiloIdentity("")
+			console.debug("KILOTEL: no NovelWeave user")
+			setNovelWeaveIdentity("")
 		}
 
 		return () => {

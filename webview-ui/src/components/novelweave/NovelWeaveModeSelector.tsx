@@ -7,7 +7,7 @@ import { useAppTranslation } from "@/i18n/TranslationContext"
 import { vscode } from "@/utils/vscode"
 import { cn } from "@/lib/utils"
 
-interface KiloModeSelectorProps {
+interface NovelWeaveModeSelectorProps {
 	value: Mode
 	onChange: (value: Mode) => void
 	modeShortcutText: string
@@ -18,7 +18,7 @@ interface KiloModeSelectorProps {
 	initiallyOpen?: boolean
 }
 
-export const KiloModeSelector = ({
+export const NovelWeaveModeSelector = ({
 	value,
 	onChange,
 	modeShortcutText,
@@ -27,7 +27,7 @@ export const KiloModeSelector = ({
 	title,
 	triggerClassName,
 	initiallyOpen,
-}: KiloModeSelectorProps) => {
+}: NovelWeaveModeSelectorProps) => {
 	const { t } = useAppTranslation()
 	const allModes = React.useMemo(() => getAllModes(customModes), [customModes])
 
@@ -127,4 +127,4 @@ export const KiloModeSelector = ({
 	)
 }
 
-export default KiloModeSelector
+export default NovelWeaveModeSelector

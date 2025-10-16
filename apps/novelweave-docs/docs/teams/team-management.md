@@ -4,7 +4,7 @@ sidebar_label: Managing Your Team
 
 # Managing Your Team
 
-Effective team management in Kilo for Teams ensures optimal AI usage, cost control, and smooth collaboration across your engineering organization.
+Effective team management in NovelWeave for Teams ensures optimal AI usage, cost control, and smooth collaboration across your engineering organization.
 
 ## Adding Team Members
 

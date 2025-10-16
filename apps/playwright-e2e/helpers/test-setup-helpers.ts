@@ -5,7 +5,7 @@ import { verifyExtensionInstalled } from "./vscode-helpers"
 
 export async function setupTestEnvironment(page: Page): Promise<void> {
 	await verifyExtensionInstalled(page)
-	await waitForWebviewText(page, "Welcome to Kilo Code!")
+	await waitForWebviewText(page, "Welcome to NovelWeave!")
 	await configureApiKeyThroughUI(page)
 	await waitForWebviewText(page, "Generate, refactor, and debug code with AI assistance")
 }

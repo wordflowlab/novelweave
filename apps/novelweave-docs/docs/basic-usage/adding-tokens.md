@@ -10,7 +10,7 @@ Once you've used any initial free tokens, you can easily add more:
 
 ## Transparent Pricing
 
-At Kilo Code, we believe in complete pricing transparency:
+At NovelWeave, we believe in complete pricing transparency:
 
 - Our pricing matches the model provider's API rates exactly
 - We don't take any commission or markup, either per token or per top-up
@@ -18,7 +18,7 @@ At Kilo Code, we believe in complete pricing transparency:
 
 ## Future Plans
 
-We're continuously working to improve Kilo Code and expand our offerings:
+We're continuously working to improve NovelWeave and expand our offerings:
 
 - Additional LLM providers will be added in the future
 - More payment options and other plans are under development

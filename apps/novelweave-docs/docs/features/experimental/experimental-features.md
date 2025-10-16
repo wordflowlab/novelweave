@@ -1,14 +1,14 @@
 # Experimental Features
 
-Kilo Code includes experimental features that are still under development.  These features may be unstable, change significantly, or be removed in future versions.  Use them with caution and be aware that they may not work as expected.
+NovelWeave includes experimental features that are still under development. These features may be unstable, change significantly, or be removed in future versions. Use them with caution and be aware that they may not work as expected.
 
-**Warning:** Experimental features may have unexpected behavior, including potential data loss or security vulnerabilities.  Enable them at your own risk.
+**Warning:** Experimental features may have unexpected behavior, including potential data loss or security vulnerabilities. Enable them at your own risk.
 
 ## Enabling Experimental Features
 
 To enable or disable experimental features:
 
-1.  Open the Kilo Code settings (<Codicon name="gear" /> icon in the top right corner).
+1.  Open the NovelWeave settings (<Codicon name="gear" /> icon in the top right corner).
 2.  Go to the "Advanced Settings" section.
 3.  Find the "Experimental Features" section.
 4.  Check or uncheck the boxes for the features you want to enable or disable.
@@ -19,17 +19,19 @@ To enable or disable experimental features:
 The following experimental features are currently available:
 
 ## Autocomplete
-When enabled, Kilo Code will provide inline code suggestions as you type. Currently this requires the Kilo Code API Provider in order to use it.
+
+When enabled, NovelWeave will provide inline code suggestions as you type. Currently this requires the NovelWeave API Provider in order to use it.
 
 ## Concurrent file edits
-When enabled, Kilo Code can edit multiple files in a single request. When disabled, Kilo Code must edit one file at a time. Disabling this can help when working with less capable models or when you want more control over file modifications.
+
+When enabled, NovelWeave can edit multiple files in a single request. When disabled, NovelWeave must edit one file at a time. Disabling this can help when working with less capable models or when you want more control over file modifications.
 
 ### Power Steering
 
-When enabled, Kilo Code will remind the model about the details of its current mode definition more frequently. This will lead to stronger adherence to role definitions and custom instructions, but will use more tokens per message.
+When enabled, NovelWeave will remind the model about the details of its current mode definition more frequently. This will lead to stronger adherence to role definitions and custom instructions, but will use more tokens per message.
 
 ## Providing Feedback
 
-If you encounter any issues with experimental features, or if you have suggestions for improvements, please report them on the [Kilo Code Code GitHub Issues page](https://github.com/Kilo-Org/novelweave) or join our [Discord server](https://kilo.love/discord) where we have channels dedciated to many experimental features.
+If you encounter any issues with experimental features, or if you have suggestions for improvements, please report them on the [NovelWeave Code GitHub Issues page](https://github.com/NovelWeave-Org/novelweave) or join our [Discord server](https://kilo.love/discord) where we have channels dedciated to many experimental features.
 
-Your feedback is valuable and helps us improve Kilo Code!
+Your feedback is valuable and helps us improve NovelWeave!

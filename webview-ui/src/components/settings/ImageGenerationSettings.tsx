@@ -75,7 +75,7 @@ export const ImageGenerationSettings = ({
 		setOpenRouterImageApiKey(value)
 	}
 
-	const handleKiloApiKeyChange = (value: string) => {
+	const handleNovelWeaveApiKeyChange = (value: string) => {
 		setNovelWeaveImageApiKey(value)
 	}
 
@@ -116,7 +116,7 @@ export const ImageGenerationSettings = ({
 								}}
 								className="w-full">
 								<VSCodeOption className="py-2 px-3" value="novelweave">
-									Kilo Code
+									NovelWeave
 								</VSCodeOption>
 								<VSCodeOption className="py-2 px-3" value="openrouter">
 									OpenRouter
@@ -134,7 +134,7 @@ export const ImageGenerationSettings = ({
 							</label>
 							<VSCodeTextField
 								value={kiloCodeImageApiKey}
-								onInput={(e: any) => handleKiloApiKeyChange(e.target.value)}
+								onInput={(e: any) => handleNovelWeaveApiKeyChange(e.target.value)}
 								placeholder={t("settings:experimental.IMAGE_GENERATION.kiloCodeApiKeyPlaceholder")}
 								className="w-full"
 								type="password"
@@ -143,7 +143,7 @@ export const ImageGenerationSettings = ({
 								{currentProfileNovelweaveToken ? (
 									<a
 										href="#"
-										onClick={() => handleKiloApiKeyChange(currentProfileNovelweaveToken)}
+										onClick={() => handleNovelWeaveApiKeyChange(currentProfileNovelweaveToken)}
 										className="text-vscode-textLink-foreground hover:text-vscode-textLink-activeForeground">
 										{t("settings:experimental.IMAGE_GENERATION.kiloCodeApiKeyPaste")}
 									</a>

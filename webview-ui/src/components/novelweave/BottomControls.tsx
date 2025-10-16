@@ -1,7 +1,7 @@
 import React from "react"
 import { vscode } from "../../utils/vscode"
 import { useAppTranslation } from "@/i18n/TranslationContext"
-import KiloRulesToggleModal from "./rules/KiloRulesToggleModal"
+import NovelWeaveRulesToggleModal from "./rules/NovelWeaveRulesToggleModal"
 import BottomButton from "./BottomButton"
 import { BottomApiConfig } from "./BottomApiConfig" // novelweave_change
 
@@ -23,7 +23,7 @@ const BottomControls: React.FC<BottomControlsProps> = ({ showApiConfig = false }
 			</div>
 			<div className="flex flex-row justify-end w-auto">
 				<div className="flex items-center gap-1">
-					<KiloRulesToggleModal />
+					<NovelWeaveRulesToggleModal />
 					<BottomButton
 						iconClass="codicon-feedback"
 						title={t("common:feedback.title")}

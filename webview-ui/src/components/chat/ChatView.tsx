@@ -52,7 +52,7 @@ import BrowserSessionRow from "./BrowserSessionRow"
 import ChatRow from "./ChatRow"
 import { ChatTextArea } from "./ChatTextArea"
 // import TaskHeader from "./TaskHeader"// novelweave_change
-import KiloTaskHeader from "../novelweave/KiloTaskHeader" // novelweave_change
+import NovelWeaveTaskHeader from "../novelweave/NovelWeaveTaskHeader" // novelweave_change
 import AutoApproveMenu from "./AutoApproveMenu"
 import BottomControls from "../novelweave/BottomControls" // novelweave_change
 import SystemPromptWarning from "./SystemPromptWarning"
@@ -1938,7 +1938,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 						handleCondenseContext={handleCondenseContext}
 						todos={latestTodos}
 					/> */}
-					<KiloTaskHeader
+					<NovelWeaveTaskHeader
 						task={task}
 						tokensIn={apiMetrics.totalTokensIn}
 						tokensOut={apiMetrics.totalTokensOut}

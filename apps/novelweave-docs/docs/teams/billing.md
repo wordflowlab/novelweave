@@ -4,7 +4,7 @@ sidebar_label: Billing & Credits
 
 # Billing & Credits
 
-Kilo for Teams uses a transparent, two-part billing system: a monthly subscription for seats plus pay-as-you-go AI credits with zero markup.
+NovelWeave for Teams uses a transparent, two-part billing system: a monthly subscription for seats plus pay-as-you-go AI credits with zero markup.
 
 ## Understanding the Billing Model
 

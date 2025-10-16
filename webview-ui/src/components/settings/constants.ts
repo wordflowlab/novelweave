@@ -99,4 +99,4 @@ export const PROVIDERS = [
 	{ value: "vercel-ai-gateway", label: "Vercel AI Gateway" },
 ].sort((a, b) => a.label.localeCompare(b.label))
 
-PROVIDERS.unshift({ value: "novelweave", label: "Kilo Code" }) // novelweave_change
+PROVIDERS.unshift({ value: "novelweave", label: "NovelWeave" }) // novelweave_change

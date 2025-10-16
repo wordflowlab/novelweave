@@ -11,7 +11,7 @@ export interface LLMResponse {
 	tokensUsed?: number
 }
 
-function getKiloBaseUriFromToken(novelweaveToken?: string): string {
+function getNovelWeaveBaseUriFromToken(novelweaveToken?: string): string {
 	if (novelweaveToken) {
 		try {
 			const payload_string = novelweaveToken.split(".")[1]
@@ -20,7 +20,7 @@ function getKiloBaseUriFromToken(novelweaveToken?: string): string {
 			// Note: this is UNTRUSTED, so we need to make sure we're OK with this being manipulated by an attacker
 			if (payload.env === "development") return "http://localhost:3000"
 		} catch (_error) {
-			console.warn("Failed to get base URL from Kilo Code token")
+			console.warn("Failed to get base URL from NovelWeave token")
 		}
 	}
 	return "https://api.novelweave.ai"
@@ -43,7 +43,7 @@ export class LLMClient {
 			throw new Error("NOVELWEAVE_API_KEY is required for Novelweave provider")
 		}
 
-		const baseUrl = getKiloBaseUriFromToken(process.env.NOVELWEAVE_API_KEY)
+		const baseUrl = getNovelWeaveBaseUriFromToken(process.env.NOVELWEAVE_API_KEY)
 
 		this.openai = new OpenAI({
 			baseURL: `${baseUrl}/api/openrouter/`,

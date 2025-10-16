@@ -30,7 +30,7 @@ import ErrorBoundary from "./components/ErrorBoundary"
 import { useAddNonInteractiveClickListener } from "./components/ui/hooks/useNonInteractiveClick"
 import { TooltipProvider } from "./components/ui/tooltip"
 import { STANDARD_TOOLTIP_DELAY } from "./components/ui/standard-tooltip"
-import { useKiloIdentity } from "./utils/novelweave/useKiloIdentity"
+import { useNovelWeaveIdentity } from "./utils/novelweave/useNovelWeaveIdentity"
 
 type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "account" | "cloud" | "profile" // novelweave_change: add "profile"
 
@@ -222,7 +222,7 @@ const App = () => {
 	}, [shouldShowAnnouncement, tab])
 
 	// novelweave_change start
-	const telemetryDistinctId = useKiloIdentity(apiConfiguration?.novelweaveToken ?? "", machineId ?? "")
+	const telemetryDistinctId = useNovelWeaveIdentity(apiConfiguration?.novelweaveToken ?? "", machineId ?? "")
 	useEffect(() => {
 		if (didHydrateState) {
 			telemetryClient.updateTelemetryState(telemetrySetting, telemetryKey, telemetryDistinctId)
