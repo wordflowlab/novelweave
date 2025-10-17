@@ -168,7 +168,7 @@ export class NovelCommandHandler {
 						value = value
 							.slice(1, -1)
 							.split(",")
-							.map((v) => v.trim())
+							.map((v: string) => v.trim())
 					}
 
 					metadata[key] = value
