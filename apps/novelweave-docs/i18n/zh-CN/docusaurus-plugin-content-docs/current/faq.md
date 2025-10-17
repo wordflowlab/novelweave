@@ -91,7 +91,7 @@ NovelWeave支持多种API提供商，包括：
 
 ### 如何开始新任务？
 
-打开NovelWeave面板（<img src="/docs/img/kilo-v1.svg" width="12" />）并在聊天框中输入你的任务。请清晰具体地描述你希望NovelWeave完成的工作。请参阅[输入你的请求](/)获取最佳实践。
+打开NovelWeave面板并在聊天框中输入你的任务。请清晰具体地描述你希望NovelWeave完成的工作。请参阅[输入你的请求](/)获取最佳实践。
 
 ### NovelWeave有哪些模式？
 

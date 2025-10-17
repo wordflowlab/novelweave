@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave AI Agent",
-	"extension.description": "ผู้ช่วยเขียนโค้ด AI แบบ Open Source สำหรับการวางแผน สร้าง และแก้ไขโค้ด",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"views.contextMenu.label": "NovelWeave",
 	"views.terminalMenu.label": "NovelWeave",
 	"views.activitybar.title": "NovelWeave",

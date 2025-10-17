@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave AI 에이전트",
-	"extension.description": "코드를 계획, 빌드, 수정하기 위한 오픈소스 AI 코딩 도우미입니다.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"command.newTask.title": "새 작업",
 	"command.explainCode.title": "코드 설명",
 	"command.fixCode.title": "코드 수정",

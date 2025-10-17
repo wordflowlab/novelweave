@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave Agente AI",
-	"extension.description": "Assistente di programmazione AI open source per la pianificazione, la creazione e la correzione del codice.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"command.newTask.title": "Nuovo Task",
 	"command.explainCode.title": "Spiega Codice",
 	"command.fixCode.title": "Correggi Codice",

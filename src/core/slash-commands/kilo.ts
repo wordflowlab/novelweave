@@ -9,6 +9,19 @@ import {
 	reportBugToolResponse,
 	condenseToolResponse,
 } from "../prompts/commands"
+import {
+	constitutionToolResponse,
+	specifyToolResponse,
+	clarifyToolResponse,
+	planToolResponse,
+	tasksToolResponse,
+	writeToolResponse,
+	analyzeToolResponse,
+	timelineToolResponse,
+	relationsToolResponse,
+	trackToolResponse,
+	trackInitToolResponse,
+} from "../prompts/novel-commands"
 
 function enabledWorkflowToggles(workflowToggles: ClineRulesToggles) {
 	return Object.entries(workflowToggles)
@@ -28,11 +41,24 @@ export async function parseNovelWeaveSlashCommands(
 	localWorkflowToggles: ClineRulesToggles,
 	globalWorkflowToggles: ClineRulesToggles,
 ): Promise<{ processedText: string; needsRulesFileCheck: boolean }> {
-	const commandReplacements: Record<string, ((userInput: string) => string) | undefined> = {
+	const commandReplacements: Record<string, ((userInput: string) => string | Promise<string>) | undefined> = {
 		newtask: newTaskToolResponse,
 		newrule: newRuleToolResponse,
 		reportbug: reportBugToolResponse,
 		smol: condenseToolResponse,
+		// Novel creation commands (七步方法论)
+		constitution: constitutionToolResponse,
+		specify: specifyToolResponse,
+		clarify: clarifyToolResponse,
+		plan: planToolResponse,
+		tasks: tasksToolResponse,
+		write: writeToolResponse,
+		analyze: analyzeToolResponse,
+		// Novel tracking commands
+		timeline: timelineToolResponse,
+		relations: relationsToolResponse,
+		track: trackToolResponse,
+		"track-init": trackInitToolResponse,
 	}
 
 	// this currently allows matching prepended whitespace prior to /slash-command
@@ -69,7 +95,9 @@ export async function parseNovelWeaveSlashCommands(
 				// remove the slash command and add custom instructions at the top of this message
 				const textWithoutSlashCommand =
 					text.substring(0, slashCommandStartIndex) + text.substring(slashCommandEndIndex)
-				const processedText = command(textWithoutSlashCommand)
+
+				// Handle async commands (novel commands return promises)
+				const processedText = await Promise.resolve(command(textWithoutSlashCommand))
 
 				return { processedText, needsRulesFileCheck: commandName === "newrule" }
 			}

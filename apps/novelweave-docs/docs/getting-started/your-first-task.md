@@ -14,7 +14,7 @@ After you [set up NovelWeave](/getting-started/setting-up), follow these steps:
 
 ## Step 1: Open the NovelWeave Panel
 
-Click the NovelWeave icon (<img src="/docs/img/kilo-v1.svg" width="12" />) in the VS Code Primary Side Bar (vertical bar on the side of the window) to open the chat interface. If you don't see the icon, verify the extension is [installed](/getting-started/installing) and enabled.
+Click the NovelWeave icon in the VS Code Primary Side Bar (vertical bar on the side of the window) to open the chat interface. If you don't see the icon, verify the extension is [installed](/getting-started/installing) and enabled.
 
 <img src="/docs/img/your-first-task/your-first-task.png" alt="NovelWeave icon in VS Code Primary Side Bar" width="800" />
 

@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave AI 代理",
-	"extension.description": "用于规划、构建和修复代码的开源 AI 编码助手。",
+	"extension.description": "面向小说创作的 AI 助手，支持规划、结构化和草稿写作。",
 	"command.newTask.title": "新建任务",
 	"command.explainCode.title": "解释代码",
 	"command.fixCode.title": "修复代码",

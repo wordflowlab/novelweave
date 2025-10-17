@@ -93,7 +93,7 @@ Yes, NovelWeave supports running models locally using [Ollama](/providers/ollama
 
 ### How do I start a new task?
 
-Open the NovelWeave panel (<img src="/docs/img/kilo-v1.svg" width="12" />) and type your task in the chat box. Be clear and specific about what you want NovelWeave to do. See [The Chat Interface](/basic-usage/the-chat-interface) for best practices.
+Open the NovelWeave panel and type your task in the chat box. Be clear and specific about what you want NovelWeave to do. See [The Chat Interface](/basic-usage/the-chat-interface) for best practices.
 
 ### What are modes in NovelWeave?
 

@@ -10,7 +10,7 @@ sidebar_label: 第一个任务
 
 ## 第一步：打开NovelWeave面板
 
-点击VS Code主侧边栏（窗口侧边的垂直栏）中的NovelWeave图标（<img src="/docs/img/kilo-v1.svg" width="12" />）打开聊天界面。如果看不到图标，请确认扩展已[安装](/getting-started/installing)并启用。
+点击VS Code主侧边栏（窗口侧边的垂直栏）中的NovelWeave图标打开聊天界面。如果看不到图标，请确认扩展已[安装](/getting-started/installing)并启用。
 
 <img src="/docs/img/your-first-task/your-first-task.png" alt="VS Code主侧边栏中的NovelWeave图标" width="800" />
 *主侧边栏中的NovelWeave图标可打开聊天界面*

@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave AI Agent",
-	"extension.description": "Een compleet ontwikkelteam van AI-agents in je editor.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"views.contextMenu.label": "NovelWeave",
 	"views.terminalMenu.label": "NovelWeave",
 	"views.sidebar.name": "NovelWeave",

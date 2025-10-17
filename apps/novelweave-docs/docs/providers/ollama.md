@@ -72,7 +72,7 @@ By default, API requests time out after 10 minutes. Local models can be slow, if
 
 ### Configure NovelWeave
 
-- Open the NovelWeave sidebar (<img src="/docs/img/kilo-v1.svg" width="12" /> icon).
+- Open the NovelWeave sidebars.
 - Click the Settings gear icon (<Codicon name="gear" />).
 - Select "Ollama" as the API Provider.
 - Select the model configured in the previous step.

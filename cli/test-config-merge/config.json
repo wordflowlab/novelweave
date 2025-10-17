@@ -1,0 +1,14 @@
+{
+	"version": "1.0.0",
+	"mode": "code",
+	"telemetry": true,
+	"provider": "default",
+	"providers": [
+		{
+			"id": "default",
+			"provider": "novelweave",
+			"novelweaveToken": "valid-token-1234567890",
+			"novelweaveModel": "anthropic/claude-sonnet-4"
+		}
+	]
+}

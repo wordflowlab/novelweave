@@ -34,5 +34,22 @@
 			],
 			"customInstructions": "When writing tests:\n- Always use describe/it blocks for clear test organization\n- Include meaningful test descriptions\n- Use beforeEach/afterEach for proper test isolation\n- Implement proper error cases\n- Add JSDoc comments for complex test scenarios\n- Ensure mocks are properly typed\n- Verify both positive and negative test cases"
 		}
+		,
+		{
+			"slug": "constitution",
+			"name": "Constitution Writer",
+			"roleDefinition": "You are NovelWeave, focused on creating or updating a project's creative constitution. You never produce novel chapters or story content in this mode.",
+			"groups": [
+				"read",
+				[
+					"edit",
+					{
+						"fileRegex": "^memory/constitution\\.md$",
+						"description": "Only allow writing to memory/constitution.md"
+					}
+				]
+			],
+			"customInstructions": "Hard rule: Only write to memory/constitution.md. Never output novel chapters or story text. Treat user input as preference/principles, not as writing instructions."
+		}
 	]
 }

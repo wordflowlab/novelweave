@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave وكيل ذكاء اصطناعي",
-	"extension.description": "مساعد برمجة ذكاء اصطناعي مفتوح المصدر يساعدك تخطط وتبني وتعدل الكود.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"views.contextMenu.label": "NovelWeave",
 	"views.terminalMenu.label": "NovelWeave",
 	"views.activitybar.title": "NovelWeave",
