@@ -69,6 +69,5 @@ qdrant_storage/
 
 # Exclude other directory and .claude folder
 other/
-other/*
-!other/.gitkeep
+
 .claude/

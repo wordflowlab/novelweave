@@ -128,10 +128,12 @@ ${userInput || "创建一份通用的小说创作宪法"}
 <explicit_instructions type="novel_write">
 你正在执行"/write（章节写作）"命令。严格遵守以下规则：
 
-- 执行下方模板中的指令，生成实际的章节内容，而非显示写作指南
+- 只写【一个】章节，不得批量生成多章；不得自动循环多个任务
+- 从 tasks.md 中选择一个 pending 任务或基于参数指定的章节编号，仅处理该章
 - 必须读取相关参考文档（宪法、规格、计划、任务等）
 - 根据任务要求生成具体的小说章节内容（2000-4000字）
-- 必须调用 write_to_file 将章节内容写入 stories/*/content/第X章.md
+- 优先将章节保存到 stories/*/chapters/NNN-标题.md；若无 chapters 目录，再回退到 stories/*/content/volume1/chapter-NNN.md
+- 必须调用 write_to_file 仅一次，写入本章内容
 - 在聊天中只输出简洁的完成报告（字数、保存位置、任务状态）
 - 不要在聊天中输出完整章节内容（除非用户明确要求预览）
 - 遵循反AI检测写作规范，确保文字自然流畅
