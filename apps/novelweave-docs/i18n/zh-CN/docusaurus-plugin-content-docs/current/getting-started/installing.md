@@ -27,7 +27,7 @@ NovelWeave是一款VS Code扩展，可将AI编程助手直接集成到编辑器�
 4. 选择NovelWeave发布的扩展并点击**安装**
 5. 根据提示重新加载VS Code
 
-安装完成后，在侧边栏找到NovelWeave图标（<img src="/docs/img/kilo-v1.svg" width="12" />）即可打开面板。
+安装完成后，在侧边栏找到NovelWeave图标即可打开面板。
 
 <img src="/docs/img/installing/installing.png" alt="VS Code应用商店中的NovelWeave扩展安装界面" width="400" />
 *VS Code应用商店中的NovelWeave扩展安装界面*
@@ -48,7 +48,7 @@ NovelWeave是一款VS Code扩展，可将AI编程助手直接集成到编辑器�
 4. 选择NovelWeave发布的扩展并点击**安装**
 5. 根据提示重新加载Cursor
 
-安装完成后，在侧边栏找到NovelWeave图标（<img src="/docs/img/kilo-v1.svg" width="12" />）即可打开面板。
+安装完成后，在侧边栏找到NovelWeave图标即可打开面板。
 
 ## Open VSX注册表
 
@@ -72,7 +72,6 @@ NovelWeave是一款VS Code扩展，可将AI编程助手直接集成到编辑器�
 若需手动下载安装：
 
 1. **下载VSIX文件：**
-
     - 在[NovelWeave GitHub Releases页面](https://github.com/NovelWeave-Org/novelweave/releases)查找正式版本
     - 从[最新版本](https://github.com/NovelWeave-Org/novelweave/releases/latest)下载`.vsix`文件
 

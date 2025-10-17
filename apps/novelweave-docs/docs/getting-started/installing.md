@@ -27,7 +27,7 @@ alternatively, you can:
 4. Select "NovelWeave" by NovelWeave and click **Install**
 5. Reload VS Code if prompted
 
-After installation, find the NovelWeave icon (<img src="/docs/img/kilo-v1.svg" width="12" />) in the Side Bar to open the NovelWeave panel.
+After installation, find the NovelWeave icon in the Side Bar to open the NovelWeave panel.
 
 <img src="/docs/img/installing/installing.png" alt="VS Code marketplace with NovelWeave extension ready to install" width="400" />
 *VS Code marketplace with NovelWeave extension ready to install*
@@ -48,7 +48,7 @@ alternatively, you can:
 4. Select "NovelWeave" by NovelWeave and click **Install**
 5. Reload Cursor if prompted
 
-After installation, find the NovelWeave icon (<img src="/docs/img/kilo-v1.svg" width="12" />) in the Side Bar to open the NovelWeave panel.
+After installation, find the NovelWeave icon in the Side Bar to open the NovelWeave panel.
 
 ## Open VSX Registry
 
@@ -72,7 +72,6 @@ If your editor isn't automatically configured for Open VSX Registry, you may nee
 If you prefer to download and install the VSIX file directly:
 
 1. **Download the VSIX file:**
-
     - Find official releases on the [NovelWeave GitHub Releases page](https://github.com/NovelWeave-Org/novelweave/releases)
     - Download the `.vsix` file from the [latest release](https://github.com/NovelWeave-Org/novelweave/releases/latest)
 

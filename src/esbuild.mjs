@@ -56,6 +56,7 @@ async function main() {
 							["../.env", ".env", { optional: true }],
 							["node_modules/vscode-material-icons/generated", "assets/vscode-material-icons"],
 							["../webview-ui/audio", "webview-ui/audio"],
+							["../templates", "templates"], // Novel creation templates - includes commands, knowledge, presets, tracking, memory, experts
 						],
 						srcDir,
 						buildDir,

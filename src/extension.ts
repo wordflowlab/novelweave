@@ -40,6 +40,7 @@ import {
 	registerCodeActions,
 	registerTerminalActions,
 	CodeActionProvider,
+	registerNovelCommands,
 } from "./activate"
 import { initializeI18n } from "./i18n"
 import { registerGhostProvider } from "./services/ghost" // novelweave_change
@@ -279,7 +280,14 @@ export async function activate(context: vscode.ExtensionContext) {
 		)
 	}
 
+	// Set global extension path for command services
+	const { setExtensionPath } = await import("./services/command/extension-context")
+	setExtensionPath(context.extensionPath)
+
 	registerCommands({ context, outputChannel, provider })
+
+	// Register novel commands
+	registerNovelCommands(context)
 
 	/**
 	 * We use the text document content provider API to show the left side for diff

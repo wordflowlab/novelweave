@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave AI Agent",
-	"extension.description": "Trợ lý mã hóa AI nguồn mở để lập kế hoạch, xây dựng và sửa mã.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"command.newTask.title": "Tác Vụ Mới",
 	"command.explainCode.title": "Giải Thích Mã",
 	"command.fixCode.title": "Sửa Mã",

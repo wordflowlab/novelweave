@@ -3,6 +3,7 @@ import * as path from "path"
 import matter from "gray-matter"
 import { getGlobalRooDirectory, getProjectRooDirectoryForCwd } from "../roo-config"
 import { getBuiltInCommands, getBuiltInCommand } from "./built-in-commands"
+import { getExtensionPath } from "./extension-context"
 
 export interface Command {
 	name: string
@@ -21,7 +22,8 @@ export async function getCommands(cwd: string): Promise<Command[]> {
 	const commands = new Map<string, Command>()
 
 	// Add built-in commands first (lowest priority)
-	const builtInCommands = await getBuiltInCommands()
+	const extensionPath = getExtensionPath()
+	const builtInCommands = await getBuiltInCommands(extensionPath)
 	for (const command of builtInCommands) {
 		commands.set(command.name, command)
 	}
@@ -59,7 +61,8 @@ export async function getCommand(cwd: string, name: string): Promise<Command | u
 	}
 
 	// Check built-in commands if not found in project or global (lowest priority)
-	return await getBuiltInCommand(name)
+	const extensionPath = getExtensionPath()
+	return await getBuiltInCommand(name, extensionPath)
 }
 
 /**

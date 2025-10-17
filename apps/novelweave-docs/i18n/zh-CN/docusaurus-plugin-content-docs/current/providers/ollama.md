@@ -125,7 +125,7 @@ devstral:24b 产生的结果如下：
     ```
 
 3.  **配置 NovelWeave：**
-    - 打开 NovelWeave 侧边栏（<img src="/docs/img/kilo-v1.svg" width="12" /> 图标）。
+    - 打开 NovelWeave 侧边栏.
     - 单击设置齿轮图标（<Codicon name="gear" />）。
     - 选择“ollama”作为 API 提供商。
     - 输入模型名称。

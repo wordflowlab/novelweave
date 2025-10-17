@@ -40,7 +40,7 @@ NovelWeave 对大多数模型使用 0.0 的默认温度，以优化代码生成�
 
 ## 如何调整温度
 
-1.  **打开 NovelWeave 面板：** 单击 VS Code 侧边栏中的 NovelWeave 图标（<img src="/docs/img/kilo-v1.svg" width="12" />）
+1.  **打开 NovelWeave 面板：** 单击 VS Code 侧边栏中的 NovelWeave 图标
 2.  **打开设置：** 单击右上角的 <Codicon name="gear" /> 图标
 3.  **查找温度控制：** 导航到“提供商”部分
 4.  **启用自定义温度：** 选中“使用自定义温度”框

@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave KI-Agent",
-	"extension.description": "Open-Source-KI-Codierungsassistent zum Planen, Erstellen und Korrigieren von Code.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"command.newTask.title": "Neue Aufgabe",
 	"command.explainCode.title": "Code Erklären",
 	"command.fixCode.title": "Code Reparieren",

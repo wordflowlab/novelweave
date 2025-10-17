@@ -17,29 +17,36 @@ export function getSupportedSlashCommands(
 	localWorkflowToggles: ClineRulesToggles = {},
 	globalWorkflowToggles: ClineRulesToggles = {},
 ): SlashCommand[] {
-	// Start with non-mode commands
-	const baseCommands: SlashCommand[] = [
-		{
-			name: "newtask",
-			description: "Create a new task with context from the current task",
-		},
-		{
-			name: "newrule",
-			description: "Create a new NovelWeave rule with context from your conversation",
-		},
-		{ name: "reportbug", description: "Create a NovelWeave GitHub issue" },
-		{ name: "smol", description: "Condenses your current context window" },
+	// Only keep utility commands useful for novel writing
+	const baseCommands: SlashCommand[] = [{ name: "smol", description: "Condenses your current context window" }]
+
+	// Novel creation commands (七步方法论)
+	const novelCommands: SlashCommand[] = [
+		{ name: "constitution", description: "创建或更新小说创作宪法，定义不可妥协的创作原则" },
+		{ name: "specify", description: "定义故事规格，像 PRD 一样明确要创造什么" },
+		{ name: "clarify", description: "通过 AI 提问澄清关键决策点，消除模糊性" },
+		{ name: "plan", description: "制定创作计划，将规格转化为技术方案" },
+		{ name: "tasks", description: "分解执行任务，生成可操作的任务清单" },
+		{ name: "write", description: "基于任务清单执行章节写作，自动加载上下文和验证规则" },
+		{ name: "analyze", description: "综合验证作品质量和一致性" },
+		{ name: "timeline", description: "管理故事时间线，确保时序一致" },
+		{ name: "relations", description: "追踪角色关系变化和发展" },
+		{ name: "track", description: "综合追踪与智能分析" },
+		{ name: "track-init", description: "初始化追踪系统" },
 	]
 
 	// Add mode-switching commands dynamically
-	const modeCommands = getAllModes(customModes).map((mode) => ({
-		name: mode.slug,
-		description: `Switch to ${mode.name.replace(/^[💻🏗️❓🪲🪃]+ /, "")} mode`,
-	}))
+	// Filter out programming-related modes, only keep ask mode
+	const modeCommands = getAllModes(customModes)
+		.filter((mode) => !["code", "debug", "orchestrator"].includes(mode.slug))
+		.map((mode) => ({
+			name: mode.slug,
+			description: `Switch to ${mode.name.replace(/^[💻🏗️❓🪲🪃]+ /, "")} mode`,
+		}))
 
 	// add workflow commands
 	const workflowCommands = getWorkflowCommands(localWorkflowToggles, globalWorkflowToggles)
-	return [...baseCommands, ...modeCommands, ...workflowCommands]
+	return [...baseCommands, ...novelCommands, ...modeCommands, ...workflowCommands]
 }
 
 // Export a default instance for backward compatibility

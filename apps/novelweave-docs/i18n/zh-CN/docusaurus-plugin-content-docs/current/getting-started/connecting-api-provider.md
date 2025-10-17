@@ -78,7 +78,7 @@ _OpenAI平台，带有"创建新密钥"按钮。命名您的密钥并在创建�
 
 获取API密钥后：
 
-1. 点击VS Code侧边栏中的NovelWeave图标(<img src="/docs/img/kilo-v1.svg" width="12" />)打开NovelWeave侧边栏
+1. 点击VS Code侧边栏中的NovelWeave图标打开NovelWeave侧边栏
 2. 在欢迎界面，从下拉菜单中选择您的API提供商
 3. 将API密钥粘贴到相应字段中
 4. 选择您的模型：

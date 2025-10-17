@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "novelweave",
-	"version": "0.1.0",
+	"version": "0.6.0",
 	"icon": "assets/icons/novelweave-icon.png",
 	"readme": "readme.md",
 	"galleryBanner": {
@@ -293,6 +293,28 @@
 				"command": "novelweave.ghost.goToPreviousSuggestion",
 				"title": "%ghost.commands.goToPreviousSuggestion%",
 				"category": "%configuration.title%"
+			},
+			{
+				"command": "novelweave.createNovelProject",
+				"title": "Create Novel Project",
+				"category": "NovelWeave Novel",
+				"icon": "$(book)"
+			},
+			{
+				"command": "novelweave.migrateNovelWriterProject",
+				"title": "Migrate novel-writer Project",
+				"category": "NovelWeave Novel"
+			},
+			{
+				"command": "novelweave.exportNovelCommands",
+				"title": "Export Novel Commands",
+				"category": "NovelWeave Novel",
+				"icon": "$(export)"
+			},
+			{
+				"command": "novelweave.detectProjectType",
+				"title": "Detect Project Type",
+				"category": "NovelWeave Novel"
 			}
 		],
 		"menus": {

@@ -1,4 +1,5 @@
 import { Command } from "./commands"
+import { getBuiltInNovelCommands, getBuiltInNovelCommand, getBuiltInNovelCommandNames } from "./novel-commands"
 
 interface BuiltInCommandDefinition {
 	name: string
@@ -289,8 +290,8 @@ Remember: The goal is to create documentation that enables AI assistants to be i
 /**
  * Get all built-in commands as Command objects
  */
-export async function getBuiltInCommands(): Promise<Command[]> {
-	return Object.values(BUILT_IN_COMMANDS).map((cmd) => ({
+export async function getBuiltInCommands(extensionPath?: string): Promise<Command[]> {
+	const regularCommands = Object.values(BUILT_IN_COMMANDS).map((cmd) => ({
 		name: cmd.name,
 		content: cmd.content,
 		source: "built-in" as const,
@@ -298,28 +299,69 @@ export async function getBuiltInCommands(): Promise<Command[]> {
 		description: cmd.description,
 		argumentHint: cmd.argumentHint,
 	}))
+
+	// Add novel commands if extension path is available
+	if (extensionPath) {
+		try {
+			const novelCommands = await getBuiltInNovelCommands(extensionPath)
+			return [...regularCommands, ...novelCommands]
+		} catch (error) {
+			console.warn("Failed to load novel commands:", error)
+			return regularCommands
+		}
+	}
+
+	return regularCommands
 }
 
 /**
  * Get a specific built-in command by name
  */
-export async function getBuiltInCommand(name: string): Promise<Command | undefined> {
+export async function getBuiltInCommand(name: string, extensionPath?: string): Promise<Command | undefined> {
+	// Check regular built-in commands first
 	const cmd = BUILT_IN_COMMANDS[name]
-	if (!cmd) return undefined
-
-	return {
-		name: cmd.name,
-		content: cmd.content,
-		source: "built-in" as const,
-		filePath: `<built-in:${name}>`,
-		description: cmd.description,
-		argumentHint: cmd.argumentHint,
+	if (cmd) {
+		return {
+			name: cmd.name,
+			content: cmd.content,
+			source: "built-in" as const,
+			filePath: `<built-in:${name}>`,
+			description: cmd.description,
+			argumentHint: cmd.argumentHint,
+		}
 	}
+
+	// Check novel commands if extension path is available
+	if (extensionPath) {
+		try {
+			const novelCommand = await getBuiltInNovelCommand(extensionPath, name)
+			if (novelCommand) {
+				return novelCommand
+			}
+		} catch (error) {
+			console.warn(`Failed to load novel command ${name}:`, error)
+		}
+	}
+
+	return undefined
 }
 
 /**
  * Get names of all built-in commands
  */
-export async function getBuiltInCommandNames(): Promise<string[]> {
-	return Object.keys(BUILT_IN_COMMANDS)
+export async function getBuiltInCommandNames(extensionPath?: string): Promise<string[]> {
+	const regularCommandNames = Object.keys(BUILT_IN_COMMANDS)
+
+	// Add novel command names if extension path is available
+	if (extensionPath) {
+		try {
+			const novelCommandNames = getBuiltInNovelCommandNames()
+			return [...regularCommandNames, ...novelCommandNames]
+		} catch (error) {
+			console.warn("Failed to get novel command names:", error)
+			return regularCommandNames
+		}
+	}
+
+	return regularCommandNames
 }

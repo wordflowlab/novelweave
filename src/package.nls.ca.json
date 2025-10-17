@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "NovelWeave Agent d'IA",
-	"extension.description": "Assistent de codificació de IA de codi obert per planificar, crear i corregir codi.",
+	"extension.description": "AI-powered novel writing assistant for planning, structuring, and drafting stories.",
 	"command.newTask.title": "Nova Tasca",
 	"command.explainCode.title": "Explicar Codi",
 	"command.fixCode.title": "Corregir Codi",
