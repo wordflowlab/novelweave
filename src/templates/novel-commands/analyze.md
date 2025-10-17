@@ -98,8 +98,9 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 - 宪法文件：`memory/constitution.md`
 - 规格文件：`stories/*/specification.md`
-- 计划文件：`stories/*/creative-plan.md`
+- 计划文件：`stories/*/creative-plan.md` 或 `stories/*/plan.md`
 - 任务文件：`stories/*/tasks.md`
+- per‑story 参考：`stories/*/characters/*.md`、`stories/*/world/*.md`、`stories/*/tracking/*.md`
 
 ### A2. 覆盖率分析
 
@@ -215,9 +216,13 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 - 宪法文件：`memory/constitution.md`
 - 规格文件：`stories/*/specification.md`
-- 计划文件：`stories/*/creative-plan.md`
+- 计划文件：`stories/*/creative-plan.md` 或 `stories/*/plan.md`
 - 任务列表：`stories/*/tasks.md`
-- **已完成内容**：`stories/*/content/*.md` 或 `stories/*/chapters/*.md`
+- **per‑story 知识/设定**：
+    - `stories/*/characters/*.md`
+    - `stories/*/world/*.md`
+    - `stories/*/tracking/*.md`（如 foreshadowing-tracker.md、crosspoint-tracker.md）
+- **已完成内容**：`stories/*/chapters/*.md` 或 `stories/*/content/*.md`
 
 ### B2. 宪法合规性检查
 

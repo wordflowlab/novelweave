@@ -192,6 +192,57 @@ export class ProjectInitializer {
 `
 
 		await fs.writeFile(readmePath, readmeContent, "utf-8")
+
+		// 创建一个默认故事骨架（stories/story-YYYYMMDD）
+		await this.createDefaultStorySkeleton(rootPath)
+	}
+
+	/**
+	 * 创建默认故事骨架：stories/story-YYYYMMDD
+	 * 目录包含：characters/、world/、tracking/、chapters/、content/volume1/
+	 * 并创建 per-story 追踪表模板（与 novel-write 结构对齐）
+	 */
+	private static async createDefaultStorySkeleton(rootPath: string): Promise<void> {
+		const today = new Date()
+		const id = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(
+			today.getDate(),
+		).padStart(2, "0")}`
+		const storyDir = path.join(rootPath, "stories", `story-${id}`)
+
+		const dirs = [
+			path.join(storyDir, "characters"),
+			path.join(storyDir, "world"),
+			path.join(storyDir, "tracking"),
+			path.join(storyDir, "chapters"),
+			path.join(storyDir, "content", "volume1"),
+		]
+
+		for (const d of dirs) {
+			await fs.mkdir(d, { recursive: true })
+		}
+
+		// 角色示例文件
+		const protagonistPath = path.join(storyDir, "characters", "protagonist-sample.md")
+		const protagonistMd = `# 主角（示例）\n\n- 姓名：\n- 年龄：\n- 出身：\n- 核心欲望：\n- 致命缺陷：\n- 成长弧线：\n- 常用语气与口头禅：\n`
+		await fs.writeFile(protagonistPath, protagonistMd, "utf-8")
+
+		// 世界观示例文件
+		const worldReadme = path.join(storyDir, "world", "README.md")
+		const worldMd = `# 世界观（示例）\n\n- 历史/时代背景：\n- 地理/势力分布：\n- 规则/禁忌：\n- 科技/魔法系统：\n`
+		await fs.writeFile(worldReadme, worldMd, "utf-8")
+
+		// per-story 追踪：伏笔/交汇点模板（与 track-init 保持一致）
+		const foreshadowPath = path.join(storyDir, "tracking", "foreshadowing-tracker.md")
+		const foreshadowMd = `# 伏笔追踪（Foreshadowing Tracker）\n\n| ID    | 埋设章节 | 描述                 | 计划揭晓章节 | 状态   | 实际揭晓章节 |\n|-------|----------|----------------------|--------------|--------|--------------|\n| F-001 | 第01章   | [伏笔内容]           | 第12章       | 埋设中 |              |\n\n> 说明：状态=埋设中/已揭晓/取消；超过30章未回收将标为“超期”。\n`
+		await fs.writeFile(foreshadowPath, foreshadowMd, "utf-8")
+
+		const crosspointPath = path.join(storyDir, "tracking", "crosspoint-tracker.md")
+		const crosspointMd = `# 交汇点追踪（Crosspoint Tracker）\n\n| 交汇点ID | 章节   | 涉及线索           | 描述                   | 影响/状态 |\n|----------|--------|--------------------|------------------------|-----------|\n| X-001    | 第10章 | PL-01, PL-03       | [线索在此交汇的描述]   | 待发生    |\n\n> 说明：确保线索ID存在于 plot-tracker.json；章节号引用有效。\n`
+		await fs.writeFile(crosspointPath, crosspointMd, "utf-8")
+
+		// 在 content/volume1 放置占位文件，便于 git 追踪
+		const gitkeep = path.join(storyDir, "content", "volume1", ".gitkeep")
+		await fs.writeFile(gitkeep, "", "utf-8")
 	}
 
 	/**

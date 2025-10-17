@@ -44,6 +44,7 @@ import {
 } from "./activate"
 import { initializeI18n } from "./i18n"
 import { registerGhostProvider } from "./services/ghost" // novelweave_change
+import { syncLinksForWorkspace, syncLinksForChapter } from "./core/novel-project/linking"
 import { registerMainThreadForwardingLogger } from "./utils/fowardingLogger" // novelweave_change
 import { getNovelWeaveWrapperProperties } from "./core/novelweave/wrapper" // novelweave_change
 
@@ -288,6 +289,36 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	// Register novel commands
 	registerNovelCommands(context)
+
+	// Register syncLinks command (link tasks.md with chapters and generate index)
+	context.subscriptions.push(
+		vscode.commands.registerCommand("novelweave.syncLinks", async () => {
+			try {
+				await syncLinksForWorkspace()
+				vscode.window.showInformationMessage("NovelWeave: 已同步任务与章节链接")
+			} catch (e) {
+				console.error("syncLinks failed", e)
+				vscode.window.showErrorMessage("NovelWeave: 同步失败，请查看控制台日志")
+			}
+		}),
+	)
+
+	// Auto-link on save of chapters/NNN-*.md
+	const linkingEnabled = vscode.workspace.getConfiguration("novelweave").get<boolean>("linking.enabled", true)
+	if (linkingEnabled) {
+		context.subscriptions.push(
+			vscode.workspace.onDidSaveTextDocument(async (doc) => {
+				const p = doc.uri.fsPath.replace(/\\/g, "/")
+				if (/stories\/[^/]+\/chapters\/\d{3}-.+\.md$/u.test(p)) {
+					try {
+						await syncLinksForChapter(doc.uri)
+					} catch (e) {
+						console.error("syncLinks on save failed", e)
+					}
+				}
+			}),
+		)
+	}
 
 	/**
 	 * We use the text document content provider API to show the left side for diff

@@ -136,6 +136,40 @@ mkdir -p memory stories spec/tracking
 - 初始化角色状态
 - 设置起始位置
 
+### 4. 创建 per‑story 追踪文件（如存在当前故事目录）
+
+为当前故事目录（`stories/*`）创建/更新以下文件：
+
+1. `stories/*/tracking/foreshadowing-tracker.md`（伏笔追踪表）
+
+```markdown
+# 伏笔追踪（Foreshadowing Tracker）
+
+| ID    | 埋设章节 | 描述       | 计划揭晓章节 | 状态   | 实际揭晓章节 |
+| ----- | -------- | ---------- | ------------ | ------ | ------------ |
+| F-001 | 第01章   | [伏笔内容] | 第12章       | 埋设中 |              |
+| F-002 | 第05章   | [伏笔内容] | 第20章       | 已揭晓 | 第21章       |
+
+> 说明：状态=埋设中/已揭晓/取消；超过30章未回收将标为“超期”。
+```
+
+2. `stories/*/tracking/crosspoint-tracker.md`（交汇点追踪表）
+
+```markdown
+# 交汇点追踪（Crosspoint Tracker）
+
+| 交汇点ID | 章节   | 涉及线索     | 描述                 | 影响/状态 |
+| -------- | ------ | ------------ | -------------------- | --------- |
+| X-001    | 第10章 | PL-01, PL-03 | [线索在此交汇的描述] | 待发生    |
+| X-002    | 第18章 | PL-02, 主线  | [关键转折交汇点描述] | 已发生    |
+
+> 说明：确保线索ID存在于 plot-tracker.json；章节号引用有效。
+```
+
+写入策略：
+
+- 若文件不存在，创建文件并填充上述表头；若已存在，保持原有内容，仅在顶部保留标题与表头注释。
+
 3. **生成追踪报告**
    显示初始化结果，确认追踪系统就绪
 
@@ -153,7 +187,7 @@ mkdir -p memory stories spec/tracking
 在聊天中输出：
 
 ```
-✅ 追踪系统已初始化；已生成 spec/tracking/*.json
+✅ 追踪系统已初始化；已生成 spec/tracking/*.json；并创建/更新 stories/*/tracking/{foreshadowing-tracker.md,crosspoint-tracker.md}
 ```
 
 建议：
