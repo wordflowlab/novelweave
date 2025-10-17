@@ -1,17 +1,21 @@
-import { useCallback, useState, useEffect } from "react"
+import { useCallback, useState } from "react"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import knuthShuffle from "knuth-shuffle-seeded"
 import { Trans } from "react-i18next"
 import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
-import posthog from "posthog-js"
+
 
 import type { ProviderSettings } from "@roo-code/types"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { TelemetryEventName } from "@roo-code/types"
 
 import { useExtensionState } from "@src/context/ExtensionStateContext"
 import { validateApiConfiguration } from "@src/utils/validate"
 import { vscode } from "@src/utils/vscode"
 import { useAppTranslation } from "@src/i18n/TranslationContext"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { getRequestyAuthUrl, getOpenRouterAuthUrl } from "@src/oauth/urls"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { telemetryClient } from "@src/utils/TelemetryClient"
 
 import ApiOptions from "../settings/ApiOptions"
@@ -20,17 +24,9 @@ import { Tab, TabContent } from "../common/Tab"
 import RooHero from "./RooHero"
 
 const WelcomeView = () => {
-	const { apiConfiguration, currentApiConfigName, setApiConfiguration, uriScheme, machineId } = useExtensionState()
+	const { apiConfiguration, currentApiConfigName, setApiConfiguration, uriScheme } = useExtensionState()
 	const { t } = useAppTranslation()
 	const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined)
-	const [showRooProvider, setShowRooProvider] = useState(false)
-
-	// Check PostHog feature flag for Roo provider
-	useEffect(() => {
-		posthog.onFeatureFlags(function () {
-			setShowRooProvider(posthog?.getFeatureFlag("roo-provider-featured") === "test")
-		})
-	}, [])
 
 	// Memoize the setApiConfigurationField function to pass to ApiOptions
 	const setApiConfigurationFieldForApiOptions = useCallback(
@@ -53,7 +49,7 @@ const WelcomeView = () => {
 	}, [apiConfiguration, currentApiConfigName])
 
 	// Using a lazy initializer so it reads once at mount
-	const [imagesBaseUri] = useState(() => {
+	const [_imagesBaseUri] = useState(() => {
 		const w = window as any
 		return w.IMAGES_BASE_URI || ""
 	})

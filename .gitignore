@@ -68,5 +68,7 @@ qdrant_storage/
 *.code-workspace
 
 # Exclude other directory and .claude folder
-# other/
+other/
+other/*
+!other/.gitkeep
 .claude/

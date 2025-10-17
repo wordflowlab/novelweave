@@ -3,7 +3,7 @@ import { useState } from "react"
 const RooHero = () => {
 	// TODO: Replace with NovelWeave logo
 	// Temporarily hidden - no logo displayed
-	const [imagesBaseUri] = useState(() => {
+	const [_imagesBaseUri] = useState(() => {
 		const w = window as any
 		return w.IMAGES_BASE_URI || ""
 	})
