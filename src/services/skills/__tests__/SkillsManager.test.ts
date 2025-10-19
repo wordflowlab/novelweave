@@ -1,7 +1,8 @@
 import * as vscode from "vscode"
 import * as path from "path"
 import * as fs from "fs/promises"
-import { SkillsManager, Skill } from "../SkillsManager"
+import { SkillsManager } from "../SkillsManager"
+import type { Skill } from "@roo-code/types"
 
 // Mock vscode
 jest.mock("vscode", () => ({

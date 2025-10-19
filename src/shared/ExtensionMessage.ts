@@ -156,6 +156,7 @@ export interface ExtensionMessage {
 		| "organizationSwitchResult"
 		| "skillsData" // novelweave_change: Skills support
 		| "skillDetails" // novelweave_change: Skills support
+		| "refreshSkills" // novelweave_change: Skills support
 	text?: string
 	// novelweave_change start
 	payload?:

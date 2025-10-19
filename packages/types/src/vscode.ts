@@ -61,6 +61,9 @@ export const commandIds = [
 	"exportSettings", // novelweave_change
 	"generateTerminalCommand", // novelweave_change
 	"handleExternalUri", // novelweave_change - for JetBrains plugin URL forwarding
+	"skillsButtonClicked", // novelweave_change: Skills support
+	"skillsRefresh", // novelweave_change: Skills support
+	"skillsCreate", // novelweave_change: Skills support
 	"focusPanel",
 	"toggleAutoApprove",
 ] as const

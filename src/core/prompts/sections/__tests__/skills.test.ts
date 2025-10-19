@@ -1,4 +1,5 @@
-import { SkillsManager, SkillSummary } from "../../../../services/skills/SkillsManager"
+import { SkillsManager } from "../../../../services/skills/SkillsManager"
+import type { SkillSummary } from "@roo-code/types"
 import { generateSkillsSection, extractActivatedSkills, findSkillByName } from "../skills"
 
 // Mock SkillsManager
