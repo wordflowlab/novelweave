@@ -11,6 +11,7 @@
 - 📝 **Seven-Step Methodology** - Specification-driven novel creation workflow
 - 🎨 **Visual Interface** - Intuitive sidebar, webview panels, and integrated AI chat
 - 🤖 **Multi-AI Support** - Claude 4, GPT-4, Gemini Pro, and 400+ AI models
+- 🧠 **Agent Skills** - Modular AI knowledge system for specialized writing expertise
 - 📊 **Project Management** - Chapter tracking, character profiles, plot threads
 - 🔌 **Slash Commands** - Full support for novel-writer command system
 - ✅ **Quality Assurance** - Plot tracking, timeline management, consistency validation
@@ -106,6 +107,21 @@ Validate plot consistency, timeline accuracy, character development, and adheren
 
 ## 📖 Features in Detail
 
+### Agent Skills System
+
+NovelWeave's innovative **Agent Skills** system provides your AI assistant with specialized knowledge modules that can be activated on-demand:
+
+- **Built-in Skills** - Professional writing expertise including:
+    - Genre knowledge (Romance, Mystery, Fantasy)
+    - Writing techniques (Dialogue, Scene Structure)
+    - Quality assurance (Consistency checking, Requirement detection)
+- **Project Skills** - Share team-specific guidelines in `.agent/skills/`
+- **Personal Skills** - Your own reusable knowledge library
+- **Smart Activation** - AI automatically selects relevant skills based on your task
+- **Custom Skills** - Create your own expertise modules with simple Markdown
+
+> 📖 **Learn More**: See the [Agent Skills User Guide](docs/agent-skills-user-guide.md) for detailed usage instructions.
+
 ### AI-Powered Writing Assistant
 
 - **Smart Continuation** - AI suggests next paragraphs based on your style
@@ -127,7 +143,19 @@ Validate plot consistency, timeline accuracy, character development, and adheren
 - **Timeline Management** - Chronological accuracy validation
 - **Style Consistency** - Maintain your unique writing voice
 
-## 🆕 What's New in v1.0
+## 🆕 What's New
+
+### v0.13.0 (Latest)
+
+- 🧠 **Agent Skills System** - Modular AI knowledge architecture
+    - 14 built-in professional writing skills
+    - Three-tier system: Extension, Project, and Personal skills
+    - Smart auto-activation based on task context
+    - Full UI for browsing, managing, and creating custom skills
+- ✅ Enhanced quality assurance tools
+- 📚 Comprehensive documentation and best practices guides
+
+### v1.0
 
 - ✅ Complete seven-step methodology implementation
 - ✅ Multi-AI model support (400+ models)
@@ -145,6 +173,14 @@ Validate plot consistency, timeline accuracy, character development, and adheren
 5. **Track Consistently** - Update trackers after each major chapter
 
 ## 🔗 Related Resources
+
+### Documentation
+
+- 📖 [Agent Skills User Guide](docs/agent-skills-user-guide.md) - Learn how to use and create Skills
+- 🛠️ [Agent Skills Developer Guide](docs/agent-skills-developer-guide.md) - Technical architecture and API
+- ✍️ [Skills Writing Best Practices](docs/writing-skills-best-practices.md) - Create high-quality Skills
+
+### Community & Tools
 
 - 📦 [novel-writer CLI Tool](https://github.com/wordflowlab/novel-writer) - Command-line companion
 - 📖 [Seven-Step Methodology](https://github.com/wordflowlab/novel-writer/blob/main/METHODOLOGY.md) - Detailed methodology guide

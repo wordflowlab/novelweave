@@ -65,6 +65,9 @@ async function main() {
 					// Copy walkthrough files to dist directory
 					copyPaths([["walkthrough", "walkthrough"]], srcDir, distDir)
 
+					// Copy templates (including skills) to dist directory
+					copyPaths([["templates", "templates"]], srcDir, distDir)
+
 					// Copy JSDOM xhr-sync-worker.js to fix runtime resolution
 					const jsdomWorkerDest = path.join(distDir, "xhr-sync-worker.js")
 

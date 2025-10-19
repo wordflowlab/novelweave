@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "novelweave",
-	"version": "0.6.0",
+	"version": "0.13.0",
 	"icon": "assets/icons/novelweave-icon.png",
 	"readme": "readme.md",
 	"galleryBanner": {
@@ -321,6 +321,22 @@
 				"title": "Sync Tasks and Chapters Links",
 				"category": "NovelWeave Novel",
 				"icon": "$(sync)"
+			},
+			{
+				"command": "novelweave.skillsButtonClicked",
+				"title": "Agent Skills",
+				"icon": "$(library)",
+				"category": "NovelWeave"
+			},
+			{
+				"command": "novelweave.skillsRefresh",
+				"title": "Refresh Agent Skills",
+				"category": "NovelWeave"
+			},
+			{
+				"command": "novelweave.skillsCreate",
+				"title": "Create New Agent Skill",
+				"category": "NovelWeave"
 			}
 		],
 		"menus": {
@@ -385,28 +401,33 @@
 					"when": "view == novelweave.SidebarProvider"
 				},
 				{
-					"command": "novelweave.historyButtonClicked",
+					"command": "novelweave.skillsButtonClicked",
 					"group": "navigation@4",
 					"when": "view == novelweave.SidebarProvider"
 				},
 				{
-					"command": "novelweave.profileButtonClicked",
+					"command": "novelweave.historyButtonClicked",
 					"group": "navigation@5",
 					"when": "view == novelweave.SidebarProvider"
 				},
 				{
-					"command": "novelweave.settingsButtonClicked",
+					"command": "novelweave.profileButtonClicked",
 					"group": "navigation@6",
 					"when": "view == novelweave.SidebarProvider"
 				},
 				{
-					"command": "novelweave.popoutButtonClicked",
+					"command": "novelweave.settingsButtonClicked",
 					"group": "navigation@7",
 					"when": "view == novelweave.SidebarProvider"
 				},
 				{
-					"command": "novelweave.helpButtonClicked",
+					"command": "novelweave.popoutButtonClicked",
 					"group": "navigation@8",
+					"when": "view == novelweave.SidebarProvider"
+				},
+				{
+					"command": "novelweave.helpButtonClicked",
+					"group": "navigation@9",
 					"when": "false && view == novelweave.SidebarProvider"
 				}
 			],
@@ -422,23 +443,28 @@
 					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
 				},
 				{
-					"command": "novelweave.historyButtonClicked",
+					"command": "novelweave.skillsButtonClicked",
 					"group": "navigation@3",
 					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
 				},
 				{
-					"command": "novelweave.popoutButtonClicked",
+					"command": "novelweave.historyButtonClicked",
 					"group": "navigation@4",
 					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
 				},
 				{
-					"command": "novelweave.settingsButtonClicked",
+					"command": "novelweave.popoutButtonClicked",
 					"group": "navigation@5",
 					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
 				},
 				{
-					"command": "novelweave.helpButtonClicked",
+					"command": "novelweave.settingsButtonClicked",
 					"group": "navigation@6",
+					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
+				},
+				{
+					"command": "novelweave.helpButtonClicked",
+					"group": "navigation@7",
 					"when": "activeWebviewPanelId == novelweave.TabPanelProvider"
 				}
 			],

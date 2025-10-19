@@ -71,3 +71,4 @@ qdrant_storage/
 other/
 
 .claude/
+openspec/

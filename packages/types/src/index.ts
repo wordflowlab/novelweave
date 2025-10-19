@@ -24,5 +24,6 @@ export * from "./type-fu.js"
 export * from "./vscode.js"
 export * from "./novelweave.js" // novelweave_change
 export * from "./usage-tracker.js" // novelweave_change
+export * from "./skills.js" // novelweave_change
 
 export * from "./providers/index.js"

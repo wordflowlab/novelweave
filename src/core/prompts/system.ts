@@ -18,8 +18,10 @@ import { isEmpty } from "../../utils/object"
 
 import { McpHub } from "../../services/mcp/McpHub"
 import { CodeIndexManager } from "../../services/code-index/manager"
+import { SkillsManager } from "../../services/skills/SkillsManager"
 
 import { PromptVariables, loadSystemPromptFile } from "./sections/custom-system-prompt"
+import { generateSkillsSection, generateSkillsSectionZh } from "./sections/skills"
 
 import { getToolDescriptionsForMode } from "./tools"
 import {
@@ -70,6 +72,7 @@ async function generatePrompt(
 	todoList?: TodoItem[],
 	modelId?: string,
 	clineProviderState?: ClineProviderState, // novelweave_change
+	skillsManager?: SkillsManager, // novelweave_change: Skills support
 ): Promise<string> {
 	if (!context) {
 		throw new Error("Extension context is required for generating system prompt")
@@ -87,10 +90,15 @@ async function generatePrompt(
 	const hasMcpServers = mcpHub && mcpHub.getServers().length > 0
 	const shouldIncludeMcp = hasMcpGroup && hasMcpServers
 
-	const [modesSection, mcpServersSection] = await Promise.all([
+	const [modesSection, mcpServersSection, skillsSection] = await Promise.all([
 		getModesSection(context),
 		shouldIncludeMcp
 			? getMcpServersSection(mcpHub, effectiveDiffStrategy, enableMcpServerCreation)
+			: Promise.resolve(""),
+		skillsManager
+			? language === "zh" || language === "zh-CN" || language === "zh-TW"
+				? generateSkillsSectionZh(skillsManager, mode)
+				: generateSkillsSection(skillsManager, mode)
 			: Promise.resolve(""),
 	])
 
@@ -101,6 +109,8 @@ async function generatePrompt(
 ${markdownFormattingSection()}
 
 ${getSharedToolUseSection()}
+
+${skillsSection}
 
 ${getToolDescriptionsForMode(
 	mode,
@@ -165,6 +175,7 @@ export const SYSTEM_PROMPT = async (
 	todoList?: TodoItem[],
 	modelId?: string,
 	clineProviderState?: ClineProviderState, // novelweave_change
+	skillsManager?: SkillsManager, // novelweave_change: Skills support
 ): Promise<string> => {
 	if (!context) {
 		throw new Error("Extension context is required for generating system prompt")
@@ -241,5 +252,6 @@ ${customInstructions}`
 		todoList,
 		modelId,
 		clineProviderState, // novelweave_change
+		skillsManager, // novelweave_change: Skills support
 	)
 }

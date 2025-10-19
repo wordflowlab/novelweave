@@ -292,7 +292,13 @@ export interface WebviewMessage {
 		| "editQueuedMessage"
 		| "dismissUpsell"
 		| "getDismissedUpsells"
+		| "getSkills" // novelweave_change: Skills support
+		| "refreshSkills" // novelweave_change: Skills support
+		| "viewSkillDetails" // novelweave_change: Skills support
+		| "createSkill" // novelweave_change: Skills support
+		| "deleteSkill" // novelweave_change: Skills support
 	text?: string
+	skillId?: string // novelweave_change: Skills support
 	editedMessageContent?: string
 	tab?: "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "cloud"
 	disabled?: boolean

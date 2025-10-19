@@ -154,6 +154,8 @@ export interface ExtensionMessage {
 		| "dismissedUpsells"
 		| "showTimestamps" // novelweave_change
 		| "organizationSwitchResult"
+		| "skillsData" // novelweave_change: Skills support
+		| "skillDetails" // novelweave_change: Skills support
 	text?: string
 	// novelweave_change start
 	payload?:
@@ -169,6 +171,7 @@ export interface ExtensionMessage {
 		| "historyButtonClicked"
 		| "promptsButtonClicked"
 		| "profileButtonClicked" // novelweave_change
+		| "skillsButtonClicked" // novelweave_change
 		| "marketplaceButtonClicked"
 		| "cloudButtonClicked"
 		| "didBecomeVisible"
@@ -267,6 +270,32 @@ export interface ExtensionMessage {
 	queuedMessages?: QueuedMessage[]
 	list?: string[] // For dismissedUpsells
 	organizationId?: string | null // For organizationSwitchResult
+	// novelweave_change: Skills support
+	skills?: Array<{
+		id: string
+		name: string
+		description: string
+		path: string
+		source: "personal" | "project" | "extension"
+		version?: string
+		keywords?: string[]
+		whenToUse?: string
+		requiredModes?: string[]
+		content?: string
+	}>
+	activeSkills?: string[]
+	skill?: {
+		id: string
+		name: string
+		description: string
+		path: string
+		source: "personal" | "project" | "extension"
+		version?: string
+		keywords?: string[]
+		whenToUse?: string
+		requiredModes?: string[]
+		content: string
+	}
 }
 
 export type ExtensionState = Pick<

@@ -7,6 +7,9 @@ import { TelemetryService } from "@roo-code/telemetry"
 import { defaultModeSlug, getModeBySlug } from "../../shared/modes"
 import type { ToolParamName, ToolResponse } from "../../shared/tools"
 
+// novelweave_change: Skills integration
+import { extractActivatedSkills, findSkillByName } from "../prompts/sections/skills"
+
 import { fetchInstructionsTool } from "../tools/fetchInstructionsTool"
 import { listFilesTool } from "../tools/listFilesTool"
 import { getReadFileToolDescription, readFileTool } from "../tools/readFileTool"
@@ -156,6 +159,53 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 			}
 
 			await cline.say("text", content, undefined, block.partial)
+
+			// novelweave_change: Skills activation detection
+			// Only check for skills activation when block is complete (not partial)
+			if (!block.partial && content) {
+				try {
+					const provider = cline.providerRef.deref()
+					const skillsManager = provider?.skillsManager
+
+					if (skillsManager) {
+						const activatedSkillNames = extractActivatedSkills(content)
+
+						for (const skillName of activatedSkillNames) {
+							try {
+								// Find skill by name
+								const skill = findSkillByName(skillsManager, skillName)
+
+								if (skill) {
+									// Activate the skill
+									await skillsManager.activateSkill(skill.id)
+									// Load skill content
+									const skillContent = await skillsManager.loadSkillContent(skill.id)
+									// Add skill content to user message for next request
+									cline.userMessageContent.push({
+										type: "text",
+										text: `<skill name="${skillName}">\n\n${skillContent}\n\n</skill>`,
+									})
+									console.log(`[Skills] Activated skill: ${skillName} (${skill.id})`)
+								} else {
+									console.warn(`[Skills] Skill not found: ${skillName}`)
+									// Optionally add a message to inform the AI
+									cline.userMessageContent.push({
+										type: "text",
+										text: `Note: Skill "${skillName}" was not found and could not be activated.`,
+									})
+								}
+							} catch (error) {
+								console.error(`[Skills] Error activating skill ${skillName}:`, error)
+								// Continue with other skills even if one fails
+							}
+						}
+					}
+				} catch (error) {
+					console.error("[Skills] Error in skill activation detection:", error)
+					// Don't let skills errors break the normal flow
+				}
+			}
+
 			break
 		}
 		case "tool_use":

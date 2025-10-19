@@ -29,6 +29,7 @@ import { McpServerManager } from "./services/mcp/McpServerManager"
 import { CodeIndexManager } from "./services/code-index/manager"
 import { registerCommitMessageProvider } from "./services/commit-message"
 import { MdmService } from "./services/mdm/MdmService"
+import { SkillsManager } from "./services/skills/SkillsManager" // novelweave_change: Skills support
 import { migrateSettings } from "./utils/migrateSettings"
 import { checkAndRunAutoLaunchingTask as checkAndRunAutoLaunchingTask } from "./utils/autoLaunchingTask"
 import { autoImportSettings } from "./utils/autoImportSettings"
@@ -157,6 +158,19 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	// Initialize the provider *before* the Roo Code Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
+
+	// novelweave_change start: Initialize SkillsManager
+	try {
+		const skillsManager = SkillsManager.getInstance(context)
+		await skillsManager.initialize()
+		provider.skillsManager = skillsManager
+		outputChannel.appendLine(`[Skills] Manager initialized, scanned ${skillsManager.getAllSkills().length} skills`)
+	} catch (error) {
+		outputChannel.appendLine(
+			`[Skills] Failed to initialize SkillsManager: ${error instanceof Error ? error.message : String(error)}`,
+		)
+	}
+	// novelweave_change end
 
 	// Initialize Roo Code Cloud service.
 	const postStateListener = () => ClineProvider.getVisibleInstance()?.postStateToWebview()

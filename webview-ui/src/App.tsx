@@ -19,6 +19,7 @@ import ProfileView from "./components/novelweave/profile/ProfileView" // novelwe
 import McpView from "./components/mcp/McpView"
 import { MarketplaceView } from "./components/marketplace/MarketplaceView"
 import ModesView from "./components/modes/ModesView"
+import { SkillsView } from "./components/skills/SkillsView" // novelweave_change
 import { HumanRelayDialog } from "./components/human-relay/HumanRelayDialog"
 import BottomControls from "./components/novelweave/BottomControls" // novelweave_change
 import { MemoryService } from "./services/MemoryService" // novelweave_change
@@ -32,7 +33,17 @@ import { TooltipProvider } from "./components/ui/tooltip"
 import { STANDARD_TOOLTIP_DELAY } from "./components/ui/standard-tooltip"
 import { useNovelWeaveIdentity } from "./utils/novelweave/useNovelWeaveIdentity"
 
-type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "account" | "cloud" | "profile" // novelweave_change: add "profile"
+type Tab =
+	| "settings"
+	| "history"
+	| "mcp"
+	| "modes"
+	| "chat"
+	| "marketplace"
+	| "account"
+	| "cloud"
+	| "profile"
+	| "skills" // novelweave_change: add "profile", "skills"
 
 interface HumanRelayDialogState {
 	isOpen: boolean
@@ -68,6 +79,7 @@ const tabsByMessageAction: Partial<Record<NonNullable<ExtensionMessage["action"]
 	historyButtonClicked: "history",
 	profileButtonClicked: "profile",
 	marketplaceButtonClicked: "marketplace",
+	skillsButtonClicked: "skills", // novelweave_change
 	// cloudButtonClicked: "cloud", // novelweave_change: no cloud
 }
 
@@ -287,6 +299,8 @@ const App = () => {
 			)}
 			{/* novelweave_change: add profileview */}
 			{tab === "profile" && <ProfileView onDone={() => switchTab("chat")} />}
+			{/* novelweave_change: add skills view */}
+			{tab === "skills" && <SkillsView onDone={() => switchTab("chat")} />}
 			{tab === "marketplace" && (
 				<MarketplaceView
 					stateManager={marketplaceStateManager}

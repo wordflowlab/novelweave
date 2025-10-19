@@ -1,0 +1,30 @@
+{
+	"title": "Agent Skills",
+	"refresh": "刷新技能",
+	"createNew": "创建新技能",
+	"viewFullContent": "查看完整内容",
+	"delete": "删除",
+	"deleteConfirm": "确定要删除这个技能吗?",
+	"deleteSuccess": "技能已成功删除",
+	"deleteError": "删除技能失败",
+	"active": "已激活",
+	"groups": {
+		"active": "已激活的技能",
+		"project": "项目技能",
+		"personal": "个人技能",
+		"extension": "扩展技能"
+	},
+	"empty": {
+		"title": "未找到技能",
+		"description": "创建您的第一个技能开始使用!"
+	},
+	"error": {
+		"title": "加载技能时出错",
+		"tryAgain": "重试"
+	},
+	"fields": {
+		"keywords": "关键词",
+		"modes": "模式",
+		"supportFiles": "支持文件"
+	}
+}

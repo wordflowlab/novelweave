@@ -71,6 +71,7 @@ export const modeConfigSchema = z.object({
 	groups: groupEntryArraySchema,
 	source: z.enum(["global", "project", "organization"]).optional(), // novelweave_change: Added "organization" source
 	iconName: z.string().optional(), // novelweave_change
+	recommendedSkills: z.array(z.string()).optional(), // novelweave_change: Skills support
 })
 
 export type ModeConfig = z.infer<typeof modeConfigSchema>
@@ -140,6 +141,13 @@ export const DEFAULT_MODES: readonly ModeConfig[] = [
 		// novelweave_change start
 		name: "Architect",
 		iconName: "codicon-type-hierarchy-sub",
+		recommendedSkills: [
+			"NovelWeave 小说创作工作流",
+			"novel-writer-workflow-guide",
+			"requirement-detector",
+			"pre-write-checklist",
+			"getting-started-guide",
+		],
 		// novelweave_change end
 		roleDefinition:
 			"You are NovelWeave, an experienced technical leader who is inquisitive and an excellent planner. Your goal is to gather information and get context to create a detailed plan for accomplishing the user's task, which the user will review and approve before they switch into another mode to implement the solution.",
@@ -155,19 +163,27 @@ export const DEFAULT_MODES: readonly ModeConfig[] = [
 		// novelweave_change start
 		name: "Code",
 		iconName: "codicon-code",
+		recommendedSkills: [
+			"natural-dialogue-techniques",
+			"scene-structure-techniques",
+			"romance-novel-conventions",
+			"mystery-novel-conventions",
+			"fantasy-world-building",
+		],
 		// novelweave_change end
 		roleDefinition:
 			"You are NovelWeave, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.",
 		whenToUse:
 			"Use this mode when you need to write, modify, or refactor code. Ideal for implementing features, fixing bugs, creating new files, or making code improvements across any programming language or framework.",
 		description: "Write, modify, and refactor code",
-		groups: ["read", "edit", "browser", "command", "mcp"],
+		groups: ["read", "edit", "browser", "mcp"],
 	},
 	{
 		slug: "ask",
 		// novelweave_change start
 		name: "Ask",
 		iconName: "codicon-question",
+		recommendedSkills: ["getting-started-guide", "NovelWeave 小说创作工作流", "novel-writer-workflow-guide"],
 		// novelweave_change end
 		roleDefinition:
 			"You are NovelWeave, a knowledgeable technical assistant focused on answering questions and providing information about software development, technology, and related topics.",
@@ -183,6 +199,12 @@ export const DEFAULT_MODES: readonly ModeConfig[] = [
 		// novelweave_change start
 		name: "Debug",
 		iconName: "codicon-bug",
+		recommendedSkills: [
+			"story-consistency-monitor",
+			"forgotten-elements-reminder",
+			"setting-detector",
+			"style-detector",
+		],
 		// novelweave_change end
 		roleDefinition:
 			"You are NovelWeave, an expert software debugger specializing in systematic problem diagnosis and resolution.",
@@ -198,6 +220,7 @@ export const DEFAULT_MODES: readonly ModeConfig[] = [
 		// novelweave_change start
 		name: "Orchestrator",
 		iconName: "codicon-run-all",
+		recommendedSkills: ["NovelWeave 小说创作工作流", "novel-writer-workflow-guide"],
 		// novelweave_change end
 		roleDefinition:
 			"You are NovelWeave, a strategic workflow orchestrator who coordinates complex tasks by delegating them to appropriate specialized modes. You have a comprehensive understanding of each mode's capabilities and limitations, allowing you to effectively break down complex problems into discrete tasks that can be solved by different specialists.",

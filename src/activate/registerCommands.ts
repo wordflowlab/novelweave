@@ -154,6 +154,17 @@ const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Rec
 
 		visibleProvider.postMessageToWebview({ type: "action", action: "historyButtonClicked" })
 	},
+	skillsButtonClicked: () => {
+		const visibleProvider = getVisibleProviderOrLog(outputChannel)
+
+		if (!visibleProvider) {
+			return
+		}
+
+		TelemetryService.instance.captureTitleButtonClicked("skills")
+
+		visibleProvider.postMessageToWebview({ type: "action", action: "skillsButtonClicked" })
+	},
 	// novelweave_change begin
 	profileButtonClicked: () => {
 		const visibleProvider = getVisibleProviderOrLog(outputChannel)
@@ -288,6 +299,144 @@ const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Rec
 			type: "action",
 			action: "toggleAutoApprove",
 		})
+	},
+	// novelweave_change: Skills commands
+	skillsRefresh: async () => {
+		const visibleProvider = getVisibleProviderOrLog(outputChannel)
+		if (!visibleProvider) {
+			return
+		}
+
+		const skillsManager = visibleProvider.skillsManager
+		if (skillsManager) {
+			try {
+				await skillsManager.scanSkills()
+				vscode.window.showInformationMessage(
+					`Skills refreshed: ${skillsManager.getAllSkills().length} skills found`,
+				)
+				// Notify webview
+				visibleProvider.postMessageToWebview({ type: "refreshSkills" })
+			} catch (error) {
+				vscode.window.showErrorMessage(
+					`Failed to refresh skills: ${error instanceof Error ? error.message : String(error)}`,
+				)
+			}
+		} else {
+			vscode.window.showWarningMessage("Skills Manager is not initialized")
+		}
+	},
+	skillsCreate: async () => {
+		const visibleProvider = getVisibleProviderOrLog(outputChannel)
+		if (!visibleProvider) {
+			return
+		}
+
+		const skillsManager = visibleProvider.skillsManager
+		if (!skillsManager) {
+			vscode.window.showWarningMessage("Skills Manager is not initialized")
+			return
+		}
+
+		try {
+			// Ask user where to create the skill
+			const location = await vscode.window.showQuickPick(
+				[
+					{ label: "Personal Skill", value: "personal", description: "Save to your global storage" },
+					{
+						label: "Project Skill",
+						value: "project",
+						description: "Save to .agent/skills/ in current workspace",
+					},
+				],
+				{ placeHolder: "Where would you like to create the skill?" },
+			)
+
+			if (!location) {
+				return
+			}
+
+			// Ask for skill name
+			const skillName = await vscode.window.showInputBox({
+				prompt: "Enter skill name (kebab-case)",
+				placeHolder: "my-skill-name",
+				validateInput: (value) => {
+					if (!value) {
+						return "Skill name is required"
+					}
+					if (!/^[a-z0-9-]+$/.test(value)) {
+						return "Skill name must be kebab-case (lowercase letters, numbers, and hyphens only)"
+					}
+					return null
+				},
+			})
+
+			if (!skillName) {
+				return
+			}
+
+			// Determine target directory
+			let targetDir: string
+			if (location.value === "personal") {
+				targetDir = context.globalStorageUri.fsPath
+				await vscode.workspace.fs.createDirectory(vscode.Uri.file(targetDir))
+				targetDir = `${targetDir}/skills/${skillName}`
+			} else {
+				const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
+				if (!workspaceFolder) {
+					vscode.window.showErrorMessage("No workspace folder found")
+					return
+				}
+				targetDir = `${workspaceFolder.uri.fsPath}/.agent/skills/${skillName}`
+			}
+
+			// Create directory
+			await vscode.workspace.fs.createDirectory(vscode.Uri.file(targetDir))
+
+			// Create SKILL.md template
+			const skillPath = `${targetDir}/SKILL.md`
+			const template = `---
+name: ${skillName
+				.split("-")
+				.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+				.join(" ")}
+description: Brief description of what this skill does and when to use it
+version: 1.0.0
+---
+
+# ${skillName
+				.split("-")
+				.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+				.join(" ")}
+
+## Instructions
+
+Provide clear, step-by-step guidance on how to use this skill.
+
+## Examples
+
+Include practical examples demonstrating the skill's application.
+
+## Best Practices
+
+List recommended practices and common pitfalls to avoid.
+`
+
+			await vscode.workspace.fs.writeFile(vscode.Uri.file(skillPath), Buffer.from(template, "utf8"))
+
+			// Open the file in editor
+			const document = await vscode.workspace.openTextDocument(skillPath)
+			await vscode.window.showTextDocument(document)
+
+			// Refresh skills
+			await skillsManager.scanSkills()
+			visibleProvider.postMessageToWebview({ type: "refreshSkills" })
+
+			vscode.window.showInformationMessage(`Skill "${skillName}" created successfully`)
+		} catch (error) {
+			vscode.window.showErrorMessage(
+				`Failed to create skill: ${error instanceof Error ? error.message : String(error)}`,
+			)
+		}
 	},
 })
 

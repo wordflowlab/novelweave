@@ -3742,5 +3742,119 @@ export const webviewMessageHandler = async (
 			})
 			break
 		}
+		// novelweave_change: Skills support
+		case "getSkills": {
+			const skillsManager = provider.skillsManager
+			if (skillsManager) {
+				const skills = skillsManager.getAllSkills()
+				const activeSkills = skillsManager.getActiveSkills().map((s) => s.id)
+				await provider.postMessageToWebview({
+					type: "skillsData",
+					skills,
+					activeSkills,
+				})
+			} else {
+				await provider.postMessageToWebview({
+					type: "skillsData",
+					skills: [],
+					activeSkills: [],
+				})
+			}
+			break
+		}
+		case "refreshSkills": {
+			const skillsManager = provider.skillsManager
+			if (skillsManager) {
+				try {
+					await skillsManager.scanSkills()
+					const skills = skillsManager.getAllSkills()
+					const activeSkills = skillsManager.getActiveSkills().map((s) => s.id)
+					await provider.postMessageToWebview({
+						type: "skillsData",
+						skills,
+						activeSkills,
+					})
+					provider.log("Skills refreshed successfully")
+				} catch (error) {
+					provider.log(`Failed to refresh skills: ${error instanceof Error ? error.message : String(error)}`)
+				}
+			}
+			break
+		}
+		case "viewSkillDetails": {
+			const skillsManager = provider.skillsManager
+			if (skillsManager && message.skillId) {
+				try {
+					const skill = skillsManager.getAllSkills().find((s) => s.id === message.skillId)
+					if (skill && skill.path) {
+						// skill.path is the directory, need to append SKILL.md
+						const skillFilePath = path.join(skill.path, "SKILL.md")
+						const document = await vscode.workspace.openTextDocument(skillFilePath)
+						await vscode.window.showTextDocument(document, {
+							preview: false,
+							viewColumn: vscode.ViewColumn.One,
+						})
+					} else {
+						provider.log(`Skill not found or has no path: ${message.skillId}`)
+					}
+				} catch (error) {
+					provider.log(`Failed to open skill file: ${error instanceof Error ? error.message : String(error)}`)
+					vscode.window.showErrorMessage(
+						`Failed to open skill file: ${error instanceof Error ? error.message : String(error)}`,
+					)
+				}
+			}
+			break
+		}
+		case "createSkill": {
+			// Trigger the create skill command
+			try {
+				await vscode.commands.executeCommand("novelweave.skillsCreate")
+			} catch (error) {
+				provider.log(`Failed to create skill: ${error instanceof Error ? error.message : String(error)}`)
+				vscode.window.showErrorMessage(
+					`Failed to create skill: ${error instanceof Error ? error.message : String(error)}`,
+				)
+			}
+			break
+		}
+		case "deleteSkill": {
+			const skillsManager = provider.skillsManager
+			if (skillsManager && message.skillId) {
+				try {
+					const skill = skillsManager.getAllSkills().find((s) => s.id === message.skillId)
+					if (skill) {
+						// Only allow deleting project and personal skills, not extension skills
+						if (skill.source === "extension") {
+							vscode.window.showErrorMessage("Cannot delete extension skills")
+							break
+						}
+
+						provider.log(`Deleting skill: ${skill.name} at path: ${skill.path}`)
+
+						// Delete the skill directory
+						await fs.rm(skill.path, { recursive: true, force: true })
+
+						provider.log(`Skill directory deleted, refreshing skills...`)
+
+						// Refresh skills
+						await skillsManager.scanSkills()
+						provider.postMessageToWebview({ type: "refreshSkills" })
+
+						provider.log(`Skills refreshed successfully`)
+						vscode.window.showInformationMessage(`Skill "${skill.name}" deleted successfully`)
+					} else {
+						provider.log(`Skill not found: ${message.skillId}`)
+						vscode.window.showErrorMessage("Skill not found")
+					}
+				} catch (error) {
+					provider.log(`Failed to delete skill: ${error instanceof Error ? error.message : String(error)}`)
+					vscode.window.showErrorMessage(
+						`Failed to delete skill: ${error instanceof Error ? error.message : String(error)}`,
+					)
+				}
+			}
+			break
+		}
 	}
 }

@@ -1,0 +1,30 @@
+{
+	"title": "Agent Skills",
+	"refresh": "Refresh Skills",
+	"createNew": "Create New Skill",
+	"viewFullContent": "View Full Content",
+	"delete": "Delete",
+	"deleteConfirm": "Are you sure you want to delete this skill?",
+	"deleteSuccess": "Skill deleted successfully",
+	"deleteError": "Failed to delete skill",
+	"active": "Active",
+	"groups": {
+		"active": "Active Skills",
+		"project": "Project Skills",
+		"personal": "Personal Skills",
+		"extension": "Extension Skills"
+	},
+	"empty": {
+		"title": "No Skills found",
+		"description": "Create your first Skill to get started!"
+	},
+	"error": {
+		"title": "Error Loading Skills",
+		"tryAgain": "Try Again"
+	},
+	"fields": {
+		"keywords": "Keywords",
+		"modes": "Modes",
+		"supportFiles": "Support files"
+	}
+}
