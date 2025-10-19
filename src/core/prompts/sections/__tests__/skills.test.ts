@@ -92,8 +92,7 @@ describe("Skills System Prompt Integration", () => {
 				{
 					id: "extension:test",
 					name: "Test Skill",
-					description: "A test skill",
-					whenToUse: "Use when testing",
+					description: "A test skill. Use when: Use when testing",
 				},
 			]
 
@@ -106,7 +105,7 @@ describe("Skills System Prompt Integration", () => {
 
 			const result = await generateSkillsSection(mockSkillsManager)
 
-			expect(result).toContain("A test skill. Use when testing")
+			expect(result).toContain("A test skill. Use when: Use when testing")
 		})
 
 		it("should handle special characters in skill names and descriptions", async () => {
