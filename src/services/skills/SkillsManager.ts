@@ -57,24 +57,21 @@ export class SkillsManager {
 
 	/**
 	 * 获取 Skills 搜索路径
+	 * 按优先级从低到高排序（后扫描的覆盖先扫描的）
 	 */
 	private getSkillsPaths(): Array<[SkillSource, string]> {
 		const paths: Array<[SkillSource, string]> = []
 
-		// 1. Built-in skills (扩展内置，最高优先级)
-		const builtinPath = path.join(this.context.extensionPath, "dist", "templates", "skills")
-		paths.push(["extension", builtinPath])
+		// 1. Personal skills (全局用户配置，优先级低)
+		const personalPath = path.join(this.context.globalStorageUri.fsPath, "skills")
+		paths.push(["personal", personalPath])
 
-		// 2. Project skills (项目特定)
+		// 2. Project skills (项目特定，优先级高)
 		const workspaceFolders = vscode.workspace.workspaceFolders
 		if (workspaceFolders && workspaceFolders.length > 0) {
 			const projectPath = path.join(workspaceFolders[0].uri.fsPath, ".agent", "skills")
 			paths.push(["project", projectPath])
 		}
-
-		// 3. Personal skills (全局用户配置)
-		const personalPath = path.join(this.context.globalStorageUri.fsPath, "skills")
-		paths.push(["personal", personalPath])
 
 		return paths
 	}
@@ -84,24 +81,39 @@ export class SkillsManager {
 	 */
 	private async scanDirectory(basePath: string, source: SkillSource): Promise<void> {
 		try {
-			const entries = await fs.readdir(basePath, { withFileTypes: true })
-
-			for (const entry of entries) {
-				if (entry.isDirectory()) {
-					const skillPath = path.join(basePath, entry.name)
-					const skillFile = path.join(skillPath, "SKILL.md")
-
-					try {
-						await fs.access(skillFile)
-						const skill = await this.parseSkillFile(skillFile, source)
-						this.skills.set(skill.id, skill)
-					} catch {
-						// No SKILL.md in this directory, skip
-					}
-				}
-			}
+			await this.scanDirectoryRecursive(basePath, source)
 		} catch (error) {
 			// Directory doesn't exist, skip
+		}
+	}
+
+	/**
+	 * 递归扫描目录中的 Skills
+	 */
+	private async scanDirectoryRecursive(dir: string, source: SkillSource): Promise<void> {
+		const entries = await fs.readdir(dir, { withFileTypes: true })
+
+		for (const entry of entries) {
+			if (entry.isDirectory()) {
+				const fullPath = path.join(dir, entry.name)
+				const skillFile = path.join(fullPath, "SKILL.md")
+
+				// 检查当前目录是否有 SKILL.md
+				try {
+					await fs.access(skillFile)
+					const skill = await this.parseSkillFile(skillFile, source)
+					this.skills.set(skill.id, skill)
+				} catch {
+					// No SKILL.md in this directory
+				}
+
+				// 递归扫描子目录
+				try {
+					await this.scanDirectoryRecursive(fullPath, source)
+				} catch {
+					// Ignore errors in subdirectories
+				}
+			}
 		}
 	}
 
@@ -119,7 +131,7 @@ export class SkillsManager {
 			}
 
 			const skillDir = path.dirname(filePath)
-			const skillId = this.generateSkillId(skillDir, source)
+			const skillId = this.generateSkillId(skillDir)
 
 			// Find support files
 			const supportFiles = await this.findSupportFiles(skillDir)
@@ -146,11 +158,11 @@ export class SkillsManager {
 	}
 
 	/**
-	 * 生成 Skill ID
+	 * 生成 Skill ID（只用目录名，不包含 source 前缀）
+	 * 这样同名 Skill 会自动覆盖（通过 Map.set）
 	 */
-	private generateSkillId(skillPath: string, source: string): string {
-		const dirName = path.basename(skillPath)
-		return `${source}:${dirName}`
+	private generateSkillId(skillPath: string): string {
+		return path.basename(skillPath)
 	}
 
 	/**

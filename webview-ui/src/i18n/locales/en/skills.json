@@ -8,6 +8,8 @@
 	"deleteSuccess": "Skill deleted successfully",
 	"deleteError": "Failed to delete skill",
 	"active": "Active",
+	"initialize": "Initialize Skills",
+	"checkNew": "Check for New Skills",
 	"groups": {
 		"active": "Active Skills",
 		"project": "Project Skills",

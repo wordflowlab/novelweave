@@ -64,6 +64,8 @@ export const commandIds = [
 	"skillsButtonClicked", // novelweave_change: Skills support
 	"skillsRefresh", // novelweave_change: Skills support
 	"skillsCreate", // novelweave_change: Skills support
+	"skillsInitialize", // novelweave_change: Skills initialization
+	"skillsCheckNew", // novelweave_change: Skills check for updates
 	"focusPanel",
 	"toggleAutoApprove",
 ] as const

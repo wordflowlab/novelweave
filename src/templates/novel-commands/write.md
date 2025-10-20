@@ -6,9 +6,9 @@ argument-hint: [章节编号或任务ID]
 ⚠️ **执行提醒**：以下是你需要执行的任务指令，不是要显示给用户的内容。你需要：
 
 1. 读取任务清单和所有参考文档
-2. 仅生成【一个】章节内容（2000-4000字），不得批量生成多章
+2. 生成实际的章节内容（2000-4000字）
 3. 遵循反AI检测写作规范
-4. 保存章节到 chapters/ 目录（stories/\*/chapters/NNN-标题.md）；如不存在则回退到 content/
+4. 保存章节到 content/ 目录
 5. 在聊天中只输出完成报告
 
 基于七步方法论流程执行章节写作。
@@ -43,7 +43,7 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 2. **再查（规格和计划）**：
     - `stories/*/specification.md`（故事规格）
-    - `stories/*/creative-plan.md` 或 `stories/*/plan.md`（创作计划）
+    - `stories/*/creative-plan.md`（创作计划）
     - `stories/*/tasks.md`（当前任务）
 
 3. **再查（状态和数据）**：
@@ -54,10 +54,7 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 4. **再查（知识库）**：
     - `spec/knowledge/` 相关文件（世界观、角色档案等）
-    - `stories/*/characters/*.md`（当前故事的人物设定与局部补充）
-    - `stories/*/world/*.md`（当前故事的世界观补充/设定）
-    - `stories/*/tracking/*.md`（如 crosspoint-tracker.md、foreshadowing-tracker.md）
-    - `stories/*/chapters/` 或 `stories/*/content/`（前文内容 - 了解前情）
+    - `stories/*/content/`（前文内容 - 了解前情）
 
 5. **再查（写作规范 - 关键！）**：
 
@@ -106,9 +103,9 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 ## 写作执行流程
 
-### 1. 选择写作任务（只选一个）
+### 1. 选择写作任务
 
-从 `tasks.md` 中选择【一个】状态为 `pending` 的写作任务（或基于参数指定章节），将其标记为 `in_progress`。
+从 `tasks.md` 中选择状态为 `pending` 的写作任务，标记为 `in_progress`。
 
 ### 2. 验证前置条件
 
@@ -410,10 +407,8 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 ### 7. 保存和更新
 
-- 将章节内容保存到：
-    - 优先：`stories/*/chapters/NNN-标题.md`
-    - 回退：`stories/*/content/volume1/chapter-NNN.md`
-- 更新本任务状态为 `completed`（仅本条目）
+- 将章节内容保存到 `stories/*/content/`
+- 更新任务状态为 `completed`
 - 记录完成时间和字数
 
 ## 写作要点
@@ -426,10 +421,10 @@ find stories -name "specification.md" -o -name "creative-plan.md" -o -name "task
 
 ## 完成后行动（完成提示 + 引导）
 
-保存后在聊天中输出（不要粘贴全文，仅报告）：
+保存后在聊天中输出：
 
 ```
-✅ 写作完成：stories/*/(chapters|content)/...
+✅ 章节已保存到 stories/*/content/xxx.md
 ```
 
 ### 8. 验证字数和更新进度

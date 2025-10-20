@@ -4,7 +4,7 @@ description: 将创作计划分解为可执行的任务清单
 
 ⚠️ **执行提醒**：以下是你需要执行的任务指令，不是要显示给用户的内容。你需要：
 
-1. 读取创作计划（creative-plan.md 或 plan.md）
+1. 读取创作计划（creative-plan.md）
 2. 生成具体的写作任务清单
 3. 按优先级分类（P0/P1/P2）
 4. 保存任务列表到 tasks.md
@@ -32,7 +32,7 @@ mkdir -p memory stories spec/tracking
 
 1. 使用 `execute_command` 或 `list_files` 查找创作计划文件：
     ```bash
-    find stories -name "creative-plan.md" -o -name "plan.md" -type f
+    find stories -name "creative-plan.md" -type f
     ```
 2. 使用 `read_file` 读取创作计划文件
 3. 使用 `read_file` 读取对应的规格文件（specification.md）
@@ -62,7 +62,7 @@ mkdir -p memory stories spec/tracking
     - **必须包含**：[关键元素列表]
     - **章末钩子**：[悬念设置]
     - **依赖**：无
-    - **输出**：`chapters/001-章节标题.md` （如无 chapters 目录则回退：`content/volume1/chapter-001.md`）
+    - **输出**：`content/volume1/chapter-001.md`
 
 - [ ] [P0] **T002** - 角色档案：主角详细设定
     - **核心任务**：完善主角设定
@@ -83,7 +83,7 @@ mkdir -p memory stories spec/tracking
     - **必须包含**：[关键元素]
     - **章末钩子**：[悬念]
     - **依赖**：T004(第4章)
-    - **输出**：`chapters/005-章节标题.md` （如无 chapters 目录则回退：`content/volume1/chapter-005.md`）
+    - **输出**：`content/volume1/chapter-005.md`
 
 ### 低优先级 [可选完善]
 

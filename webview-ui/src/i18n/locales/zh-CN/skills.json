@@ -8,6 +8,8 @@
 	"deleteSuccess": "技能已成功删除",
 	"deleteError": "删除技能失败",
 	"active": "已激活",
+	"initialize": "初始化技能",
+	"checkNew": "检查新技能",
 	"groups": {
 		"active": "已激活的技能",
 		"project": "项目技能",

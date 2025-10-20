@@ -1,6 +1,6 @@
 ---
 name: setting-detector
-description: "Automatically detects story settings (genres, time periods, themes) based on keywords and activates corresponding knowledge bases - works silently in the background to provide relevant writing guidance without user intervention"
+description: "基于关键词自动检测故事设定（类型、时代、主题）并激活相应的知识库 - 在后台静默工作，无需用户干预即可提供相关写作指导"
 allowed-tools: Read
 ---
 

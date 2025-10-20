@@ -15,6 +15,7 @@ import { handleNewTask } from "./handleTask"
 import { CodeIndexManager } from "../services/code-index/manager"
 import { importSettingsWithFeedback } from "../core/config/importExport"
 import { MdmService } from "../services/mdm/MdmService"
+import { SkillsInitializer } from "../services/skills/SkillsInitializer" // novelweave_change: Skills initialization
 import { t } from "../i18n"
 import { generateTerminalCommand } from "../utils/terminalCommandGenerator" // novelweave_change
 
@@ -436,6 +437,110 @@ List recommended practices and common pitfalls to avoid.
 			vscode.window.showErrorMessage(
 				`Failed to create skill: ${error instanceof Error ? error.message : String(error)}`,
 			)
+		}
+	},
+	// novelweave_change: Skills initialization commands
+	skillsInitialize: async () => {
+		const visibleProvider = getVisibleProviderOrLog(outputChannel)
+		if (!visibleProvider) {
+			return
+		}
+
+		try {
+			const skillsInitializer = new SkillsInitializer(context)
+			const isInitialized = await skillsInitializer.isInitialized()
+
+			if (isInitialized) {
+				const action = await vscode.window.showWarningMessage(
+					"Skills 已经初始化。是否重新初始化（将覆盖现有 Skills）？",
+					{ modal: true },
+					"重新初始化",
+					"取消",
+				)
+
+				if (action !== "重新初始化") {
+					return
+				}
+			}
+
+			await vscode.window.withProgress(
+				{
+					location: vscode.ProgressLocation.Notification,
+					title: "初始化 Agent Skills...",
+					cancellable: false,
+				},
+				async (progress) => {
+					progress.report({ increment: 0, message: "复制模板..." })
+					await skillsInitializer.initializeSkills(true)
+					progress.report({ increment: 100, message: "完成！" })
+				},
+			)
+
+			const openAction = await vscode.window.showInformationMessage(
+				"✅ Agent Skills 初始化成功！",
+				"打开 Skills 目录",
+			)
+
+			if (openAction === "打开 Skills 目录") {
+				const skillsUri = vscode.Uri.file(`${vscode.workspace.workspaceFolders![0].uri.fsPath}/.agent/skills`)
+				await vscode.commands.executeCommand("revealInExplorer", skillsUri)
+			}
+
+			// Refresh Skills
+			if (visibleProvider.skillsManager) {
+				await visibleProvider.skillsManager.scanSkills()
+				visibleProvider.postMessageToWebview({ type: "refreshSkills" })
+			}
+		} catch (error) {
+			vscode.window.showErrorMessage(`初始化失败: ${error instanceof Error ? error.message : String(error)}`)
+		}
+	},
+	skillsCheckNew: async () => {
+		const visibleProvider = getVisibleProviderOrLog(outputChannel)
+		if (!visibleProvider) {
+			return
+		}
+
+		try {
+			const skillsInitializer = new SkillsInitializer(context)
+			const newSkills = await skillsInitializer.checkForNewSkills()
+
+			if (newSkills.length === 0) {
+				vscode.window.showInformationMessage("没有发现新的官方 Skills。")
+				return
+			}
+
+			const action = await vscode.window.showInformationMessage(
+				`发现 ${newSkills.length} 个新的官方 Skills：\n\n${newSkills.join("\n")}\n\n是否添加到项目？`,
+				{ modal: true },
+				"添加",
+				"取消",
+			)
+
+			if (action === "添加") {
+				await vscode.window.withProgress(
+					{
+						location: vscode.ProgressLocation.Notification,
+						title: "添加新 Skills...",
+						cancellable: false,
+					},
+					async (progress) => {
+						progress.report({ increment: 0 })
+						await skillsInitializer.addMissingSkills(newSkills)
+						progress.report({ increment: 100, message: "完成！" })
+					},
+				)
+
+				vscode.window.showInformationMessage(`成功添加 ${newSkills.length} 个新 Skills！`)
+
+				// Refresh Skills
+				if (visibleProvider.skillsManager) {
+					await visibleProvider.skillsManager.scanSkills()
+					visibleProvider.postMessageToWebview({ type: "refreshSkills" })
+				}
+			}
+		} catch (error) {
+			vscode.window.showErrorMessage(`检查失败: ${error instanceof Error ? error.message : String(error)}`)
 		}
 	},
 })

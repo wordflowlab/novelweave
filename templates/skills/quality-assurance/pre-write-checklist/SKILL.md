@@ -1,6 +1,6 @@
 ---
 name: pre-write-checklist
-description: "Activates automatically before chapter writing to enforce the 9-item mandatory file reading checklist - prevents AI focus degradation in long-form fiction by ensuring all context is loaded before each writing session"
+description: "在章节写作前自动激活，强制执行9项必读文件检查清单 - 通过确保每次写作前加载所有上下文来防止AI在长篇小说中的焦点退化"
 allowed-tools: Read, Grep
 ---
 

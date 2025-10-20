@@ -1,6 +1,6 @@
 ---
 name: mystery-novel-conventions
-description: "Use when user mentions mystery, detective, crime, or suspense-focused narrative - provides genre conventions, clue placement, and fair play principles for mystery writing"
+description: "当用户提到悬疑、侦探、犯罪或悬念叙事时使用 - 提供类型规范、线索布置和推理小说的公平游戏原则"
 allowed-tools: Read, Grep
 ---
 

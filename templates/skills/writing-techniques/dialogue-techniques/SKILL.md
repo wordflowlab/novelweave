@@ -1,6 +1,6 @@
 ---
 name: natural-dialogue-techniques
-description: "Use when writing dialogue scenes or when user asks about character conversations - provides techniques for natural, character-consistent dialogue that reveals character and advances plot"
+description: "在写作对话场景或用户询问角色对话时使用 - 提供自然、符合角色性格的对话技巧，展现角色并推进情节"
 allowed-tools: Read
 ---
 

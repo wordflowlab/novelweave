@@ -1,6 +1,6 @@
 ---
 name: getting-started-guide
-description: "Activates when users start a new novel project - guides them through the seven-step methodology (constitution → specify → clarify → plan → tasks → write → analyze) with gentle prompts and explanations"
+description: "当用户开始新小说项目时激活 - 通过温和的提示和解释引导他们完成七步方法论（constitution → specify → clarify → plan → tasks → write → analyze）"
 allowed-tools: Read
 ---
 

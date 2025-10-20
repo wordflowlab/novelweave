@@ -24,7 +24,6 @@ export const SkillsPanel: React.FC<SkillsPanelProps> = ({ skills, activeSkills, 
 			active: [],
 			project: [],
 			personal: [],
-			extension: [],
 		}
 
 		skills.forEach((skill) => {
@@ -128,7 +127,6 @@ export const SkillsPanel: React.FC<SkillsPanelProps> = ({ skills, activeSkills, 
 		active: t("groups.active"),
 		project: t("groups.project"),
 		personal: t("groups.personal"),
-		extension: t("groups.extension"),
 	}
 
 	return (
@@ -164,9 +162,21 @@ export const SkillsPanel: React.FC<SkillsPanelProps> = ({ skills, activeSkills, 
 					)
 				})}
 
-				<div style={{ marginTop: "16px" }}>
+				<div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
 					<VSCodeButton onClick={handleCreate} style={{ width: "100%" }}>
 						{t("createNew")}
+					</VSCodeButton>
+					<VSCodeButton
+						appearance="secondary"
+						onClick={() => vscode.postMessage({ type: "skillsInitialize" })}
+						style={{ width: "100%" }}>
+						{t("initialize") || "Initialize Skills"}
+					</VSCodeButton>
+					<VSCodeButton
+						appearance="secondary"
+						onClick={() => vscode.postMessage({ type: "skillsCheckNew" })}
+						style={{ width: "100%" }}>
+						{t("checkNew") || "Check for New Skills"}
 					</VSCodeButton>
 				</div>
 			</div>

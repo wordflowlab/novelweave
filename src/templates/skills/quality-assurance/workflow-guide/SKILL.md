@@ -1,6 +1,6 @@
 ---
 name: novel-writer-workflow-guide
-description: "Use when user starts a novel project or asks how to organize their writing - guides through novel-writer's seven-step methodology and ensures proper workflow"
+description: "当用户开始小说项目或询问如何组织写作时使用 - 引导完成novel-writer的七步方法论并确保正确的工作流程"
 allowed-tools: Read, Grep
 ---
 

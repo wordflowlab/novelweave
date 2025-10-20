@@ -1,6 +1,5 @@
 import type { WebviewApi } from "vscode-webview"
-
-import { WebviewMessage } from "@roo/WebviewMessage"
+import type { WebviewMessage } from "@roo/WebviewMessage"
 
 /**
  * A utility wrapper around the acquireVsCodeApi() function, which enables
@@ -32,9 +31,10 @@ class VSCodeAPIWrapper {
 	 */
 	public postMessage(message: WebviewMessage) {
 		if (this.vsCodeApi) {
+			console.log("[VSCodeAPI] Sending message to extension:", message.type, message)
 			this.vsCodeApi.postMessage(message)
 		} else {
-			console.log(message)
+			console.warn("[VSCodeAPI] No VSCode API available, message not sent:", message)
 		}
 	}
 

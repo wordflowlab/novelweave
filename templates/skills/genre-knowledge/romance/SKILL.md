@@ -1,6 +1,6 @@
 ---
 name: romance-novel-conventions
-description: "Use when user mentions romance, love story, or relationship-focused narrative - provides genre conventions, pacing guidelines, and emotional beats for romance writing"
+description: "当用户提到言情、爱情故事或关系导向叙事时使用 - 提供类型规范、节奏指南和言情小说的情感节点"
 allowed-tools: Read, Grep
 ---
 

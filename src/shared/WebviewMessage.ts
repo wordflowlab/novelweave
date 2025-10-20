@@ -297,8 +297,11 @@ export interface WebviewMessage {
 		| "viewSkillDetails" // novelweave_change: Skills support
 		| "createSkill" // novelweave_change: Skills support
 		| "deleteSkill" // novelweave_change: Skills support
+		| "skillsInitialize" // novelweave_change: Skills initialization
+		| "skillsCheckNew" // novelweave_change: Skills check new
 	text?: string
 	skillId?: string // novelweave_change: Skills support
+	skillName?: string // novelweave_change: Skills support (for delete confirmation)
 	editedMessageContent?: string
 	tab?: "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "cloud"
 	disabled?: boolean

@@ -25,6 +25,10 @@ export const SkillsView: React.FC<SkillsViewProps> = ({ onDone }) => {
 				setActiveSkills(message.activeSkills || [])
 				setError(message.error || null)
 				setIsLoading(false)
+			} else if (message.type === "refreshSkills") {
+				// Backend notifies us to refresh skills (e.g., after deletion)
+				console.log("[SkillsView] Received refreshSkills message from backend, reloading skills...")
+				vscode.postMessage({ type: "getSkills" })
 			}
 		}
 

@@ -33,24 +33,18 @@ export const SkillItem: React.FC<SkillItemProps> = ({ skill, isActive }) => {
 	}
 
 	const handleDelete = () => {
-		console.log("handleDelete called for skill:", skill.name, "source:", skill.source, "id:", skill.id)
+		console.log("[SkillItem] handleDelete called for skill:", skill.name, "source:", skill.source, "id:", skill.id)
 
-		if (skill.source === "extension") {
-			console.log("Cannot delete extension skill")
-			window.alert(t("deleteError") + ": Cannot delete extension skills")
-			return
+		// All skills (project and personal) can be deleted
+		// Note: Can't use window.confirm() in webview sandbox, backend will handle confirmation
+		const message = {
+			type: "deleteSkill" as const,
+			skillId: skill.id,
+			skillName: skill.name, // Pass name for backend confirmation dialog
 		}
-
-		const confirmed = window.confirm(t("deleteConfirm"))
-		console.log("User confirmed deletion:", confirmed)
-
-		if (confirmed) {
-			console.log("Sending deleteSkill message with skillId:", skill.id)
-			vscode.postMessage({
-				type: "deleteSkill",
-				skillId: skill.id,
-			})
-		}
+		console.log("[SkillItem] Sending deleteSkill message:", message)
+		vscode.postMessage(message)
+		console.log("[SkillItem] Message sent successfully")
 	}
 
 	const toggleExpand = () => {
@@ -186,24 +180,22 @@ export const SkillItem: React.FC<SkillItemProps> = ({ skill, isActive }) => {
 							}}>
 							{t("viewFullContent")}
 						</button>
-						{skill.source !== "extension" && (
-							<button
-								onClick={(e) => {
-									e.stopPropagation()
-									handleDelete()
-								}}
-								style={{
-									padding: "4px 12px",
-									fontSize: "12px",
-									cursor: "pointer",
-									border: "1px solid var(--vscode-button-border)",
-									backgroundColor: "var(--vscode-inputValidation-errorBackground)",
-									color: "var(--vscode-errorForeground)",
-									borderRadius: "2px",
-								}}>
-								{t("delete")}
-							</button>
-						)}
+						<button
+							onClick={(e) => {
+								e.stopPropagation()
+								handleDelete()
+							}}
+							style={{
+								padding: "4px 12px",
+								fontSize: "12px",
+								cursor: "pointer",
+								border: "1px solid var(--vscode-button-border)",
+								backgroundColor: "var(--vscode-inputValidation-errorBackground)",
+								color: "var(--vscode-errorForeground)",
+								borderRadius: "2px",
+							}}>
+							{t("delete")}
+						</button>
 					</div>
 				</div>
 			)}

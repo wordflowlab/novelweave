@@ -11,7 +11,7 @@ export interface Skill {
 	name: string
 	description: string
 	path: string
-	source: "personal" | "project" | "extension"
+	source: "personal" | "project"
 
 	// Optional fields from YAML frontmatter
 	allowedToolGroups?: string[]
@@ -54,4 +54,4 @@ export interface SkillSummary {
 /**
  * Skill 来源类型
  */
-export type SkillSource = "personal" | "project" | "extension"
+export type SkillSource = "personal" | "project"

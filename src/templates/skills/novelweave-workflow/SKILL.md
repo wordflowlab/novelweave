@@ -1,5 +1,5 @@
 ---
-name: NovelWeave 小说创作工作流
+name: novelweave-workflow
 description: 使用 NovelWeave 进行小说创作的完整工作流程，包括命令使用、最佳实践和高效创作技巧。适用于规划小说项目、组织创作过程或学习 NovelWeave 功能。
 version: 1.0.0
 keywords: [NovelWeave, 工作流, 小说命令, 创作流程, 最佳实践]

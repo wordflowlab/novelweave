@@ -1,6 +1,6 @@
 ---
 name: story-consistency-monitor
-description: "Use during chapter writing to automatically check character behavior, world rules, and timeline consistency - alerts when detecting potential contradictions before they become major issues"
+description: "在章节写作过程中自动检查角色行为、世界规则和时间线一致性 - 在潜在矛盾成为重大问题前发出警报"
 allowed-tools: Read, Grep
 ---
 

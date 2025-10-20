@@ -1,6 +1,6 @@
 ---
 name: scene-structure-techniques
-description: "Use when structuring scenes or planning chapter content - provides scene-sequel framework, tension management, and beat-by-beat structure for compelling scenes"
+description: "在构建场景或规划章节内容时使用 - 提供场景-续场框架、张力管理和引人入胜场景的节拍式结构"
 allowed-tools: Read
 ---
 

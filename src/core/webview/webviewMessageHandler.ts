@@ -3818,41 +3818,100 @@ export const webviewMessageHandler = async (
 			}
 			break
 		}
+		case "skillsInitialize": {
+			// Trigger the skills initialization command
+			try {
+				await vscode.commands.executeCommand("novelweave.skillsInitialize")
+			} catch (error) {
+				provider.log(`Failed to initialize skills: ${error instanceof Error ? error.message : String(error)}`)
+				vscode.window.showErrorMessage(
+					`Failed to initialize skills: ${error instanceof Error ? error.message : String(error)}`,
+				)
+			}
+			break
+		}
+		case "skillsCheckNew": {
+			// Trigger the check for new skills command
+			try {
+				await vscode.commands.executeCommand("novelweave.skillsCheckNew")
+			} catch (error) {
+				provider.log(
+					`Failed to check for new skills: ${error instanceof Error ? error.message : String(error)}`,
+				)
+				vscode.window.showErrorMessage(
+					`Failed to check for new skills: ${error instanceof Error ? error.message : String(error)}`,
+				)
+			}
+			break
+		}
 		case "deleteSkill": {
+			provider.log(`[deleteSkill] Received deleteSkill message with skillId: ${message.skillId}`)
 			const skillsManager = provider.skillsManager
-			if (skillsManager && message.skillId) {
-				try {
-					const skill = skillsManager.getAllSkills().find((s) => s.id === message.skillId)
-					if (skill) {
-						// Only allow deleting project and personal skills, not extension skills
-						if (skill.source === "extension") {
-							vscode.window.showErrorMessage("Cannot delete extension skills")
-							break
-						}
 
-						provider.log(`Deleting skill: ${skill.name} at path: ${skill.path}`)
+			if (!skillsManager) {
+				provider.log(`[deleteSkill] ERROR: skillsManager is not available`)
+				vscode.window.showErrorMessage("Skills manager is not initialized")
+				break
+			}
 
-						// Delete the skill directory
-						await fs.rm(skill.path, { recursive: true, force: true })
+			if (!message.skillId) {
+				provider.log(`[deleteSkill] ERROR: skillId is missing from message`)
+				vscode.window.showErrorMessage("Skill ID is missing")
+				break
+			}
 
-						provider.log(`Skill directory deleted, refreshing skills...`)
+			try {
+				provider.log(`[deleteSkill] Looking for skill with ID: ${message.skillId}`)
+				const allSkills = skillsManager.getAllSkills()
+				provider.log(`[deleteSkill] Total skills available: ${allSkills.length}`)
 
-						// Refresh skills
-						await skillsManager.scanSkills()
-						provider.postMessageToWebview({ type: "refreshSkills" })
-
-						provider.log(`Skills refreshed successfully`)
-						vscode.window.showInformationMessage(`Skill "${skill.name}" deleted successfully`)
-					} else {
-						provider.log(`Skill not found: ${message.skillId}`)
-						vscode.window.showErrorMessage("Skill not found")
-					}
-				} catch (error) {
-					provider.log(`Failed to delete skill: ${error instanceof Error ? error.message : String(error)}`)
-					vscode.window.showErrorMessage(
-						`Failed to delete skill: ${error instanceof Error ? error.message : String(error)}`,
+				const skill = allSkills.find((s) => s.id === message.skillId)
+				if (skill) {
+					provider.log(
+						`[deleteSkill] Found skill: ${skill.name} at path: ${skill.path}, source: ${skill.source}`,
 					)
+
+					// Show confirmation dialog (webview can't use window.confirm due to sandbox)
+					const skillName = message.skillName || skill.name
+					const confirmed = await vscode.window.showWarningMessage(
+						`确定要删除技能 "${skillName}" 吗？`,
+						{ modal: true },
+						"删除",
+						"取消",
+					)
+
+					if (confirmed !== "删除") {
+						provider.log(`[deleteSkill] User cancelled deletion`)
+						return
+					}
+
+					// All skills (project and personal) can be deleted
+					provider.log(`[deleteSkill] User confirmed, attempting to delete directory: ${skill.path}`)
+
+					// Delete the skill directory
+					await fs.rm(skill.path, { recursive: true, force: true })
+
+					provider.log(`[deleteSkill] Skill directory deleted successfully, refreshing skills...`)
+
+					// Refresh skills
+					await skillsManager.scanSkills()
+					provider.postMessageToWebview({ type: "refreshSkills" })
+
+					provider.log(`[deleteSkill] Skills refreshed successfully`)
+					vscode.window.showInformationMessage(`技能 "${skill.name}" 已成功删除`)
+				} else {
+					provider.log(`[deleteSkill] ERROR: Skill not found with ID: ${message.skillId}`)
+					provider.log(`[deleteSkill] Available skill IDs: ${allSkills.map((s) => s.id).join(", ")}`)
+					vscode.window.showErrorMessage(`未找到技能: ${message.skillId}`)
 				}
+			} catch (error) {
+				const errorMsg = error instanceof Error ? error.message : String(error)
+				const errorStack = error instanceof Error ? error.stack : ""
+				provider.log(`[deleteSkill] ERROR: Failed to delete skill: ${errorMsg}`)
+				if (errorStack) {
+					provider.log(`[deleteSkill] Stack trace: ${errorStack}`)
+				}
+				vscode.window.showErrorMessage(`删除技能失败: ${errorMsg}`)
 			}
 			break
 		}

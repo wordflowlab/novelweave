@@ -30,6 +30,7 @@ import { CodeIndexManager } from "./services/code-index/manager"
 import { registerCommitMessageProvider } from "./services/commit-message"
 import { MdmService } from "./services/mdm/MdmService"
 import { SkillsManager } from "./services/skills/SkillsManager" // novelweave_change: Skills support
+import { SkillsInitializer } from "./services/skills/SkillsInitializer" // novelweave_change: Skills initialization
 import { migrateSettings } from "./utils/migrateSettings"
 import { checkAndRunAutoLaunchingTask as checkAndRunAutoLaunchingTask } from "./utils/autoLaunchingTask"
 import { autoImportSettings } from "./utils/autoImportSettings"
@@ -159,15 +160,71 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Initialize the provider *before* the Roo Code Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
 
-	// novelweave_change start: Initialize SkillsManager
+	// novelweave_change start: Initialize Skills (with project initialization prompt)
 	try {
+		const skillsInitializer = new SkillsInitializer(context)
+
+		// Check if project needs Skills initialization
+		const isInitialized = await skillsInitializer.isInitialized()
+		const dontAskAgain = context.globalState.get<boolean>("skills.dontAskAgain", false)
+
+		if (!isInitialized && vscode.workspace.workspaceFolders && !dontAskAgain) {
+			// Show initialization prompt
+			const action = await vscode.window.showInformationMessage(
+				"💡 检测到这是新项目，是否初始化 Agent Skills？",
+				{
+					modal: false,
+					detail: "将复制所有内置 Skills 到 .agent/skills/，您可以自由修改。",
+				},
+				"初始化",
+				"稍后",
+				"不再提示",
+			)
+
+			if (action === "初始化") {
+				try {
+					await vscode.window.withProgress(
+						{
+							location: vscode.ProgressLocation.Notification,
+							title: "初始化 Agent Skills...",
+							cancellable: false,
+						},
+						async (progress) => {
+							progress.report({ increment: 0, message: "复制 Skills 模板..." })
+							await skillsInitializer.initializeSkills()
+							progress.report({ increment: 100, message: "完成！" })
+						},
+					)
+
+					const openAction = await vscode.window.showInformationMessage(
+						"✅ Agent Skills 初始化成功！您现在可以在 .agent/skills/ 中修改它们。",
+						"打开 Skills 目录",
+					)
+
+					if (openAction === "打开 Skills 目录") {
+						const skillsUri = vscode.Uri.file(
+							path.join(vscode.workspace.workspaceFolders![0].uri.fsPath, ".agent", "skills"),
+						)
+						await vscode.commands.executeCommand("revealInExplorer", skillsUri)
+					}
+				} catch (error) {
+					vscode.window.showErrorMessage(
+						`初始化失败: ${error instanceof Error ? error.message : String(error)}`,
+					)
+				}
+			} else if (action === "不再提示") {
+				await context.globalState.update("skills.dontAskAgain", true)
+			}
+		}
+
+		// Initialize SkillsManager (scans project and personal Skills)
 		const skillsManager = SkillsManager.getInstance(context)
 		await skillsManager.initialize()
 		provider.skillsManager = skillsManager
 		outputChannel.appendLine(`[Skills] Manager initialized, scanned ${skillsManager.getAllSkills().length} skills`)
 	} catch (error) {
 		outputChannel.appendLine(
-			`[Skills] Failed to initialize SkillsManager: ${error instanceof Error ? error.message : String(error)}`,
+			`[Skills] Failed to initialize: ${error instanceof Error ? error.message : String(error)}`,
 		)
 	}
 	// novelweave_change end

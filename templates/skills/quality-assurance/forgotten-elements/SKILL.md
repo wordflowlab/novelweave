@@ -1,6 +1,6 @@
 ---
 name: forgotten-elements-reminder
-description: "Automatically reminds when important story elements (characters, plot lines, foreshadowing) haven't appeared for 10+ chapters - prevents 'disappeared character syndrome' and dropped plot threads in long-form fiction"
+description: "当重要的故事元素（角色、情节线、伏笔）10章以上未出现时自动提醒 - 防止长篇小说中的'角色消失综合症'和遗漏的情节线"
 allowed-tools: Read, Grep
 ---
 

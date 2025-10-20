@@ -1,6 +1,6 @@
 ---
 name: fantasy-world-building
-description: "Use when user mentions fantasy, magic system, or world-building for fantastical settings - provides fantasy genre conventions, magic system design patterns, and world-building frameworks"
+description: "当用户提到奇幻、魔法系统或世界构建时使用 - 提供奇幻类型规范、魔法系统设计模式和世界构建框架"
 allowed-tools: Read, Grep
 ---
 

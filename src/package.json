@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "novelweave",
-	"version": "0.13.0",
+	"version": "0.14.0",
 	"icon": "assets/icons/novelweave-icon.png",
 	"readme": "readme.md",
 	"galleryBanner": {
@@ -336,6 +336,16 @@
 			{
 				"command": "novelweave.skillsCreate",
 				"title": "Create New Agent Skill",
+				"category": "NovelWeave"
+			},
+			{
+				"command": "novelweave.skillsInitialize",
+				"title": "Initialize Agent Skills",
+				"category": "NovelWeave"
+			},
+			{
+				"command": "novelweave.skillsCheckNew",
+				"title": "Check for New Skills",
 				"category": "NovelWeave"
 			}
 		],
