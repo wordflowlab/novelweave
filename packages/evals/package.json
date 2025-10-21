@@ -30,7 +30,7 @@
 	"dependencies": {
 		"@roo-code/ipc": "workspace:^",
 		"@roo-code/types": "workspace:^",
-		"cmd-ts": "^0.13.0",
+		"cmd-ts": "^0.14.3",
 		"drizzle-orm": "^0.44.1",
 		"execa": "^9.6.0",
 		"node-ipc": "^12.0.0",
