@@ -116,9 +116,13 @@ export async function getOpenRouterModels(
 
 		if (!result.success) {
 			// novelweave_change start
-			throw new Error(
-				"OpenRouter models response is invalid: " + JSON.stringify(result.error.format(), undefined, 2),
+			console.error(
+				"OpenRouter models response is invalid:",
+				JSON.stringify(result.error.format(), undefined, 2),
+				"\nActual response:",
+				JSON.stringify(json, undefined, 2),
 			)
+			return {} // 静默降级，不抛出错误
 			// novelweave_change end
 		}
 
@@ -144,7 +148,7 @@ export async function getOpenRouterModels(
 		console.error(
 			`Error fetching OpenRouter models: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
 		)
-		throw error // novelweave_change
+		return {} // novelweave_change: 静默降级，不抛出错误
 	}
 
 	return models

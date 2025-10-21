@@ -130,7 +130,7 @@ export async function getOllamaModels(
 		}
 	} catch (error) {
 		if (error.code === "ECONNREFUSED") {
-			console.warn(`Failed connecting to Ollama at ${baseUrl}`)
+			// novelweave_change: 静默处理，Ollama 未运行时不输出日志
 		} else {
 			console.error(
 				`Error fetching Ollama models: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,

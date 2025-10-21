@@ -46,12 +46,14 @@ export const MarketplaceInstallModal: React.FC<MarketplaceInstallModalProps> = (
 
 	// Check if item has multiple installation methods
 	const hasMultipleMethods = useMemo(() => {
-		return item && Array.isArray(item.content) && item.content.length > 1
+		if (!item || item.type === "skill") return false
+		return Array.isArray(item.content) && item.content.length > 1
 	}, [item])
 
 	// Get installation method names (for display in dropdown)
 	const methodNames = useMemo(() => {
-		if (!item || !Array.isArray(item.content)) return []
+		if (!item || item.type === "skill") return []
+		if (!Array.isArray(item.content)) return []
 
 		// Content is an array of McpInstallationMethod objects
 		return (item.content as Array<{ name: string; content: string }>).map((method) => method.name)
@@ -59,7 +61,7 @@ export const MarketplaceInstallModal: React.FC<MarketplaceInstallModalProps> = (
 
 	// Get effective parameters for the selected method (global + method-specific)
 	const effectiveParameters = useMemo(() => {
-		if (!item) return []
+		if (!item || item.type === "skill") return []
 
 		const globalParams = item.type === "mcp" ? item.parameters || [] : []
 		let methodParams: McpParameter[] = []
@@ -80,7 +82,7 @@ export const MarketplaceInstallModal: React.FC<MarketplaceInstallModalProps> = (
 
 	// Get effective prerequisites for the selected method (global + method-specific)
 	const effectivePrerequisites = useMemo(() => {
-		if (!item) return []
+		if (!item || item.type === "skill") return []
 
 		const globalPrereqs = item.prerequisites || []
 		let methodPrereqs: string[] = []
@@ -98,7 +100,7 @@ export const MarketplaceInstallModal: React.FC<MarketplaceInstallModalProps> = (
 
 	// Update parameter values when method changes
 	React.useEffect(() => {
-		if (item) {
+		if (item && item.type !== "skill") {
 			// Get effective parameters for current method
 			const globalParams = item.type === "mcp" ? item.parameters || [] : []
 			let methodParams: McpParameter[] = []

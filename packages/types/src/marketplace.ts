@@ -27,7 +27,7 @@ export type McpInstallationMethod = z.infer<typeof mcpInstallationMethodSchema>
 /**
  * Component type validation
  */
-export const marketplaceItemTypeSchema = z.enum(["mode", "mcp"] as const)
+export const marketplaceItemTypeSchema = z.enum(["mode", "mcp", "skill"] as const)
 
 export type MarketplaceItemType = z.infer<typeof marketplaceItemTypeSchema>
 
@@ -61,6 +61,22 @@ export const mcpMarketplaceItemSchema = baseMarketplaceItemSchema.extend({
 
 export type McpMarketplaceItem = z.infer<typeof mcpMarketplaceItemSchema>
 
+export const skillMarketplaceItemSchema = baseMarketplaceItemSchema.extend({
+	repository: z.string().url("Repository must be a valid URL"),
+	category: z.string().optional(),
+	keywords: z.array(z.string()).optional(),
+	version: z
+		.string()
+		.regex(/^\d+\.\d+\.\d+$/, "Version must be in semver format (e.g., 1.2.0)")
+		.optional(),
+	downloads: z.number().int().min(0).optional(),
+	rating: z.number().min(0).max(5).optional(),
+	verified: z.boolean().optional(),
+	lastUpdated: z.string().optional(),
+})
+
+export type SkillMarketplaceItem = z.infer<typeof skillMarketplaceItemSchema>
+
 /**
  * Unified marketplace item schema using discriminated union
  */
@@ -72,6 +88,10 @@ export const marketplaceItemSchema = z.discriminatedUnion("type", [
 	// MCP marketplace item
 	mcpMarketplaceItemSchema.extend({
 		type: z.literal("mcp"),
+	}),
+	// Skill marketplace item
+	skillMarketplaceItemSchema.extend({
+		type: z.literal("skill"),
 	}),
 ])
 

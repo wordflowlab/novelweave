@@ -16,7 +16,7 @@ export interface MarketplaceListViewProps {
 	stateManager: MarketplaceViewStateManager
 	allTags: string[]
 	filteredTags: string[]
-	filterByType?: "mcp" | "mode"
+	filterByType?: "mcp" | "mode" | "skill"
 }
 
 export function MarketplaceListView({ stateManager, allTags, filteredTags, filterByType }: MarketplaceListViewProps) {

@@ -26,6 +26,10 @@ export interface Skill {
 	// Integration fields
 	mcpResources?: string[]
 	requiredModes?: string[]
+
+	// Marketplace fields (for skills installed from marketplace)
+	repository?: string
+	hasUpdate?: boolean
 }
 
 /**

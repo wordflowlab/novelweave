@@ -820,12 +820,8 @@ export const webviewMessageHandler = async (
 				try {
 					return await getModels(options)
 				} catch (error) {
-					console.error(
-						`Failed to fetch models in webviewMessageHandler requestRouterModels for ${options.provider}:`,
-						error,
-					)
-
-					throw error // Re-throw to be caught by Promise.allSettled.
+					// novelweave_change: 静默降级，不重复记录错误（modelCache 已记录）
+					return {} // 返回空对象，让 Promise.allSettled 正常处理
 				}
 			}
 

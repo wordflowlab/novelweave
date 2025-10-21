@@ -11,5 +11,5 @@ export function getNovelWeaveBaseUriFromToken(novelweaveToken?: string) {
 			console.warn("Failed to get base URL from NovelWeave token")
 		}
 	}
-	return "https://api.novelweave.ai"
+	return "https://api.cline.bot"
 }

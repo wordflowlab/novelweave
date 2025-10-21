@@ -162,10 +162,9 @@ export const getModels = async (options: GetModelsOptions): Promise<ModelRecord>
 		*/
 		return models || {}
 	} catch (error) {
-		// Log the error and re-throw it so the caller can handle it (e.g., show a UI message).
-		console.error(`[getModels] Failed to fetch models in modelCache for ${provider}:`, error)
-
-		throw error // Re-throw the original error to be handled by the caller.
+		// novelweave_change: 静默降级，不重复抛出错误（具体 fetcher 已记录详细信息）
+		console.error(`[getModels] Failed to fetch models for ${provider}`)
+		return {} // 返回空对象作为降级处理
 	}
 }
 

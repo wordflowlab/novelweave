@@ -6,6 +6,7 @@ import type { MarketplaceItem, MarketplaceItemType, InstallMarketplaceItemOption
 import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
 import type { CustomModesManager } from "../../core/config/CustomModesManager"
+import { SkillsInstaller } from "../skills/SkillsInstaller"
 
 export interface InstallOptions extends InstallMarketplaceItemOptions {
 	target: "project" | "global"
@@ -13,10 +14,14 @@ export interface InstallOptions extends InstallMarketplaceItemOptions {
 }
 
 export class SimpleInstaller {
+	private readonly skillsInstaller: SkillsInstaller
+
 	constructor(
 		private readonly context: vscode.ExtensionContext,
 		private readonly customModesManager?: CustomModesManager,
-	) {}
+	) {
+		this.skillsInstaller = new SkillsInstaller(context)
+	}
 
 	async installItem(item: MarketplaceItem, options: InstallOptions): Promise<{ filePath: string; line?: number }> {
 		const { target } = options
@@ -26,13 +31,15 @@ export class SimpleInstaller {
 				return await this.installMode(item, target)
 			case "mcp":
 				return await this.installMcp(item, target, options)
+			case "skill":
+				return await this.installSkill(item, target)
 			default:
 				throw new Error(`Unsupported item type: ${(item as any).type}`)
 		}
 	}
 
 	private async installMode(
-		item: MarketplaceItem,
+		item: Extract<MarketplaceItem, { type: "mode" }>,
 		target: "project" | "global",
 	): Promise<{ filePath: string; line?: number }> {
 		if (!item.content) {
@@ -155,7 +162,7 @@ export class SimpleInstaller {
 	}
 
 	private async installMcp(
-		item: MarketplaceItem,
+		item: Extract<MarketplaceItem, { type: "mcp" }>,
 		target: "project" | "global",
 		options?: InstallOptions,
 	): Promise<{ filePath: string; line?: number }> {
@@ -288,12 +295,18 @@ export class SimpleInstaller {
 			case "mcp":
 				await this.removeMcp(item, target)
 				break
+			case "skill":
+				await this.removeSkill(item, target)
+				break
 			default:
 				throw new Error(`Unsupported item type: ${(item as any).type}`)
 		}
 	}
 
-	private async removeMode(item: MarketplaceItem, target: "project" | "global"): Promise<void> {
+	private async removeMode(
+		item: Extract<MarketplaceItem, { type: "mode" }>,
+		target: "project" | "global",
+	): Promise<void> {
 		if (!this.customModesManager) {
 			throw new Error("CustomModesManager is not available")
 		}
@@ -328,7 +341,10 @@ export class SimpleInstaller {
 		await this.customModesManager.deleteCustomMode(modeSlug, true)
 	}
 
-	private async removeMcp(item: MarketplaceItem, target: "project" | "global"): Promise<void> {
+	private async removeMcp(
+		item: Extract<MarketplaceItem, { type: "mcp" }>,
+		target: "project" | "global",
+	): Promise<void> {
 		const filePath = await this.getMcpFilePath(target)
 
 		try {
@@ -379,6 +395,74 @@ export class SimpleInstaller {
 		} else {
 			const globalSettingsPath = await ensureSettingsDirectoryExists(this.context)
 			return path.join(globalSettingsPath, GlobalFileNames.mcpSettings)
+		}
+	}
+
+	private async installSkill(
+		item: Extract<MarketplaceItem, { type: "skill" }>,
+		target: "project" | "global",
+	): Promise<{ filePath: string; line?: number }> {
+		// Extract skill ID from repository URL or use item.id
+		const skillId = this.extractSkillId(item.repository, item.id)
+
+		// Map "global" to "personal" for SkillsInstaller
+		const installTarget = target === "global" ? "personal" : "project"
+
+		// Install using SkillsInstaller
+		const { skillPath } = await this.skillsInstaller.installSkill(item.repository, skillId, {
+			target: installTarget,
+		})
+
+		// Return the path to SKILL.md
+		const skillFilePath = path.join(skillPath, "SKILL.md")
+		return { filePath: skillFilePath }
+	}
+
+	private async removeSkill(
+		item: Extract<MarketplaceItem, { type: "skill" }>,
+		target: "project" | "global",
+	): Promise<void> {
+		// Extract skill ID
+		const skillId = this.extractSkillId(item.repository, item.id)
+
+		// Determine skill path
+		const installTarget = target === "global" ? "personal" : "project"
+
+		let skillPath: string
+		if (installTarget === "project") {
+			const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
+			if (!workspaceFolder) {
+				throw new Error("No workspace folder found")
+			}
+			skillPath = path.join(workspaceFolder.uri.fsPath, ".agent", "skills", skillId)
+		} else {
+			const globalStoragePath = this.context.globalStorageUri.fsPath
+			skillPath = path.join(globalStoragePath, "skills", skillId)
+		}
+
+		// Uninstall using SkillsInstaller
+		await this.skillsInstaller.uninstallSkill(skillPath)
+	}
+
+	/**
+	 * Extract skill ID from repository URL
+	 * Examples:
+	 *   https://github.com/org/skill-romance-writing -> romance-writing
+	 *   https://github.com/org/skill-fantasy.git -> fantasy
+	 */
+	private extractSkillId(repositoryUrl: string, fallbackId: string): string {
+		try {
+			// Try to match skill-{name} pattern
+			const match = repositoryUrl.match(/\/skill-([^\/\.]+)(\.git)?$/)
+			if (match) {
+				return match[1]
+			}
+
+			// Fallback to basename
+			const basename = path.basename(repositoryUrl, ".git")
+			return basename || fallbackId
+		} catch {
+			return fallbackId
 		}
 	}
 }

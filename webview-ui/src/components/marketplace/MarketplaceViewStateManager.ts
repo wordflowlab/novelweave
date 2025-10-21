@@ -22,7 +22,7 @@ export interface ViewState {
 	displayItems?: MarketplaceItem[] // Items currently being displayed (filtered or all)
 	displayOrganizationMcps?: MarketplaceItem[] // Organization MCPs currently being displayed (filtered or all)
 	isFetching: boolean
-	activeTab: "mcp" | "mode"
+	activeTab: "mcp" | "mode" | "skill"
 	filters: {
 		type: string
 		search: string
@@ -429,7 +429,9 @@ export class MarketplaceViewStateManager {
 				// Check if a specific tab is requested
 				if (
 					message.values?.marketplaceTab &&
-					(message.values.marketplaceTab === "mcp" || message.values.marketplaceTab === "mode")
+					(message.values.marketplaceTab === "mcp" ||
+						message.values.marketplaceTab === "mode" ||
+						message.values.marketplaceTab === "skill")
 				) {
 					// Set the active tab
 					void this.transition({

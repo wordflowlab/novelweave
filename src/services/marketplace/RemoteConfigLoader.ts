@@ -7,6 +7,7 @@ import {
 	type MarketplaceItemType,
 	modeMarketplaceItemSchema,
 	mcpMarketplaceItemSchema,
+	skillMarketplaceItemSchema,
 } from "@roo-code/types"
 //import { getRooCodeApiUrl } from "@roo-code/cloud" novelweave_change: use our own api
 
@@ -16,6 +17,12 @@ const modeMarketplaceResponse = z.object({
 
 const mcpMarketplaceResponse = z.object({
 	items: z.array(mcpMarketplaceItemSchema),
+})
+
+const skillMarketplaceResponse = z.object({
+	version: z.string().optional(),
+	lastUpdated: z.string().optional(),
+	skills: z.array(skillMarketplaceItemSchema),
 })
 
 export class RemoteConfigLoader {
@@ -30,12 +37,21 @@ export class RemoteConfigLoader {
 	async loadAllItems(hideMarketplaceMcps = false): Promise<MarketplaceItem[]> {
 		const items: MarketplaceItem[] = []
 
-		const modesPromise = this.fetchModes()
-		const mcpsPromise = hideMarketplaceMcps ? Promise.resolve([]) : this.fetchMcps()
+		// novelweave_change: 使用 Promise.allSettled 确保部分失败时其他数据仍可用
+		const results = await Promise.allSettled([
+			this.fetchModes(),
+			hideMarketplaceMcps ? Promise.resolve([]) : this.fetchMcps(),
+			this.fetchSkills(),
+		])
 
-		const [modes, mcps] = await Promise.all([modesPromise, mcpsPromise])
+		results.forEach((result) => {
+			if (result.status === "fulfilled") {
+				items.push(...result.value)
+			} else {
+				console.warn("Failed to fetch marketplace items:", result.reason)
+			}
+		})
 
-		items.push(...modes, ...mcps)
 		return items
 	}
 
@@ -47,18 +63,24 @@ export class RemoteConfigLoader {
 			return cached
 		}
 
-		const data = await this.fetchWithRetry<string>(`${this.apiBaseUrl}/api/marketplace/modes`)
+		try {
+			const data = await this.fetchWithRetry<string>(`${this.apiBaseUrl}/api/marketplace/modes`)
 
-		const yamlData = yaml.parse(data)
-		const validated = modeMarketplaceResponse.parse(yamlData)
+			const yamlData = yaml.parse(data)
+			const validated = modeMarketplaceResponse.parse(yamlData)
 
-		const items: MarketplaceItem[] = validated.items.map((item) => ({
-			type: "mode" as const,
-			...item,
-		}))
+			const items: MarketplaceItem[] = validated.items.map((item) => ({
+				type: "mode" as const,
+				...item,
+			}))
 
-		this.setCache(cacheKey, items)
-		return items
+			this.setCache(cacheKey, items)
+			return items
+		} catch (error) {
+			// novelweave_change: 失败时返回空数组，不阻止其他数据加载
+			console.warn("Modes marketplace not available:", error)
+			return []
+		}
 	}
 
 	private async fetchMcps(): Promise<MarketplaceItem[]> {
@@ -69,18 +91,58 @@ export class RemoteConfigLoader {
 			return cached
 		}
 
-		const data = await this.fetchWithRetry<string>(`${this.apiBaseUrl}/api/marketplace/mcps`)
+		try {
+			// API returns JSON array directly, not YAML
+			const data = await this.fetchWithRetry<any>(`${this.apiBaseUrl}/v1/mcp/marketplace`)
 
-		const yamlData = yaml.parse(data)
-		const validated = mcpMarketplaceResponse.parse(yamlData)
+			// Wrap array in expected format
+			const validated = mcpMarketplaceResponse.parse({ items: data })
 
-		const items: MarketplaceItem[] = validated.items.map((item) => ({
-			type: "mcp" as const,
-			...item,
-		}))
+			const items: MarketplaceItem[] = validated.items.map((item) => ({
+				type: "mcp" as const,
+				...item,
+			}))
 
-		this.setCache(cacheKey, items)
-		return items
+			this.setCache(cacheKey, items)
+			return items
+		} catch (error) {
+			// novelweave_change: 失败时返回空数组，不阻止其他数据加载
+			console.warn("MCPs marketplace not available:", error)
+			return []
+		}
+	}
+
+	private async fetchSkills(): Promise<MarketplaceItem[]> {
+		const cacheKey = "skills"
+		const cached = this.getFromCache(cacheKey)
+
+		if (cached) {
+			return cached
+		}
+
+		try {
+			// For now, use a placeholder GitHub URL until the actual registry is created
+			// This will be updated in Phase 4
+			const registryUrl =
+				"https://raw.githubusercontent.com/wordflowlab/novelweave-skills-registry/main/registry.json"
+
+			const data = await this.fetchWithRetry<any>(registryUrl)
+
+			// registry.json uses JSON format with "skills" array
+			const validated = skillMarketplaceResponse.parse(data)
+
+			const items: MarketplaceItem[] = validated.skills.map((item) => ({
+				type: "skill" as const,
+				...item,
+			}))
+
+			this.setCache(cacheKey, items)
+			return items
+		} catch (error) {
+			// If skills registry doesn't exist yet, return empty array
+			console.warn("Skills registry not available yet:", error)
+			return []
+		}
 	}
 
 	private async fetchWithRetry<T>(url: string, maxRetries = 3): Promise<T> {
