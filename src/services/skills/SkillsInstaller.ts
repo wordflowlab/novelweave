@@ -202,17 +202,71 @@ export class SkillsInstaller {
 	 * Clone a Git repository using sparse checkout (optimized)
 	 */
 	private async cloneRepository(repositoryUrl: string, targetPath: string): Promise<void> {
+		// Parse GitHub URL to handle both full repo URLs and tree URLs pointing to subdirectories
+		const parsedUrl = this.parseGitHubUrl(repositoryUrl)
+
 		try {
 			// Try sparse checkout first (faster, smaller download)
-			await execAsync(`git clone --depth 1 --filter=blob:none --sparse "${repositoryUrl}" "${targetPath}"`, {
+			await execAsync(`git clone --depth 1 --filter=blob:none --sparse "${parsedUrl.repoUrl}" "${targetPath}"`, {
 				timeout: 30000,
 			})
 
-			// Set sparse checkout to only include essential files
-			await execAsync(`git sparse-checkout set SKILL.md "*.md" examples/ templates/`, {
-				cwd: targetPath,
-				timeout: 5000,
-			})
+			// Set sparse checkout to include the subdirectory if specified, or essential files
+			if (parsedUrl.subdirectory) {
+				await execAsync(`git sparse-checkout set "${parsedUrl.subdirectory}"`, {
+					cwd: targetPath,
+					timeout: 5000,
+				})
+
+				// Move subdirectory contents to root and clean up
+				const subdirPath = path.join(targetPath, parsedUrl.subdirectory)
+				try {
+					await fs.access(subdirPath)
+					// Create temp directory for subdirectory contents
+					const tempPath = `${targetPath}_temp`
+					await fs.rename(subdirPath, tempPath)
+
+					// Get the .git directory before removing other files
+					const gitPath = path.join(targetPath, ".git")
+					const tempGitPath = `${targetPath}_git_temp`
+					try {
+						await fs.rename(gitPath, tempGitPath)
+					} catch {
+						// .git doesn't exist, that's okay
+					}
+
+					// Remove all files except temp directories
+					const files = await fs.readdir(targetPath)
+					for (const file of files) {
+						const fullPath = path.join(targetPath, file)
+						if (fullPath !== tempPath && fullPath !== tempGitPath) {
+							await fs.rm(fullPath, { recursive: true, force: true })
+						}
+					}
+
+					// Move temp subdirectory contents to target
+					const tempFiles = await fs.readdir(tempPath)
+					for (const file of tempFiles) {
+						await fs.rename(path.join(tempPath, file), path.join(targetPath, file))
+					}
+					await fs.rm(tempPath, { recursive: true, force: true })
+
+					// Restore .git directory if it existed
+					try {
+						await fs.access(tempGitPath)
+						await fs.rename(tempGitPath, gitPath)
+					} catch {
+						// .git temp doesn't exist, skip
+					}
+				} catch {
+					// Subdirectory doesn't exist or move failed, keep as is
+				}
+			} else {
+				await execAsync(`git sparse-checkout set SKILL.md "*.md" examples/ templates/`, {
+					cwd: targetPath,
+					timeout: 5000,
+				})
+			}
 		} catch (error) {
 			// Fallback to regular shallow clone
 			try {
@@ -223,15 +277,62 @@ export class SkillsInstaller {
 			}
 
 			try {
-				await execAsync(`git clone --depth 1 "${repositoryUrl}" "${targetPath}"`, { timeout: 30000 })
+				await execAsync(`git clone --depth 1 "${parsedUrl.repoUrl}" "${targetPath}"`, { timeout: 30000 })
+
+				// If there's a subdirectory, we need to move its contents to the target path
+				if (parsedUrl.subdirectory) {
+					const subdirPath = path.join(targetPath, parsedUrl.subdirectory)
+					try {
+						await fs.access(subdirPath)
+
+						// Create temp directory for subdirectory contents
+						const tempPath = `${targetPath}_temp`
+						await fs.rename(subdirPath, tempPath)
+
+						// Get the .git directory before removing other files
+						const gitPath = path.join(targetPath, ".git")
+						const tempGitPath = `${targetPath}_git_temp`
+						try {
+							await fs.rename(gitPath, tempGitPath)
+						} catch {
+							// .git doesn't exist, that's okay
+						}
+
+						// Remove all files except temp directories
+						const files = await fs.readdir(targetPath)
+						for (const file of files) {
+							const fullPath = path.join(targetPath, file)
+							if (fullPath !== tempPath && fullPath !== tempGitPath) {
+								await fs.rm(fullPath, { recursive: true, force: true })
+							}
+						}
+
+						// Move temp subdirectory contents to target
+						const tempFiles = await fs.readdir(tempPath)
+						for (const file of tempFiles) {
+							await fs.rename(path.join(tempPath, file), path.join(targetPath, file))
+						}
+						await fs.rm(tempPath, { recursive: true, force: true })
+
+						// Restore .git directory if it existed
+						try {
+							await fs.access(tempGitPath)
+							await fs.rename(tempGitPath, gitPath)
+						} catch {
+							// .git temp doesn't exist, skip
+						}
+					} catch {
+						// Subdirectory doesn't exist, use the whole repo
+					}
+				}
 			} catch (cloneError: any) {
 				// Parse Git error messages
 				const errorMessage = cloneError.stderr || cloneError.message || String(cloneError)
 
 				if (errorMessage.includes("Repository not found") || errorMessage.includes("not found")) {
-					throw new Error(`Repository not found: ${repositoryUrl}`)
+					throw new Error(`Repository not found: ${parsedUrl.repoUrl}`)
 				} else if (errorMessage.includes("Permission denied") || errorMessage.includes("access")) {
-					throw new Error(`Permission denied: Unable to access ${repositoryUrl}`)
+					throw new Error(`Permission denied: Unable to access ${parsedUrl.repoUrl}`)
 				} else if (errorMessage.includes("Network") || errorMessage.includes("Could not resolve host")) {
 					throw new Error("Network error: Unable to connect to Git repository")
 				} else {
@@ -239,6 +340,31 @@ export class SkillsInstaller {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Parse GitHub URL to extract repository URL and subdirectory
+	 * Handles URLs like:
+	 *   - https://github.com/owner/repo
+	 *   - https://github.com/owner/repo.git
+	 *   - https://github.com/owner/repo/tree/branch/path/to/skill
+	 */
+	private parseGitHubUrl(url: string): { repoUrl: string; subdirectory?: string } {
+		// Match GitHub tree URL pattern
+		const treeMatch = url.match(/^(https:\/\/github\.com\/[^\/]+\/[^\/]+)\/tree\/[^\/]+\/(.+)$/)
+		if (treeMatch) {
+			return {
+				repoUrl: `${treeMatch[1]}.git`,
+				subdirectory: treeMatch[2],
+			}
+		}
+
+		// Regular repository URL
+		if (url.endsWith(".git")) {
+			return { repoUrl: url }
+		}
+
+		return { repoUrl: `${url}.git` }
 	}
 
 	/**
